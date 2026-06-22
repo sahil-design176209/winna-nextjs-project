@@ -2,8 +2,8 @@ import React from "react";
 import { NavIcons, ThemeIcons } from "./SvgIcons";
 const Navbar = () => {
   return (
-    <nav className="sticky top-16 z-30 block border-b border-body-level-1 bg-body-level-0 lg:top-14 overflow-x-auto">
-      <ul className="layout-container flex flex-nowrap items-center gap-4 overflow-x-auto whitespace-nowrap py-2 text-14 sm:gap-6 xl:gap-10">
+    <nav className="sticky top-16 z-30 hidden border-b border-body-level-1 bg-body-level-0 lg:top-14 lg:block">
+      <ul className="layout-container flex items-center gap-6 xl:gap-10">
         <li>
           <a
             aria-current="page"
