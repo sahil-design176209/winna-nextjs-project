@@ -21,10 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body className="antialiased">
+      <body className="antialiased min-h-screen flex flex-col">
         <Header />
         <Navbar />
-        {children}
+   <main className="flex-1">
+    {children}
+  </main>
         <Footer />
       </body>
     </html>

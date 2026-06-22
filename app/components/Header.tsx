@@ -10,6 +10,7 @@ import WalletPopup from "./WalletPopup";
 import { LoginModal } from "./LoginModal";
 import { SignupModal } from "./SignupModal";
 
+import { usePathname } from "next/navigation";
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Header() {
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [referralCode, setReferralCode] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
+  const pathname = usePathname();
   const resetAuthForm = () => {
     setAuthFormEmail("");
     setAuthFormPassword("");
@@ -68,21 +69,25 @@ export default function Header() {
           </a>
           <div className="contents lg:flex lg:min-w-0 lg:flex-1 lg:items-center">
             <div className="ml-5 hidden gap-3 lg:inline-flex">
-              <a
-                className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 h-10 transition-colors gap-1 font-medium min-w-10 active:text-accent-blue disabled:text-white disabled:border-accent-blue disabled:opacity-50 disabled:hover:bg-transparent border border-body-level-2 px-4 hover:border-accent-blue-hover md:text-16 bg-body-level-4 text-accent-blue"
+              <Link
                 href="/"
-                data-discover="true"
-                aria-current="page"
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/"
+                    ? "bg-body-level-4 text-accent-blue border-body-level-2"
+                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                  }`}
               >
                 Casino
-              </a>
-              <a
-                className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 h-10 transition-colors gap-1 font-medium min-w-10 active:text-accent-blue disabled:text-white disabled:border-accent-blue disabled:opacity-50 disabled:hover:bg-transparent border border-body-level-3 bg-transparent px-4 text-typography-secondary hover:border-accent-blue-hover md:text-16"
-                href="/sportsbook"
-                data-discover="true"
+              </Link>
+
+              <Link
+                href="/sport"
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/sports"
+                    ? "bg-body-level-4 text-accent-blue border-body-level-2"
+                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                  }`}
               >
                 Sports
-              </a>
+              </Link>
               <button
                 className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 h-10 transition-colors font-medium bg-transparent border hover:border-accent-blue-hover active:text-accent-blue disabled:text-white disabled:border-accent-blue disabled:opacity-50 disabled:hover:bg-transparent min-w-[85px] gap-2 px-4 text-typography-secondary md:text-16 border-body-level-3"
                 data-testid="nav-vip-button-desktop"
