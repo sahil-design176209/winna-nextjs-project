@@ -8,7 +8,6 @@ const TabsComponent = () => {
           <button
             type="button"
             className="flex h-10 items-center gap-2 rounded-lg border bg-body-level-3 px-3 text-16 font-medium capitalize transition-colors border-body-level-4 text-typography-secondary hover:text-accent-blue"
-            fdprocessedid="z5ud3e"
           >
             <svg
               fill="currentColor"
@@ -23,7 +22,6 @@ const TabsComponent = () => {
           <button
             type="button"
             className="flex h-10 items-center gap-2 rounded-lg border bg-body-level-3 px-3 text-16 font-medium capitalize transition-colors border-accent-blue/30 text-accent-blue"
-            fdprocessedid="ja838f"
           >
             <svg
               width={24}

@@ -1424,7 +1424,6 @@ const Footer = () => {
                     type="button"
                     className="whitespace-nowrap text-12 text-typography-secondary hover:text-accent-blue transition-colors"
                     id="custom_launcher"
-                    fdprocessedid="325puf"
                   >
                     Live Support
                   </button>
@@ -1442,7 +1441,6 @@ const Footer = () => {
                   <button
                     type="button"
                     className="whitespace-nowrap text-12 text-typography-secondary hover:text-accent-blue transition-colors"
-                    fdprocessedid="kf6ko"
                   >
                     Report a Bug
                   </button>
@@ -1451,7 +1449,6 @@ const Footer = () => {
                   <button
                     type="button"
                     className="whitespace-nowrap text-12 text-typography-secondary hover:text-accent-blue transition-colors"
-                    fdprocessedid="14hdfa"
                   >
                     Business Contact
                   </button>
@@ -1460,7 +1457,6 @@ const Footer = () => {
                   <button
                     type="button"
                     className="whitespace-nowrap text-12 text-typography-secondary hover:text-accent-blue transition-colors"
-                    fdprocessedid="gy4iwj"
                   >
                     Complaints
                   </button>
@@ -1546,7 +1542,6 @@ const Footer = () => {
                   <button
                     type="button"
                     className="whitespace-nowrap text-12 text-typography-secondary hover:text-accent-blue transition-colors"
-                    fdprocessedid="rnmm"
                   >
                     Verify Fairness
                   </button>
@@ -1561,7 +1556,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="flex items-center h-4">
-                  <button fdprocessedid="31yj2r5">
+                  <button>
                     <span className="whitespace-nowrap text-12 text-typography-secondary hover:text-accent-blue transition-colors">
                       VIP Program
                     </span>
@@ -1642,7 +1637,6 @@ const Footer = () => {
                     aria-expanded="false"
                     aria-controls="_r_1_"
                     className="flex h-10 w-[172px] items-center justify-between gap-2 rounded-lg bg-body-level-3 py-2 pl-4 pr-2 text-white transition-colors hover:bg-body-level-4"
-                    fdprocessedid="8c9nv"
                   >
                     <span className="flex items-center gap-3">
                       <span className="flex size-6 items-center justify-center overflow-hidden rounded-full">

@@ -25,7 +25,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="dt1ifq"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.SettingsIcon />
@@ -37,7 +36,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="ouz8fi"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.GraphBarsIcon />
@@ -49,7 +47,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="7wzpc"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.UserBoxIcon />
@@ -61,7 +58,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="1c3r4i"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.RecycleIcon />
@@ -85,7 +81,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="cvhels"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.WalletIcon />
@@ -97,7 +92,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="t0cn7"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.DiceIcon />
@@ -109,7 +103,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="u9fdy6"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.HeartIcon />
@@ -122,7 +115,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="ppjad9"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.CallUserIcon />
@@ -134,7 +126,6 @@ const UserPopup = () => {
                 <button
                   type="button"
                   className="group flex h-10 w-full min-w-0 items-center gap-1 rounded-[10px] px-0.5 text-13 leading-4 text-typography-secondary transition-colors duration-150 hover:bg-body-level-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/60 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:pointer-events-none"
-                  fdprocessedid="8rh99e"
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-transparent text-typography-secondary transition-colors duration-150 group-hover:text-white">
                     <ThemeIcons.LogoutIcon />
