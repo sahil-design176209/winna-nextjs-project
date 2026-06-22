@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-
-export const metadata: Metadata = {
-  viewport: "width=device-width, initial-scale=1",
-};
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="antialiased">
         <Header />
         <Navbar />
         <main className="flex-1 px-2.5">

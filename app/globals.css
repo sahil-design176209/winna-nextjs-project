@@ -23,6 +23,7 @@ body {
   --body-level-5: #64748b;
   --body-level-6: #0d1c2480;
   --body-level-7: #0d1c24;
+
   --body-level-9: #16272f;
   /* Accent */
   --accent-blue: #10abe1;
@@ -35,7 +36,7 @@ body {
   --typography-secondary: #94a3b8;
 
   /* Status */
-  --green: #41BC2C;
+  --green: #41bc2c;
   --white: #ffffff;
 
   /* Header */
@@ -61,7 +62,7 @@ body {
 
 @theme {
   --color-body-level-0: var(--body-level-0);
-  --color-body-level-7: var(--body-level-7);
+
   --color-cs-text-color: var(--cs-text-color);
   --color-body-level-9: var(--body-level-9);
   --color-body-level-6: var(--body-level-6);
@@ -70,6 +71,7 @@ body {
   --color-body-level-3: var(--body-level-3);
   --color-body-level-4: var(--body-level-4);
   --color-body-level-5: var(--body-level-5);
+  --color-body-level-7: var(--body-level-7);
   --color-accent-blue: var(--accent-blue);
   --color-accent-blue-hover: var(--accent-blue-hover);
   --color-accent-blue-pressed: var(--accent-blue-pressed);
