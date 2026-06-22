@@ -58,8 +58,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 z-[200] w-full bg-body-level-1">
-        <div className="layout-container md:px-0 mx-2 me-2  h-random flex flex-wrap items-center justify-between gap-3 py-3">
+      <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5">
+        <div className="layout-container md:px-0 mx-2 me-2   flex flex-wrap items-center justify-between gap-3 py-3">
           <a
             className="block w-20 min-w-[48px] shrink-0 flex-none sm:w-[81px] sm:min-w-[81px]"
             href="/"

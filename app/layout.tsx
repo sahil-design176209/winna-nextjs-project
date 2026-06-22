@@ -24,7 +24,9 @@ export default function RootLayout({
       <body className="antialiased">
         <Header />
         <Navbar />
-        {children}
+        <main className="flex-1 px-2.5">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

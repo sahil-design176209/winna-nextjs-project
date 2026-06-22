@@ -50,6 +50,7 @@ body {
   --font-size-20: 20px;
   --font-size-22: 22px;
   --font-size-24: 24px;
+
   --font-size-28: 28px;
   --font-size-32: 32px;
   --font-size-36: 36px;
@@ -200,6 +201,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 /* Apply this to ALL inputs or give your password input a class like .dark-autofill */
 input {
   /* Forces Chrome's autofill engine to default to dark instead of light-white */
@@ -212,10 +214,13 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
 input:-internal-autofill-selected {
-  -webkit-box-shadow: 0 0 0px 1000px #141c2f inset !important; /* Forces your background */
-  -webkit-text-fill-color: #ffffff !important; /* Forces your text color */
+  -webkit-box-shadow: 0 0 0px 1000px #141c2f inset !important;
+  /* Forces your background */
+  -webkit-text-fill-color: #ffffff !important;
+  /* Forces your text color */
   box-shadow: 0 0 0px 1000px #141c2f inset !important;
   text-fill-color: #ffffff !important;
-  border: 1px solid #232d45 !important; /* Fixes the white border */
+  border: 1px solid #232d45 !important;
+  /* Fixes the white border */
   background-color: transparent !important;
 }
