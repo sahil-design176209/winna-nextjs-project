@@ -26,7 +26,7 @@ const RecentItems = () => {
                 data-discover="true"
                 style={{ animationDelay: "0ms" }}
               >
-                <div className="flex aspect-[105/142] w-[105px] sm:w-[105px] flex-shrink-0 lg:aspect-[167/222] lg:w-[167px] lg:hover:[transform:translate3d(0,-8px,0)] transition-transform duration-300 group relative cursor-pointer overflow-hidden xs:w-[calc((100vw-var(--layout-px)*2-12px)/3)]">
+                <div className="flex aspect-[105/142] w-[calc((100vw-2rem)/3)] sm:w-[140px] flex-shrink-0 lg:aspect-[167/222] lg:w-[167px] lg:hover:[transform:translate3d(0,-8px,0)] transition-transform duration-300 group relative cursor-pointer overflow-hidden">
                   <img
                     className="absolute inset-0 h-full w-full object-contain opacity-100"
                     alt="CoinClimber"
@@ -39,7 +39,7 @@ const RecentItems = () => {
           </div>
         </section>
         <button
-          className="absolute top-1/2 hidden size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 lg:flex -left-1 -translate-x-full lg:hidden"
+          className="absolute top-1/2 hidden lg:flex size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 -left-1 -translate-x-full"
           data-direction={-1}
           disabled=""
         >
@@ -61,7 +61,7 @@ const RecentItems = () => {
           </svg>
         </button>
         <button
-          className="absolute top-1/2 hidden size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 lg:flex -right-1 translate-x-full lg:hidden"
+          className="absolute top-1/2 hidden lg:flex size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 -right-1 translate-x-full"
           data-direction={1}
           disabled=""
         >

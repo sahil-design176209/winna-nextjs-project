@@ -11,8 +11,8 @@ const Footer = () => {
               <h4 className="mb-3 text-center text-14 leading-5 text-white lg:mb-4 lg:text-16 lg:leading-6">
                 Featured in
               </h4>
-              <ul className="flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-5">
-                <li className="w-1/8 flex justify-center lg:w-auto">
+              <ul className="flex w-full  items-center justify-center gap-5  overflow-scroll">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.bitcoin.com/gambling/reviews/winna/"
                     target="_blank"
@@ -69,7 +69,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://dappradar.com/dapp/winna"
                     target="_blank"
@@ -108,7 +108,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://markets.businessinsider.com/news/currencies/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding-1034168707"
                     target="_blank"
@@ -151,7 +151,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://coinmarketcap.com/community/articles/67698fe686a5c3196bab753a/"
                     target="_blank"
@@ -204,7 +204,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.binance.com/en/square/post/17960848844298"
                     target="_blank"
@@ -251,7 +251,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://hackernoon.com/new-crypto-casino-platform-winnacom-secures-$15-million-in-seed-funding"
                     target="_blank"
@@ -290,7 +290,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.investing.com/news/cryptocurrency-news/new-crypto-casino-platform-winnacom-secures-15-million-in-seed-funding-3787326"
                     target="_blank"
@@ -333,7 +333,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.thestreet.com/crypto/newsroom/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding"
                     target="_blank"
@@ -380,7 +380,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://decrypt.co/298673/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding"
                     target="_blank"
@@ -417,7 +417,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://blocktelegraph.io/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding/"
                     target="_blank"
@@ -547,7 +547,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://cryptobriefing.com/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding/"
                     target="_blank"
@@ -646,7 +646,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://techstartups.com/2024/12/23/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding/"
                     target="_blank"
@@ -709,7 +709,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.tipranks.com/news/newswire/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding"
                     target="_blank"
@@ -785,7 +785,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://cryptodaily.co.uk/2024/12/new-crypto-casino-platform-winnacom-secures-15-million-in-seed-funding"
                     target="_blank"
@@ -900,7 +900,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.cryptopolitan.com/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding/"
                     target="_blank"
@@ -1065,7 +1065,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.ethnews.com/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding/"
                     target="_blank"
@@ -1128,7 +1128,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://coinpaper.com/6697/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding"
                     target="_blank"
@@ -1239,7 +1239,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.crypto-news.net/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding/"
                     target="_blank"
@@ -1298,7 +1298,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.cryptoglobe.com/latest/2024/12/new-crypto-casino-platform-winna-com-secures-15-million-in-seed-funding/"
                     target="_blank"
@@ -1353,7 +1353,7 @@ const Footer = () => {
                     </span>
                   </a>
                 </li>
-                <li className="w-1/8 flex justify-center lg:w-auto">
+                <li className=" flex justify-center lg:w-auto">
                   <a
                     href="https://www.cryptotimes.io/2024/12/23/new-crypto-casino-winna-com-secures-15-million-in-funding/"
                     target="_blank"
