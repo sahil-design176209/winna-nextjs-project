@@ -39,7 +39,7 @@ export function LoginModal({
   return (
     <div className="fixed inset-0 z-[400] bg-[#01090e]/80 flex items-center justify-center px-4 py-6">
       <div className="absolute inset-0" aria-hidden="true" onClick={onClose} />
-      <div className="relative z-10 flex w-full max-w-5xl overflow-hidden rounded-[32px] border border-body-level-2 bg-[#061116] shadow-2xl lg:flex-row">
+      <div className="relative z-10 flex w-full max-w-5xl overflow-hidden rounded-[12px] border border-body-level-2 bg-[#061116] shadow-2xl lg:flex-row">
         <div className="hidden w-full lg:flex lg:w-1/2 bg-[#08131b]">
           <div className="h-full w-full rounded-l-[32px]  left-image bg-[radial-gradient(circle_at_top_left,_rgba(0,121,255,0.14),_transparent_30%),_radial-gradient(circle_at_bottom_left,_rgba(0,121,255,0.08),_transparent_40%)]" />
         </div>
@@ -53,9 +53,6 @@ export function LoginModal({
           </button>
           <div className="space-y-5 pt-4">
             <div className="flex flex-col gap-2">
-              <p className="text-xs uppercase tracking-[0.35em] text-white">
-                LOGIN
-              </p>
               <h2 className="text-3xl font-semibold text-white">Login</h2>
             </div>
           </div>
@@ -85,7 +82,11 @@ export function LoginModal({
                   onClick={onToggleShowPassword}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-typography-secondary"
                 >
-                  {showPassword ? "Hide" : "Show"}
+                  {showPassword ? (
+                    <ThemeIcons.EyeIcon />
+                  ) : (
+                    <ThemeIcons.EyeClosedIcon />
+                  )}
                 </button>
               </div>
             </label>
@@ -123,12 +124,14 @@ export function LoginModal({
               type="button"
               className="flex items-center justify-center gap-2 rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 text-sm text-white transition-colors hover:border-accent-blue"
             >
+              <ThemeIcons.GoogleIcon />
               Google
             </button>
             <button
               type="button"
               className="flex items-center justify-center gap-2 rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 text-sm text-white transition-colors hover:border-accent-blue"
             >
+              <ThemeIcons.TelegramIcon />
               Telegram
             </button>
           </div>

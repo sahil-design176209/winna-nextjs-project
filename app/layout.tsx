@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+
+export const metadata: Metadata = {
+  viewport: "width=device-width, initial-scale=1",
+};
 
 const poppins = Poppins({
   subsets: ["latin"],

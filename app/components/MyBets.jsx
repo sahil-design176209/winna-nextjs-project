@@ -3,8 +3,8 @@ import React from "react";
 const MyBets = () => {
   return (
     <div>
-      <section className="space-y-3 my-5">
-        <header className="flex items-center justify-between gap-2">
+      <section className="space-y-3 my-5 px-4 sm:px-0">
+        <header className="flex flex-wrap items-center justify-between gap-2">
           <h4 className="flex items-center gap-2 text-18 font-semibold capitalize text-typography-blue lg:text-20">
             <svg
               fill="currentColor"
@@ -17,7 +17,7 @@ const MyBets = () => {
             Bets
           </h4>
         </header>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <ul className="flex items-center [&>li]:flex-1 lg:[&>li]:flex-initial w-full gap-2 lg:w-auto min-w-0 max-w-full overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] lg:overflow-x-visible [&::-webkit-scrollbar]:hidden">
             <li>
               <button
@@ -65,7 +65,7 @@ const MyBets = () => {
               </button>
             </li>
           </ul>
-          <div className="css-b62m3t-container">
+          <div className="css-b62m3t-container w-full max-w-full sm:w-auto sm:min-w-[220px]">
             <span
               id="react-select-4-live-region"
               className="css-7pg0cj-a11yText"
@@ -130,8 +130,8 @@ const MyBets = () => {
             </div>
           </div>
         </div>
-        <div className="!-mb-12">
-          <table className="w-full table-fixed font-regular text-white">
+        <div className="!-mb-12 overflow-x-auto rounded-xl border border-body-level-2">
+          <table className="w-full min-w-full table-auto font-regular text-white">
             <thead className="text-13 lg:text-14 text-typography-secondary  relative bg-body-level-0">
               <tr>
                 <th className="h-12 text-left lg:pl-3 px-2 font-regular truncate lg:pr-0">
@@ -143,7 +143,7 @@ const MyBets = () => {
                 <th className="h-12 text-left lg:pl-3 px-2 font-regular truncate lg:pr-0">
                   Bet Amount
                 </th>
-                <th className="h-12 text-left lg:pl-3 px-2 font-regular truncate w-[22%] lg:w-[13%] lg:pr-0">
+                <th className="h-12 text-left lg:pl-3 px-2 font-regular truncate lg:w-[13%] lg:pr-0">
                   Multiplier
                 </th>
                 <th className="h-12 text-left lg:pl-3 px-2 font-regular truncate lg:w-[20%] lg:pr-0">

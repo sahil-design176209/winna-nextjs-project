@@ -110,9 +110,12 @@ const WinnaOriginals = () => {
           className=""
         >
           {games.map((game) => (
-            <SwiperSlide key={game.name} className="!w-[105px] lg:!w-[167px]">
+            <SwiperSlide
+              key={game.name}
+              className="!w-[110px] sm:!w-[140px] lg:!w-[167px]"
+            >
               <a href={game.href}>
-                <div className="group relative flex aspect-[105/142] w-[105px] overflow-hidden transition-transform duration-300 lg:w-[167px] lg:aspect-[167/222] lg:hover:-translate-y-2">
+                <div className="group relative flex aspect-[105/142] w-[110px] overflow-hidden transition-transform duration-300 sm:w-[140px] lg:w-[167px] lg:aspect-[167/222] lg:hover:-translate-y-2">
                   <img
                     src={game.image}
                     alt={game.name}

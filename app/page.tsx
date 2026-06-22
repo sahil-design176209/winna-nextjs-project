@@ -11,7 +11,7 @@ import Banner from "./components/Banner";
 export default function Home() {
   return (
     <>
-      <div className="layout-container mx-auto mt-2.5 h-full w-full pb-5 text-white md:mt-5 lg:pb-12">
+      <div className="layout-container mx-auto mt-2.5 h-full w-full pb-5 text-white lg:pb-12">
         <Banner />
         <TabsComponent />
         <RecentItems />
