@@ -65,11 +65,13 @@ const Banner = () => {
       {/* Slider Layout */}
       <div
         className="@container flex snap-x snap-mandatory gap-[var(--pb-gap)] overflow-x-auto scroll-smooth lg:max-w-full lg:snap-none lg:overflow-x-hidden react-use-css-o"
-        style={{
-          "--pb-b-closed-width-lg": "196.67px",
-          "--pb-gap": "1rem",
-          "--pb-padding-x-lg": "1.25rem",
-        }}
+        style={
+          {
+            "--pb-b-closed-width-lg": "196.67px",
+            "--pb-gap": "1rem",
+            "--pb-padding-x-lg": "1.25rem",
+          } as React.CSSProperties
+        }
       >
         {slides.map((slide, index) => {
           const isActive = index === activeIndex;
@@ -90,7 +92,7 @@ const Banner = () => {
                 className={`pointer-events-none absolute inset-0 h-full w-full object-cover object-center lg:transition-opacity lg:duration-500 ${
                   isActive ? "opacity-[0.08]" : "opacity-[0.08] lg:opacity-0"
                 }`}
-                fetchpriority={isActive ? "high" : "low"}
+                fetchPriority={isActive ? "high" : "low"}
                 height="196.67"
                 loading={isActive ? "eager" : "lazy"}
                 src={slide.bgImg}
@@ -104,7 +106,7 @@ const Banner = () => {
                     ? "lg:translate-x-0 lg:opacity-100"
                     : "lg:translate-x-[87.33px] lg:opacity-30"
                 }`}
-                fetchpriority={isActive ? "high" : "low"}
+                fetchPriority={isActive ? "high" : "low"}
                 height="196.67"
                 loading={isActive ? "eager" : "lazy"}
                 src={slide.foregroundImg}

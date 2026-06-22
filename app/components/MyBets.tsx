@@ -23,7 +23,6 @@ const MyBets = () => {
               <button
                 className="flex items-center justify-center gap-2 truncate rounded-lg border px-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue disabled:opacity-50 lg:px-4 border-body-level-4 h-10 w-full"
                 data-index={0}
-                fdprocessedid="q33zs5"
               >
                 My bets
               </button>
@@ -32,7 +31,6 @@ const MyBets = () => {
               <button
                 className="flex items-center justify-center gap-2 truncate rounded-lg border px-3 text-14 transition-colors hover:text-accent-blue disabled:opacity-50 lg:px-4 bg-body-level-3 text-accent-blue border-body-level-4 h-10 w-full"
                 data-index={1}
-                fdprocessedid="dhli4o"
               >
                 All bets
               </button>
@@ -41,7 +39,6 @@ const MyBets = () => {
               <button
                 className="flex items-center justify-center gap-2 truncate rounded-lg border px-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue disabled:opacity-50 lg:px-4 border-body-level-4 h-10 w-full"
                 data-index={2}
-                fdprocessedid="fi9n9e"
               >
                 Highrollers
               </button>
@@ -50,7 +47,6 @@ const MyBets = () => {
               <button
                 className="flex items-center justify-center gap-2 truncate rounded-lg border px-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue disabled:opacity-50 lg:px-4 border-body-level-4 h-10 w-full"
                 data-index={3}
-                fdprocessedid="nhdgul"
               >
                 Sports
               </button>
@@ -59,7 +55,6 @@ const MyBets = () => {
               <button
                 className="flex items-center justify-center gap-2 truncate rounded-lg border px-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue disabled:opacity-50 lg:px-4 border-body-level-4 h-10 w-full"
                 data-index={4}
-                fdprocessedid="6514e"
               >
                 World Cup Bets
               </button>
@@ -90,10 +85,10 @@ const MyBets = () => {
                   aria-expanded="false"
                   aria-haspopup="true"
                   role="combobox"
-                  aria-activedescendant
                   aria-readonly="true"
                   className="css-1hac4vs-dummyInput"
-                  defaultValue
+                  defaultValue=""
+                  // Removed aria-activedescendant entirely
                 />
               </div>
               <div className="css-1wy0on6">

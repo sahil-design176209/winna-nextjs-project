@@ -133,7 +133,6 @@ const Providers = () => {
               height={32}
               viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
-              className
             >
               <path
                 d="M20.785 9.34901C20.8537 9.27268 20.9074 9.18288 20.943 9.08476C20.9786 8.98663 20.9955 8.8821 20.9927 8.77712C20.9899 8.67214 20.9674 8.56877 20.9265 8.47292C20.8857 8.37707 20.8272 8.2906 20.7546 8.21847C20.6819 8.14634 20.5964 8.08995 20.503 8.05252C20.4096 8.01509 20.31 7.99735 20.2101 8.00032C20.1101 8.00329 20.0117 8.02691 19.9205 8.06983C19.8292 8.11274 19.7469 8.17412 19.6782 8.25045L13.2081 15.4462C13.0744 15.5947 13 15.7912 13 15.9955C13 16.1998 13.0744 16.3963 13.2081 16.5448L19.6782 23.7414C19.7465 23.8194 19.8287 23.8824 19.9203 23.9267C20.0119 23.971 20.111 23.9957 20.2118 23.9995C20.3126 24.0033 20.413 23.9859 20.5074 23.9486C20.6017 23.9112 20.6881 23.8545 20.7614 23.7818C20.8347 23.7091 20.8936 23.6218 20.9345 23.525C20.9754 23.4282 20.9976 23.3238 20.9998 23.2179C21.002 23.112 20.9842 23.0067 20.9473 22.9081C20.9104 22.8095 20.8552 22.7196 20.785 22.6436L14.8081 15.9955L20.785 9.34901Z"
@@ -148,7 +147,6 @@ const Providers = () => {
           <button
             className="absolute top-1/2 hidden size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 lg:flex -right-1 translate-x-full"
             data-direction={1}
-            fdprocessedid="jh2vyo"
           >
             <svg
               width={32}
