@@ -7,6 +7,7 @@ import Slots from "./components/Slots";
 import TableGames from "./components/TableGames";
 import MyBets from ".//components/MyBets";
 import Banner from "./components/Banner";
+
 export default function Home() {
   return (
     <>

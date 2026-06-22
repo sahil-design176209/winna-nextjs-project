@@ -19,11 +19,15 @@ body {
   --body-level-2: #1e293b;
   --body-level-3: #334155;
   --body-level-4: #475569;
-  --body-level-5: #64748b;
 
+  --body-level-5: #64748b;
+  --body-level-6: #0d1c2480;
+  --body-level-7: #0d1c24;
+  --body-level-9: #16272f;
   /* Accent */
   --accent-blue: #10abe1;
   --accent-blue-hover: #0b7fa9;
+  --cs-text-color: #ffffff80;
   --accent-blue-pressed: #065673;
 
   /* Typography */
@@ -31,7 +35,7 @@ body {
   --typography-secondary: #94a3b8;
 
   /* Status */
-  --green: #22c55e;
+  --green: #41BC2C;
   --white: #ffffff;
 
   /* Header */
@@ -56,6 +60,10 @@ body {
 
 @theme {
   --color-body-level-0: var(--body-level-0);
+  --color-body-level-7: var(--body-level-7);
+  --color-cs-text-color: var(--cs-text-color);
+  --color-body-level-9: var(--body-level-9);
+  --color-body-level-6: var(--body-level-6);
   --color-body-level-1: var(--body-level-1);
   --color-body-level-2: var(--body-level-2);
   --color-body-level-3: var(--body-level-3);
@@ -138,6 +146,7 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
 .providers-sliders {
   overflow-x: auto;
   overflow-y: hidden;
@@ -156,26 +165,33 @@ body {
 .providers-sliders::-webkit-scrollbar-track {
   background: #222;
 }
+
 .search-modal {
   height: 100vh;
   background-color: #010c10e6;
 }
+
 .close-search {
   cursor: pointer;
 }
+
 .h-random {
   padding: 8px 0px;
 }
+
 .fs-6 {
   font-size: 11px;
 }
+
 .leading-none {
   font-size: 11px;
   color: var(--typography-secondary);
 }
+
 .pointer-cursor {
   cursor: pointer;
 }
+
 .left-image {
   background-image: url(../public/images/sign.webp);
   background-position: center;
