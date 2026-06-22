@@ -3,7 +3,7 @@ import React from "react";
 const MyBets = () => {
   return (
     <div>
-      <section className="space-y-3 my-5 px-4 sm:px-0">
+      <section className="space-y-3 my-5 px-0 sm:px-0">
         <header className="flex flex-wrap items-center justify-between gap-2">
           <h4 className="flex items-center gap-2 text-18 font-semibold capitalize text-typography-blue lg:text-20">
             <svg

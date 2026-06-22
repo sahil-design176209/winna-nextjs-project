@@ -4,7 +4,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-body-level-1 border-t border-body-level-3 ">
+      <footer className="bg-body-level-1 border-t border-body-level-3 px-2.5 ">
         <div className="layout-container py-6 lg:py-10">
           <div className="md:hidden">
             <section className="mb-6 rounded-lg border-b border-body-level-3 pb-6 lg:bg-body-level-3 lg:p-5">
