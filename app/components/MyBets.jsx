@@ -65,68 +65,38 @@ const MyBets = () => {
               </button>
             </li>
           </ul>
-          <div className="css-b62m3t-container">
-            <span
-              id="react-select-4-live-region"
-              className="css-7pg0cj-a11yText"
-            />
-            <span
-              aria-live="polite"
-              aria-atomic="false"
-              aria-relevant="additions text"
-              role="log"
-              className="css-7pg0cj-a11yText"
-            />
-            <div className="h-10 pl-3 pr-2 hover:cursor-pointer hover:bg-body-level-5 gap-5 text-16 font-normal bg-body-level-3 hover:text-white group/select-control text-white rounded css-cp01gg-control">
-              <div className="css-14oxtc6">
-                <div className="css-w54w9q-singleValue">
-                  <span className="truncate text-16">5</span>
-                </div>
-                <input
-                  id="react-select-4-input"
-                  tabIndex={0}
-                  inputMode="none"
-                  aria-autocomplete="list"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  role="combobox"
-                  aria-activedescendant
-                  aria-readonly="true"
-                  className="css-1hac4vs-dummyInput"
-                  defaultValue
+          <div className="css-b62m3t-container min-w-[120px]">
+            <label htmlFor="bets-per-page" className="sr-only">
+              Items per page
+            </label>
+            <div className="relative">
+              <select
+                id="bets-per-page"
+                defaultValue="5"
+                className="appearance-none h-10 w-full rounded-lg border border-body-level-4 bg-body-level-3 px-3 pr-10 text-16 text-white outline-none transition-colors hover:border-accent-blue"
+              >
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+              </select>
+              <svg
+                width={20}
+                height={20}
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-typography-secondary"
+              >
+                <path
+                  d="M6 8l4 4 4-4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
-              </div>
-              <div className="css-1wy0on6">
-                <span className="css-j4w2j1-indicatorSeparator" />
-                <div
-                  className="css-g56vrd-indicatorContainer"
-                  aria-hidden="true"
-                >
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-typography-secondary group-hover/select-control:text-white"
-                  >
-                    <path
-                      className="top-arrow"
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M8.11613 13.64L11.5425 16.84C11.7711 17.0533 12.2282 17.0533 12.4567 16.84L15.885 13.6399C16.1669 13.3763 15.8984 13 15.4279 13L8.57323 13C8.10089 13 7.83234 13.3763 8.11613 13.64Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      className="bottom-arrow"
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M8.11613 10.36L11.5425 7.16C11.7711 6.94667 12.2282 6.94667 12.4567 7.16L15.885 10.3601C16.1669 10.6237 15.8984 11 15.4279 11L8.57323 11C8.10089 11 7.83234 10.6237 8.11613 10.36Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </div>
-              </div>
+              </svg>
             </div>
           </div>
         </div>
