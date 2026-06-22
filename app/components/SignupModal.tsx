@@ -61,9 +61,6 @@ export function SignupModal({
           </button>
           <div className="space-y-5 pt-4">
             <div className="flex flex-col gap-2">
-              <p className="text-xs uppercase tracking-[0.35em] text-white">
-                REGISTER
-              </p>
               <h2 className="text-3xl font-semibold text-white">Register</h2>
             </div>
           </div>
@@ -96,14 +93,18 @@ export function SignupModal({
                   value={authFormPassword}
                   onChange={onPasswordChange}
                   required
-                  className="w-full rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 pr-12 text-white outline-none transition-colors focus:border-accent-blue"
+                  className="focus:outline-none focus:ring-0 autofill:border-body-level-2 w-full rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 pr-12 text-white outline-none transition-colors focus:border-accent-blue"
                 />
                 <button
                   type="button"
                   onClick={onToggleShowPassword}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-typography-secondary"
                 >
-                  {showPassword ? "Hide" : "Show"}
+                  {showPassword ? (
+                    <ThemeIcons.EyeIcon />
+                  ) : (
+                    <ThemeIcons.EyeClosedIcon />
+                  )}
                 </button>
               </div>
             </label>
@@ -120,9 +121,6 @@ export function SignupModal({
                   onChange={onReferralChange}
                   className="w-full rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 text-white outline-none transition-colors focus:border-accent-blue"
                 />
-                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-typography-secondary">
-                  ▼
-                </span>
               </div>
             </label>
             <label className="inline-flex items-center gap-3 text-sm text-typography-secondary">
@@ -151,12 +149,14 @@ export function SignupModal({
               type="button"
               className="flex items-center justify-center gap-2 rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 text-sm text-white transition-colors hover:border-accent-blue"
             >
+              <ThemeIcons.GoogleIcon />
               Google
             </button>
             <button
               type="button"
               className="flex items-center justify-center gap-2 rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 text-sm text-white transition-colors hover:border-accent-blue"
             >
+              <ThemeIcons.TelegramIcon />
               Telegram
             </button>
           </div>

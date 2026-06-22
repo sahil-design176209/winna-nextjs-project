@@ -55,16 +55,16 @@ const Providers = () => {
               },
             }}
           >
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
-                className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
+                className="flex h-[61.23px] min-w-[110px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[140px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/pragmatic"
               >
                 ...
               </a>
             </SwiperSlide>
 
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -72,7 +72,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -80,7 +80,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -88,7 +88,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -96,7 +96,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -104,7 +104,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -112,7 +112,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="!w-auto">
+            <SwiperSlide className="">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"

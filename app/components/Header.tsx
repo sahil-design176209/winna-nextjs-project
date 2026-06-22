@@ -57,16 +57,16 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 z-[200] w-full bg-body-level-1 lg:sticky">
-        <div className="layout-container h-random flex  items-center justify-between ">
+      <header className="fixed top-0 z-[200] w-full bg-body-level-1">
+        <div className="layout-container md:px-0 mx-2 me-2  h-random flex flex-wrap items-center justify-between gap-3 py-3">
           <a
-            className="block w-[81px] min-w-[81px] shrink-0 flex-none"
+            className="block w-20 min-w-[48px] shrink-0 flex-none sm:w-[81px] sm:min-w-[81px]"
             href="/"
             data-discover="true"
           >
             <Image src={WinnaLogo} alt="logo" />
           </a>
-          <div className="contents lg:flex lg:min-w-0 lg:flex-1 lg:items-center">
+          <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:items-center">
             <div className="ml-5 hidden gap-3 lg:inline-flex">
               <a
                 className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 h-10 transition-colors gap-1 font-medium min-w-10 active:text-accent-blue disabled:text-white disabled:border-accent-blue disabled:opacity-50 disabled:hover:bg-transparent border border-body-level-2 px-4 hover:border-accent-blue-hover md:text-16 bg-body-level-4 text-accent-blue"
@@ -110,10 +110,10 @@ export default function Header() {
                 />
               </a>
             </div>
-            <div className="flex items-center gap-2 lg:ml-auto justify-center">
+            <div className="flex flex-wrap items-center gap-2 lg:ml-auto justify-center">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-4 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-4 disabled:opacity-50 hidden size-10 text-typography-secondary lg:flex"
+                className=" hidden  rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-4 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-4 disabled:opacity-50 size-10 text-typography-secondary flex lg:flex"
               >
                 <div className="flex h-4 w-4 items-center justify-center mr-0 md:mr-0 md:h-6 md:w-6">
                   <ThemeIcons.SearchIcon />
@@ -170,7 +170,7 @@ export default function Header() {
 
                     {/* Profile Menu Dropdown Overlay Layout */}
                     {isProfileMenuOpen && (
-                      <div className="absolute right-0 mt-2 w-[330px] z-[9999] rounded-xl bg-[#09151c] border border-body-level-2 shadow-2xl p-4 text-sm text-typography-secondary">
+                      <div className="absolute right-0 top-full mt-2 w-full max-w-[330px] z-[9999] rounded-xl bg-[#09151c] border border-body-level-2 shadow-2xl p-4 text-sm text-typography-secondary">
                         {/* User info section */}
                         <div className="flex items-center gap-3 pb-3 mb-3 border-b border-body-level-2">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-body-level-4 text-white">
@@ -251,7 +251,7 @@ export default function Header() {
               )}
               {/* logged in data ends */}
             </div>
-            <div className="ml-2 block cursor-pointer text-white max-lg:hidden">
+            <div className="ml-2 hidden cursor-pointer text-white lg:block">
               <button
                 className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-4 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-4 disabled:opacity-50 size-10 text-typography-secondary lg:text-white"
                 data-profile="true"

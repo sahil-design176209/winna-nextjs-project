@@ -47,9 +47,9 @@ const TableGames = () => {
             See All
           </a>
         </header>
-        <div className="grid w-full snap-x snap-mandatory grid-cols-[repeat(3,minmax(105px,1fr))] gap-x-2 overflow-x-auto scroll-smooth sm:grid-cols-3 sm:gap-x-3">
+        <div className="grid w-full gap-2 overflow-hidden sm:grid-cols-2 lg:grid-cols-3 sm:gap-3">
           <a
-            className="aspect-[498/669] flex-shrink-0 snap-start sm:aspect-auto sm:h-auto sm:w-auto"
+            className="block overflow-hidden rounded-xl  w-full"
             href="/casino/categories/blackjack"
             data-discover="true"
           >
@@ -60,7 +60,7 @@ const TableGames = () => {
             />
           </a>
           <a
-            className="aspect-[498/669] flex-shrink-0 snap-start sm:aspect-auto sm:h-auto sm:w-auto"
+            className="block overflow-hidden rounded-xl  w-full"
             href="/casino/categories/roulette"
             data-discover="true"
           >
@@ -71,7 +71,7 @@ const TableGames = () => {
             />
           </a>
           <a
-            className="aspect-[498/669] flex-shrink-0 snap-start sm:aspect-auto sm:h-auto sm:w-auto"
+            className="block overflow-hidden rounded-xl  w-full"
             href="/casino/categories/baccarat"
             data-discover="true"
           >
