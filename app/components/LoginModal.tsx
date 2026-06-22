@@ -53,9 +53,6 @@ export function LoginModal({
           </button>
           <div className="space-y-5 pt-4">
             <div className="flex flex-col gap-2">
-              <p className="text-xs uppercase tracking-[0.35em] text-white">
-                LOGIN
-              </p>
               <h2 className="text-3xl font-semibold text-white">Login</h2>
             </div>
           </div>
@@ -85,7 +82,11 @@ export function LoginModal({
                   onClick={onToggleShowPassword}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-typography-secondary"
                 >
-                  {showPassword ? "Hide" : "Show"}
+                  {showPassword ? (
+                    <ThemeIcons.EyeIcon />
+                  ) : (
+                    <ThemeIcons.EyeClosedIcon />
+                  )}
                 </button>
               </div>
             </label>
@@ -123,12 +124,14 @@ export function LoginModal({
               type="button"
               className="flex items-center justify-center gap-2 rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 text-sm text-white transition-colors hover:border-accent-blue"
             >
+              <ThemeIcons.GoogleIcon />
               Google
             </button>
             <button
               type="button"
               className="flex items-center justify-center gap-2 rounded-2xl border border-body-level-2 bg-body-level-2 px-4 py-3 text-sm text-white transition-colors hover:border-accent-blue"
             >
+              <ThemeIcons.TelegramIcon />
               Telegram
             </button>
           </div>
