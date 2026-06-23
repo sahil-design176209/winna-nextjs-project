@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   Home,
   Tv,
@@ -8,7 +9,8 @@ import {
   Flame,
   ChevronDown,
 } from "lucide-react";
-import { NavIcons } from "./SvgIcons";
+import { NavIcons, ThemeIcons } from "./SvgIcons";
+import SportsNavDropdown from "./Sportsnavdropdown";
 
 // Types for navigation items
 interface SportItem {
@@ -22,6 +24,7 @@ interface SportItem {
 }
 
 export default function SportsNavbar() {
+  const [isSportsMenuOpen, setIsSportsMenuOpen] = useState(false);
   const sportsItems: SportItem[] = [
     { id: "wc26", label: "WC 26", isCustomText: true, text: "WC 26" },
     { id: "soccer", icon: <SoccerIcon />, label: "Soccer", hasBadge: true },
@@ -60,9 +63,9 @@ export default function SportsNavbar() {
   ];
 
   return (
-    <div className="layout-container   px-4 h-14 flex items-center justify-between select-none font-sans overflow-hidden">
+    <div className="layout-container   px-4 h-14 flex items-center justify-between select-none font-sans">
       {/* Left Row Scroll Container */}
-      <div className="flex items-center space-x-4 overflow-x-auto scrollbar-none flex-1 mr-4 py-2">
+      <div className="flex items-center space-x-4 flex-1 mr-4 py-2">
         {/* Core Control Elements */}
         <div className="flex items-center space-x-5 text-gray-400 shrink-0">
           <button className="hover:text-white transition-colors">
@@ -260,27 +263,19 @@ export default function SportsNavbar() {
         </button>
 
         {/* Sports Map Loop */}
-        <div className="flex items-center space-x-[18px]">
+        <div className="flex items-center space-x-[18px] relative ">
           {/* Dropdown Chevron arrow for extra items */}
-          <button className="text-gray-500 hover:text-white shrink-0">
-            <svg
-              width={13}
-              height={13}
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="caret-down"
-              className="svg-inline--fa fa-caret-down "
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 320 512"
-            >
-              <path
-                fill="#fff"
-                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
-              ></path>
-            </svg>
+          <button
+            className="text-white  "
+            onClick={() => setIsSportsMenuOpen(!isSportsMenuOpen)}
+          >
+            <ThemeIcons.ChevronDownIcon />
           </button>
+          {isSportsMenuOpen && (
+            <div className="absolute left-1/2 -translate-x-1/2 top-[40px] mt-2 w-[1260px] max-w-[1260px] z-[9999] rounded-xl bg-body-level-3 border border-body-level-3 shadow-2xl p-[24px] text-sm text-typography-secondary">
+              <SportsNavDropdown />
+            </div>
+          )}
         </div>
       </div>
 
