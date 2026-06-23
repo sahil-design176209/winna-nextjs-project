@@ -7,20 +7,20 @@ export default function MobileBanner() {
 
   const slides = [
     {
-      image: "https://winna.com/promotions/drops-and-wins.webp",
+      image: "https://static.sptpub.com/promo/images/2475747263155146758/banner/2679017604693241856_2679017604693241865_large.jpeg",
       link: "/sports",
     },
     
     {
-      image: "https://winna.com/promotions/winna-trillion.webp",
+      image: "https://static.sptpub.com/promo/images/2475747263155146758/banner/2525105999128436745_2679164210969186311_large.jpeg",
       link: "/promotions",
     },
      {
-      image: "https://winna.com/promotions/drops-and-wins.webp",
+      image: "https://static.sptpub.com/promo/images/2475747263155146758/banner/2679017604693241856_2679017604693241865_large.jpeg",
       link: "/promotions",
     },{
-      image: "https://winna.com/promotions/winna-trillion.webp",
-      link: "/casino",
+      image: "https://static.sptpub.com/promo/images/2475747263155146758/banner/2525105999128436745_2679164210969186311_large.jpeg",
+      link: "/promotions",
     },
     
   ];

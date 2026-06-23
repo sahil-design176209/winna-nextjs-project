@@ -72,8 +72,8 @@ export default function Header() {
               <Link
                 href="/"
                 className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
-                  pathname === "/"
-                    ? "bg-body-level-4 text-accent-blue border-body-level-2"
+                  pathname === "/casino"
+                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
                     : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
                 }`}
               >
@@ -83,8 +83,8 @@ export default function Header() {
               <Link
                 href="/sport"
                 className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
-                  pathname === "/sports"
-                    ? "bg-body-level-4 text-accent-blue border-body-level-2"
+                  pathname === "/sport"
+                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
                     : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
                 }`}
               >
@@ -95,7 +95,7 @@ export default function Header() {
               
               >
                 <div>
-                  <ThemeIcons.LiveIcon />
+           
                 </div>
                 VIP
               </button>
@@ -120,7 +120,7 @@ export default function Header() {
             <div className="flex flex-wrap items-center gap-2 lg:ml-auto justify-center">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className=" hidden  rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-4 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-4 disabled:opacity-50 size-10 text-typography-secondary flex lg:flex"
+                className=" hidden  rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-9 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 size-10 text-typography-secondary flex lg:flex"
               >
                 <div className="flex h-4 w-4 items-center justify-center mr-0 md:mr-0 md:h-6 md:w-6">
                   <ThemeIcons.SearchIcon />
@@ -131,7 +131,7 @@ export default function Header() {
                 <>
                   <div className="relative">
                     <button
-                      className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-4 text-white hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-4 disabled:opacity-50 min-w-[100px] shrink-0 pr-2"
+                      className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-9 text-white hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 min-w-[100px] shrink-0 pr-2"
                       data-profile="currency"
                     >
                       <span className="flex pt-[2px]">
@@ -150,7 +150,7 @@ export default function Header() {
                   <div className="relative">
                     <button
                       onClick={() => setIsWalletOpen(true)}
-                      className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-accent-blue hover:bg-accent-blue-hover active:bg-accent-blue-pressed disabled:opacity-50 text-white lg:text-16"
+                      className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-9 hover:bg-body-level-9-hover active:bg-body-level-9-pressed disabled:opacity-50 text-white lg:text-16"
                     >
                       <div className="flex items-center justify-center md:h-5 md:w-5 lg:mr-1 w-5 h-5">
                         <ThemeIcons.WalletIcon />
@@ -167,7 +167,7 @@ export default function Header() {
                   <div className="relative">
                     <button
                       onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
-                      className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-4 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-4 disabled:opacity-50 size-10 text-typography-secondary"
+                      className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-9 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 size-10 text-typography-secondary"
                       data-profile="true"
                     >
                       <div className="flex items-center justify-center mr-0 md:mr-0 md:h-6 md:w-6 h-5 w-5">
@@ -180,7 +180,7 @@ export default function Header() {
                       <div className="absolute right-0 top-full mt-2 w-[330px] max-w-[330px] z-[9999] rounded-xl bg-[#09151c] border border-body-level-2 shadow-2xl p-4 text-sm text-typography-secondary">
                         {/* User info section */}
                         <div className="flex items-center gap-3 pb-3 mb-3 border-b border-body-level-2">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-body-level-4 text-white">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-body-level-9 text-white">
                             <ThemeIcons.UserIcon />
                           </div>
                           <div className="overflow-hidden">
@@ -241,7 +241,7 @@ export default function Header() {
                   <div className="relative">
                     <button
                       onClick={() => openAuthModal("login")}
-                      className="flex rounded-lg cursor-pointer items-center justify-center text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-4 text-white hover:bg-body-level-5 active:bg-body-level-3 min-w-[100px]"
+                      className="flex rounded-lg cursor-pointer items-center justify-center text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-9 text-white hover:bg-body-level-5 active:bg-body-level-3 min-w-[100px]"
                     >
                       Login
                     </button>
@@ -249,7 +249,7 @@ export default function Header() {
                   <div className="relative">
                     <button
                       onClick={() => openAuthModal("signup")}
-                      className="flex rounded-lg cursor-pointer items-center justify-center text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-accent-blue text-white hover:bg-accent-blue-hover active:bg-accent-blue-pressed min-w-[100px]"
+                      className="flex rounded-lg cursor-pointer items-center justify-center text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-9 text-white hover:bg-body-level-9-hover active:bg-body-level-9-pressed min-w-[100px]"
                     >
                       Sign Up
                     </button>
@@ -260,7 +260,7 @@ export default function Header() {
             </div>
             <div className="ml-2 hidden cursor-pointer text-white lg:block">
               <button
-                className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-4 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-4 disabled:opacity-50 size-10 text-typography-secondary lg:text-white"
+                className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-9 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 size-10 text-typography-secondary lg:text-white"
                 data-profile="true"
               >
                 <div className="flex items-center justify-center mr-0 md:mr-0 md:h-6 md:w-6 h-5 w-5">
