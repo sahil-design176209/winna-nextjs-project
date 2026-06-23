@@ -25,15 +25,17 @@ body {
   --body-level-7: #0d1c24;
 
   --body-level-9: #16272f;
+  --body-level-8: #0c1d25;
+  --body-levl-10: #567484;
   /* Accent */
   --accent-blue: #10abe1;
   --accent-blue-hover: #0b7fa9;
   --cs-text-color: #ffffff80;
   --accent-blue-pressed: #065673;
-
+  --hover-color: #1c323c;
   /* Typography */
   --typography-primary: #ffffff;
-  --typography-secondary: #94a3b8;
+  --typography-secondary: #567484;
 
   /* Status */
   --green: #41bc2c;
@@ -62,10 +64,12 @@ body {
 }
 
 @theme {
+  --color-hover-color: var(--hover-color);
   --color-body-level-0: var(--body-level-0);
-
+  --color-body-level-10: var(--body-level-10);
   --color-cs-text-color: var(--cs-text-color);
   --color-body-level-9: var(--body-level-9);
+  --color-body-level-8: var(--body-level-8);
   --color-body-level-6: var(--body-level-6);
   --color-body-level-1: var(--body-level-1);
   --color-body-level-2: var(--body-level-2);
@@ -215,6 +219,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
