@@ -47,17 +47,6 @@ const Banner = () => {
       actionText: "Compete Now",
       actionLink: "/races/daily",
     },
-    {
-      tag: "Become a VIP",
-      title: "Instant VIP Match",
-      desc: "Instantly get access to VIP Host, Lossback & exclusive benefits",
-      bgImg: "/promotions/vip-transfer-bg-v2.webp",
-      foregroundImg: "https://winna.com/promotions/world-cup-hub.webp",
-      actionText: "Match Status Now",
-      actionLink: "/promotions/vip-transfer",
-      secondaryActionText: "Read More",
-      secondaryActionLink: "/promotions/vip-transfer",
-    },
   ];
 
   return (
@@ -100,7 +89,7 @@ const Banner = () => {
               />
 
               <img
-                alt={slide.title}
+                alt=""
                 className={`pointer-events-none absolute -right-[55px] top-0 h-full min-w-min select-none object-contain object-right transition-all duration-500 xs:-right-[12px] sm:right-0 ${
                   isActive
                     ? "lg:translate-x-0 lg:opacity-100"
@@ -121,7 +110,7 @@ const Banner = () => {
                 }`}
               >
                 <span className="line-clamp-2 lg:max-w-[334px]">
-                  {slide.title}
+                  {/* {slide.title} */}
                 </span>
               </h5>
 
