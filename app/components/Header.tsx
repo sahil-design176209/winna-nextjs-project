@@ -316,7 +316,7 @@ export default function Header() {
                   <div className="relative">
                     <button
                       onClick={() => openAuthModal("signup")}
-                      className="flex rounded-lg cursor-pointer items-center justify-center text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-9 text-white hover:bg-body-level-9-hover active:bg-body-level-9-pressed min-w-[100px]"
+                      className="flex rounded-lg cursor-pointer items-center justify-center text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-accent-blue text-white hover:bg-body-level-9-hover active:bg-body-level-9-pressed min-w-[100px]"
                     >
                       Sign Up
                     </button>

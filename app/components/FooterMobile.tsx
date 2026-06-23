@@ -15,13 +15,13 @@ const SectionToggle = ({
   onToggle,
 }: SectionToggleProps) => {
   return (
-    <div className="w-full border-b border-body-level-2">
+    <div className="w-full border-b border-body-level-2 m-0">
       <button
         type="button"
         onClick={onToggle}
         className="flex w-full items-center justify-between py-3 text-left  h-[52px]"
       >
-        <span className="text-14 font-regular text-white">{title}</span>
+        <span className="text-14 font-regular text-white pl-2">{title}</span>
         <svg
           className={`size-12 transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="#fff"
