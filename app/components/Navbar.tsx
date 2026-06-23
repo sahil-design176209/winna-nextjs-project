@@ -18,17 +18,17 @@ const Navbar = () => {
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-            href="/casino/categories/originals"
+            href="/casino"
             data-discover="true"
           >
             <NavIcons.OriginalIcon />
-            Originals
+            Virtual
           </a>
         </li>
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-            href="/casino/categories/slots"
+               href="/casino"
             data-discover="true"
           >
             <NavIcons.SlotsIcon />
@@ -38,43 +38,34 @@ const Navbar = () => {
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-            href="/casino/categories/table_games"
+                     href="/casino"
             data-discover="true"
           >
             <NavIcons.TableGamesIcon />
-            Table Games
+            Evolution Gaming
           </a>
         </li>
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-            href="/casino/categories/live_casino"
+           href="/casino"
             data-discover="true"
           >
             <NavIcons.LiveCasinoIcon />
-            Live Casino
+            Pragmatic Play
           </a>
         </li>
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-            href="/casino/categories/game_shows"
+                  href="/casino"
             data-discover="true"
           >
             <NavIcons.GameShowsIcon />
-            Game Shows
+            Hacksaw Gaming
           </a>
         </li>
-        <li>
-          <a
-            className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-            href="/casino/categories/new_games"
-            data-discover="true"
-          >
-            <NavIcons.NewReleasesIcon />
-            New Releases
-          </a>
-        </li>
+
         <li className="ml-auto">
           <div className="relative">
             <button className="relative flex items-center gap-2 py-3 text-14 text-typography-secondary">
