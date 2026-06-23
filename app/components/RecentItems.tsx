@@ -38,7 +38,7 @@ const RecentItems = () => {
             </div>
           </div>
         </section>
-        <button
+        {/* <button
           className="absolute top-1/2 hidden lg:flex size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 -left-1 -translate-x-full"
           data-direction={-1}
         >
@@ -79,7 +79,7 @@ const RecentItems = () => {
               fill="currentColor"
             />
           </svg>
-        </button>
+        </button> */}
       </div>
     </div>
   );

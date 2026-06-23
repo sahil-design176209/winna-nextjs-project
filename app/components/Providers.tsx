@@ -55,7 +55,7 @@ const Providers = () => {
               },
             }}
           >
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] min-w-[110px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[140px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/pragmatic"
@@ -64,7 +64,7 @@ const Providers = () => {
               </a>
             </SwiperSlide>
 
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -72,7 +72,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -80,7 +80,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -88,7 +88,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -96,7 +96,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -104,7 +104,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -112,7 +112,7 @@ const Providers = () => {
                 ...
               </a>
             </SwiperSlide>
-            <SwiperSlide className="">
+            <SwiperSlide className="max-w-[170px]">
               <a
                 className="flex h-[61.23px] flex-shrink-0 items-center justify-center rounded-md bg-body-level-2 text-typography-secondary sm:w-[105px] lg:h-[80px] lg:w-[167px]"
                 href="/casino/provider/hacksaw"
@@ -123,7 +123,7 @@ const Providers = () => {
 
             {/* more slides */}
           </Swiper>
-          <button
+          {/* <button
             className="absolute top-1/2 hidden size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 lg:flex -left-1 -translate-x-full"
             data-direction={-1}
             disabled
@@ -164,7 +164,7 @@ const Providers = () => {
                 fill="currentColor"
               />
             </svg>
-          </button>
+          </button> */}
         </div>
       </section>
     </div>

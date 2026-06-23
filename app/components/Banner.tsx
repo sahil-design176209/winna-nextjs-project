@@ -61,7 +61,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-4 ">
       {/* Slider Layout */}
       <div
         className="@container flex snap-x snap-mandatory gap-[var(--pb-gap)] overflow-x-auto scroll-smooth lg:max-w-full lg:snap-none lg:overflow-x-hidden react-use-css-o"
@@ -132,9 +132,7 @@ const Banner = () => {
                       ? "lg:translate-y-0 lg:text-14"
                       : "lg:translate-y-[-15px]"
                   }`}
-                >
-                  {slide.tag}
-                </div>
+                ></div>
 
                 <div
                   className={`flex h-[101px] w-[70%] origin-top flex-col justify-center space-y-3 transition-all lg:h-[136px] lg:w-[26cqw] lg:max-w-[390px] lg:space-y-4 ${

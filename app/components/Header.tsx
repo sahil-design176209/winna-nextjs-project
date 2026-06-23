@@ -59,7 +59,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5">
-        <div className="layout-container md:px-0 mx-2 me-2   flex flex-wrap items-center justify-between gap-3 py-3">
+        <div className="layout-container flex h-[var(--header-height-sm)] items-center justify-between lg:h-[var(--header-height-lg)]">
           <a
             className="block w-20 min-w-[48px] shrink-0 flex-none sm:w-[81px] sm:min-w-[81px]"
             href="/"
@@ -71,20 +71,22 @@ export default function Header() {
             <div className="ml-5 hidden gap-3 lg:inline-flex">
               <Link
                 href="/"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/"
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
+                  pathname === "/"
                     ? "bg-body-level-4 text-accent-blue border-body-level-2"
                     : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                  }`}
+                }`}
               >
                 Casino
               </Link>
 
               <Link
                 href="/sport"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/sports"
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
+                  pathname === "/sports"
                     ? "bg-body-level-4 text-accent-blue border-body-level-2"
                     : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                  }`}
+                }`}
               >
                 Sports
               </Link>
@@ -175,7 +177,7 @@ export default function Header() {
 
                     {/* Profile Menu Dropdown Overlay Layout */}
                     {isProfileMenuOpen && (
-                      <div className="absolute right-0 top-full mt-2 w-full max-w-[330px] z-[9999] rounded-xl bg-[#09151c] border border-body-level-2 shadow-2xl p-4 text-sm text-typography-secondary">
+                      <div className="absolute right-0 top-full mt-2 w-[330px] max-w-[330px] z-[9999] rounded-xl bg-[#09151c] border border-body-level-2 shadow-2xl p-4 text-sm text-typography-secondary">
                         {/* User info section */}
                         <div className="flex items-center gap-3 pb-3 mb-3 border-b border-body-level-2">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-body-level-4 text-white">

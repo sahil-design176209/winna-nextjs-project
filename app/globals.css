@@ -41,8 +41,9 @@ body {
 
   /* Header */
   --header-height-sm: 64px;
+  --header-height-lg: 58px;
   --strokeLinecap: 52px;
-  --header-height-lg: 55px;
+
   --font-size-12: 12px;
   --font-size-14: 14px;
   --font-size-16: 16px;
@@ -96,54 +97,50 @@ body {
   --text-64: var(--font-size-64);
 }
 
-/* } */
-
-/* body {
-  background-color: #010c10;
-} */
+.lg\:h-\[var\(--header-height-lg\)\] {
+  height: var(--header-height-lg);
+}
 
 .layout-container {
   margin-left: auto;
   margin-right: auto;
   max-width: 1312px;
-  padding-left: var(--layout-px);
-  padding-right: var(--layout-px);
 }
 
 @media (min-width: 768px) {
-  .layout-container {
+  /* .layout-container {
     padding-left: var(--layout-px-md);
     padding-right: var(--layout-px-md);
-  }
+  } */
 }
 
 @media (min-width: 1024px) {
-  .layout-container {
+  /* .layout-container {
     padding-left: var(--layout-px-lg);
     padding-right: var(--layout-px-lg);
-  }
+  } */
 }
 
 @media (min-width: 1024px) {
-  .lg\:layout-container {
+  /* .lg\:layout-container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1312px;
     padding-left: var(--layout-px);
     padding-right: var(--layout-px);
-  }
+  } */
 
   @media (min-width: 768px) {
-    .lg\:layout-container {
+    /* .lg\:layout-container {
       padding-left: var(--layout-px-md);
       padding-right: var(--layout-px-md);
-    }
+    } */
   }
 
-  .lg\:layout-container {
+  /* .lg\:layout-container {
     padding-left: var(--layout-px-lg);
     padding-right: var(--layout-px-lg);
-  }
+  } */
 }
 
 ::-webkit-scrollbar {
@@ -191,10 +188,6 @@ body {
   color: var(--typography-secondary);
 }
 
-.pointer-cursor {
-  cursor: pointer;
-}
-
 .left-image {
   background-image: url(../public/images/sign.webp);
   background-position: center;
@@ -202,25 +195,27 @@ body {
   background-size: cover;
 }
 
-/* Apply this to ALL inputs or give your password input a class like .dark-autofill */
-input {
-  /* Forces Chrome's autofill engine to default to dark instead of light-white */
-  color-scheme: dark !important;
+.infinity-marquee-to-left {
+  display: inline-flex;
+  justify-content: flex-start !important;
+  align-items: center;
+  min-width: max-content;
+  animation: infinity-marquee-left 25s linear infinite;
 }
 
-/* The ultimate override bundle */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-input:-internal-autofill-selected {
-  -webkit-box-shadow: 0 0 0px 1000px #141c2f inset !important;
-  /* Forces your background */
-  -webkit-text-fill-color: #ffffff !important;
-  /* Forces your text color */
-  box-shadow: 0 0 0px 1000px #141c2f inset !important;
-  text-fill-color: #ffffff !important;
-  border: 1px solid #232d45 !important;
-  /* Fixes the white border */
-  background-color: transparent !important;
+.infinity-marquee-to-left li {
+  flex: 0 0 auto;
+}
+
+.infinity-marquee-to-left:hover {
+  animation-play-state: paused;
+}
+
+@keyframes infinity-marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
