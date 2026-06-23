@@ -1,5 +1,4 @@
 import Image from "next/image";
-import TabsComponent from "./components/TabsComponent";
 import RecentItems from "./components/RecentItems";
 import WinnaOriginals from "./components/WinnaOriginals";
 import Providers from "./components/Providers";
@@ -12,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <TabsComponent />
+      {/* <TabsComponent /> */}
       <RecentItems />
       <WinnaOriginals />
       <Providers />

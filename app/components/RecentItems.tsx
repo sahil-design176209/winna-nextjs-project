@@ -1,8 +1,96 @@
-import React from "react";
+"use client";
+
+import { useState, type ReactNode } from "react";
+import TabsComponent from "./TabsComponent";
+
+type TabKey = "recent" | "favorites";
+
+type Item = {
+  id: string;
+
+  href: string;
+  image: string;
+};
+
+const tabs: { key: TabKey; label: string; icon: ReactNode }[] = [
+  {
+    key: "recent",
+    label: "Recently played",
+    icon: (
+      <svg
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        className="size-6"
+      >
+        <path d="M16 5.07A8 8 0 1 1 4 12v-.26a8 8 0 0 1 12-6.67M12 7.2a.8.8 0 0 0-.8.8v4a.8.8 0 0 0 .8.8h2.8a.8.8 0 1 0 0-1.6h-2V8a.8.8 0 0 0-.7-.8z" />
+      </svg>
+    ),
+  },
+  {
+    key: "favorites",
+    label: "Favorites",
+    icon: (
+      <svg
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="size-6"
+      >
+        <path
+          d="M19.4117 12.9522L12.2094 20.0138C12.1533 20.0688 12.0779 20.0996 11.9993 20.0996C11.9208 20.0996 11.8454 20.0688 11.7893 20.0138L4.58698 12.9522C3.84617 12.2247 3.33528 11.2956 3.11771 10.2803C2.90014 9.26503 2.98546 8.2082 3.36309 7.24096C3.69641 6.37848 4.25179 5.61944 4.97295 5.04074C5.69412 4.46203 6.55544 4.08424 7.46963 3.94564C9.17732 3.71545 10.7719 4.40423 11.9993 5.88802C13.228 4.40183 14.8223 3.71335 16.5231 3.94114C17.4931 4.09264 18.4019 4.5109 19.1478 5.14918C19.8938 5.78746 20.4476 6.62062 20.7473 7.55554C21.047 8.49046 21.0808 9.4903 20.845 10.4433C20.6091 11.3964 20.1129 12.265 19.4117 12.9522Z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+  },
+];
+
+const recentItems: Item[] = [
+  {
+    id: "coin-climber",
+    href: "/game/originals/coin-climber",
+    image:
+      "https://winna.imgix.net/game-image/1765979909535/DICE%20v2%20%282%29.avif?format=auto&auto=format&dpr=1.6&w=180",
+  },
+  {
+    id: "starburst",
+    href: "/game/originals/starburst",
+    image:
+      "https://winna.imgix.net/game-image/1765979909535/DICE%20v2%20%282%29.avif?format=auto&auto=format&dpr=1.6&w=180",
+  },
+];
+
+const favoriteItems: Item[] = [
+  {
+    id: "book-of-dead",
+
+    href: "/game/originals/book-of-dead",
+    image:
+      "https://winna.fra1.digitaloceanspaces.com/game-image/1770655865193/COINCLIMBER%20%281%29.avif",
+  },
+  {
+    id: "sweet-honey-fruits",
+
+    href: "/game/originals/sweety-honey-fruits",
+    image:
+      "https://winna.fra1.digitaloceanspaces.com/game-image/1770655865193/COINCLIMBER%20%281%29.avif",
+  },
+];
 
 const RecentItems = () => {
+  const [activeTab, setActiveTab] = useState<TabKey>("recent");
+  const items = activeTab === "recent" ? recentItems : favoriteItems;
+
   return (
     <div>
+      <TabsComponent
+        tabs={tabs}
+        activeTab={activeTab}
+        onTabChange={(key) => setActiveTab(key as TabKey)}
+      />
       <div className="relative mt-5">
         <section
           className="-mt-2 flex overflow-x-auto overflow-y-hidden scroll-smooth pt-2 gap-[6px]"
@@ -12,74 +100,34 @@ const RecentItems = () => {
             gap: "clamp(6px, 0.78cqw, 12px)",
           }}
         >
-          <div className="hidden">
-            <section className="flex w-full flex-col items-center justify-center gap-2 py-20 text-14 text-typography-secondary h-[142px] lg:h-[222px]">
+          {items.length === 0 ? (
+            <div className="flex w-full flex-col items-center justify-center gap-2 py-20 text-14 text-typography-secondary h-[142px] lg:h-[222px]">
               <span>No Games found</span>
               <span>Please use search or filter to find a game</span>
-            </section>
-          </div>
-          <div className="contents">
-            <div className="contents" aria-hidden="false">
+            </div>
+          ) : (
+            items.map((item, index) => (
               <a
+                key={item.id}
                 className="flex-shrink-0 snap-start animate-card-reveal"
-                href="/game/originals/coin-climber"
+                href={item.href}
                 data-discover="true"
-                style={{ animationDelay: "0ms" }}
+                style={{ animationDelay: `${index * 60}ms` }}
               >
-                <div className="flex aspect-[105/142] w-[calc((100vw-2rem)/3)] sm:w-[140px] flex-shrink-0 lg:aspect-[167/222] lg:w-[167px] lg:hover:[transform:translate3d(0,-8px,0)] transition-transform duration-300 group relative cursor-pointer overflow-hidden">
+                <div className="flex aspect-[105/142] w-[calc((100vw-2rem)/3)] sm:w-[140px] flex-shrink-0 lg:aspect-[167/222] lg:w-[167px] lg:hover:[transform:translate3d(0,-8px,0)] transition-transform duration-300 group relative cursor-pointer overflow-hidden rounded-xl bg-body-level-1">
                   <img
                     className="absolute inset-0 h-full w-full object-contain opacity-100"
-                    alt="CoinClimber"
                     loading="eager"
-                    src="https://winna.fra1.digitaloceanspaces.com/game-image/1770655865193/COINCLIMBER%20%281%29.avif"
+                    src={item.image}
                   />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-white">
+                    <p className="text-14 font-semibold leading-tight"></p>
+                  </div>
                 </div>
               </a>
-            </div>
-          </div>
+            ))
+          )}
         </section>
-        {/* <button
-          className="absolute top-1/2 hidden lg:flex size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 -left-1 -translate-x-full"
-          data-direction={-1}
-        >
-          <svg
-            width={32}
-            height={32}
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            className=""
-          >
-            <path
-              d="M20.785 9.34901C20.8537 9.27268 20.9074 9.18288 20.943 9.08476C20.9786 8.98663 20.9955 8.8821 20.9927 8.77712C20.9899 8.67214 20.9674 8.56877 20.9265 8.47292C20.8857 8.37707 20.8272 8.2906 20.7546 8.21847C20.6819 8.14634 20.5964 8.08995 20.503 8.05252C20.4096 8.01509 20.31 7.99735 20.2101 8.00032C20.1101 8.00329 20.0117 8.02691 19.9205 8.06983C19.8292 8.11274 19.7469 8.17412 19.6782 8.25045L13.2081 15.4462C13.0744 15.5947 13 15.7912 13 15.9955C13 16.1998 13.0744 16.3963 13.2081 16.5448L19.6782 23.7414C19.7465 23.8194 19.8287 23.8824 19.9203 23.9267C20.0119 23.971 20.111 23.9957 20.2118 23.9995C20.3126 24.0033 20.413 23.9859 20.5074 23.9486C20.6017 23.9112 20.6881 23.8545 20.7614 23.7818C20.8347 23.7091 20.8936 23.6218 20.9345 23.525C20.9754 23.4282 20.9976 23.3238 20.9998 23.2179C21.002 23.112 20.9842 23.0067 20.9473 22.9081C20.9104 22.8095 20.8552 22.7196 20.785 22.6436L14.8081 15.9955L20.785 9.34901Z"
-              fill="currentColor"
-            />
-            <path
-              d="M16.785 9.34901C16.8537 9.27268 16.9074 9.18288 16.943 9.08476C16.9786 8.98663 16.9955 8.8821 16.9927 8.77712C16.9899 8.67214 16.9674 8.56877 16.9265 8.47292C16.8857 8.37707 16.8272 8.2906 16.7546 8.21847C16.6819 8.14634 16.5964 8.08995 16.503 8.05252C16.4096 8.01509 16.31 7.99735 16.2101 8.00032C16.1101 8.00329 16.0117 8.02691 15.9205 8.06983C15.8292 8.11274 15.7469 8.17412 15.6782 8.25045L9.20807 15.4462C9.07445 15.5947 9 15.7912 9 15.9955C9 16.1998 9.07445 16.3963 9.20807 16.5448L15.6782 23.7414C15.7465 23.8194 15.8287 23.8824 15.9203 23.9267C16.0119 23.971 16.111 23.9957 16.2118 23.9995C16.3126 24.0033 16.413 23.9859 16.5074 23.9486C16.6017 23.9112 16.6881 23.8545 16.7614 23.7818C16.8347 23.7091 16.8936 23.6218 16.9345 23.525C16.9754 23.4282 16.9976 23.3238 16.9998 23.2179C17.002 23.112 16.9842 23.0067 16.9473 22.9081C16.9104 22.8095 16.8552 22.7196 16.785 22.6436L10.8081 15.9955L16.785 9.34901Z"
-              fill="currentColor"
-            />
-          </svg>
-        </button>
-        <button
-          className="absolute top-1/2 hidden lg:flex size-8 -translate-y-1/2 items-center justify-center rounded-[5px] bg-transparent text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-accent-blue active:bg-body-level-0 active:text-typography-secondary disabled:bg-transparent disabled:text-body-level-3 -right-1 translate-x-full"
-          data-direction={1}
-        >
-          <svg
-            width={32}
-            height={32}
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            className="rotate-180"
-          >
-            <path
-              d="M20.785 9.34901C20.8537 9.27268 20.9074 9.18288 20.943 9.08476C20.9786 8.98663 20.9955 8.8821 20.9927 8.77712C20.9899 8.67214 20.9674 8.56877 20.9265 8.47292C20.8857 8.37707 20.8272 8.2906 20.7546 8.21847C20.6819 8.14634 20.5964 8.08995 20.503 8.05252C20.4096 8.01509 20.31 7.99735 20.2101 8.00032C20.1101 8.00329 20.0117 8.02691 19.9205 8.06983C19.8292 8.11274 19.7469 8.17412 19.6782 8.25045L13.2081 15.4462C13.0744 15.5947 13 15.7912 13 15.9955C13 16.1998 13.0744 16.3963 13.2081 16.5448L19.6782 23.7414C19.7465 23.8194 19.8287 23.8824 19.9203 23.9267C20.0119 23.971 20.111 23.9957 20.2118 23.9995C20.3126 24.0033 20.413 23.9859 20.5074 23.9486C20.6017 23.9112 20.6881 23.8545 20.7614 23.7818C20.8347 23.7091 20.8936 23.6218 20.9345 23.525C20.9754 23.4282 20.9976 23.3238 20.9998 23.2179C21.002 23.112 20.9842 23.0067 20.9473 22.9081C20.9104 22.8095 20.8552 22.7196 20.785 22.6436L14.8081 15.9955L20.785 9.34901Z"
-              fill="currentColor"
-            />
-            <path
-              d="M16.785 9.34901C16.8537 9.27268 16.9074 9.18288 16.943 9.08476C16.9786 8.98663 16.9955 8.8821 16.9927 8.77712C16.9899 8.67214 16.9674 8.56877 16.9265 8.47292C16.8857 8.37707 16.8272 8.2906 16.7546 8.21847C16.6819 8.14634 16.5964 8.08995 16.503 8.05252C16.4096 8.01509 16.31 7.99735 16.2101 8.00032C16.1101 8.00329 16.0117 8.02691 15.9205 8.06983C15.8292 8.11274 15.7469 8.17412 15.6782 8.25045L9.20807 15.4462C9.07445 15.5947 9 15.7912 9 15.9955C9 16.1998 9.07445 16.3963 9.20807 16.5448L15.6782 23.7414C15.7465 23.8194 15.8287 23.8824 15.9203 23.9267C16.0119 23.971 16.111 23.9957 16.2118 23.9995C16.3126 24.0033 16.413 23.9859 16.5074 23.9486C16.6017 23.9112 16.6881 23.8545 16.7614 23.7818C16.8347 23.7091 16.8936 23.6218 16.9345 23.525C16.9754 23.4282 16.9976 23.3238 16.9998 23.2179C17.002 23.112 16.9842 23.0067 16.9473 22.9081C16.9104 22.8095 16.8552 22.7196 16.785 22.6436L10.8081 15.9955L16.785 9.34901Z"
-              fill="currentColor"
-            />
-          </svg>
-        </button> */}
       </div>
     </div>
   );

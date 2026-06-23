@@ -28,7 +28,7 @@ const Navbar = () => {
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-               href="/casino"
+            href="/casino"
             data-discover="true"
           >
             <NavIcons.SlotsIcon />
@@ -38,7 +38,7 @@ const Navbar = () => {
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-                     href="/casino"
+            href="/casino"
             data-discover="true"
           >
             <NavIcons.TableGamesIcon />
@@ -48,7 +48,7 @@ const Navbar = () => {
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-           href="/casino"
+            href="/casino"
             data-discover="true"
           >
             <NavIcons.LiveCasinoIcon />
@@ -58,7 +58,7 @@ const Navbar = () => {
         <li>
           <a
             className="flex items-center gap-2 whitespace-nowrap py-3 text-14 text-typography-secondary transition-colors hover:text-accent-blue"
-                  href="/casino"
+            href="/casino"
             data-discover="true"
           >
             <NavIcons.GameShowsIcon />
