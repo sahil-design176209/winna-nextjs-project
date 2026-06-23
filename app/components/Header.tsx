@@ -92,7 +92,7 @@ export default function Header() {
               </Link>
               <button
                 className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 h-10 transition-colors font-medium bg-transparent border hover:border-accent-blue-hover active:text-accent-blue disabled:text-white disabled:border-accent-blue disabled:opacity-50 disabled:hover:bg-transparent min-w-[85px] gap-2 px-4 text-typography-secondary md:text-16 border-body-level-3"
-                data-testid="nav-vip-button-desktop"
+              
               >
                 <div>
                   <ThemeIcons.LiveIcon />
