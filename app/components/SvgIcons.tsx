@@ -368,14 +368,14 @@ export const SportsMenuIcons = {
         stroke="#99a1af"
         stroke-width="2"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       ></path>
       <path
         d="M12 18L15 21L20 15"
         stroke="#99a1af"
         stroke-width="2"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       ></path>
     </svg>
   ),
@@ -2827,14 +2827,14 @@ export const ThemeIcons = {
           stroke="currentColor"
           stroke-width="1.33333"
           stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinejoin="round"
         ></path>
         <path
           d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z"
           stroke="currentColor"
           stroke-width="1.33333"
           stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinejoin="round"
         ></path>
       </g>
       <defs>
