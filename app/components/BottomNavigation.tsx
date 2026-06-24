@@ -43,7 +43,7 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
             key={item.id}
             onClick={handleClick}
             className={`flex flex-1 flex-col items-center justify-center gap-1 font-medium transition-colors duration-200 outline-none select-none
-              ${isActive ? "text-[#f5a623]" : "text-[#7b8b9a] hover:text-[#f5a623]"}`}
+              ${isActive ? "text-accent-blue" : "text-[#7b8b9a] hover:text-accent-blue-hover"}`}
           >
             <div className="flex h-[24px] w-[24px] items-center justify-center [&>svg]:h-full [&>svg]:w-full [&>svg]:fill-current">
               {item.icon}
