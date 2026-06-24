@@ -1053,6 +1053,47 @@ export const HamIcon = ({
     </svg>
   );
 };
+export const HamBurgerIcon = ({
+  size = 20,
+  className = "deactive-state",
+  color = "",
+}) => {
+  return (
+    <svg
+      className=""
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="4.5"
+        y="5"
+        width="23"
+        height="5.73913"
+        rx="2.86957"
+        fill="currentColor"
+      ></rect>
+      <rect
+        x="4.5"
+        y="21.2578"
+        width="23"
+        height="5.73913"
+        rx="2.86957"
+        fill="currentColor"
+      ></rect>
+      <rect
+        x="4.5"
+        y="13.1328"
+        width="23"
+        height="5.73913"
+        rx="2.86957"
+        fill="currentColor"
+      ></rect>
+    </svg>
+  );
+};
 
 export const SportsIcon = ({
   size = 20,
