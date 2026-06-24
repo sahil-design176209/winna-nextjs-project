@@ -21,7 +21,7 @@ import BonusModal from "./BonusList"
 import OpenbetModal from "./OpenBet"
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
+const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [isWalletOpen, setIsWalletOpen] = React.useState(false);
@@ -74,7 +74,25 @@ export default function Header() {
     setIsProfileMenuOpen(false);
     setIsWalletOpen(false);
   };
+const closeAllModals = () => {
+  setShowProfileModal(false);
+  setShowStatisticsModal(false);
+  setShowValutModal(false);
+  setShowStatementModal(false);
+  setShoWithdrwalModal(false);
+  setShowEditstakeModal(false);
+  setShowTransactionModal(false);
+  setShowBonusModal(false);
+  setShowOpenbetModal(false);
+};
 
+const openModal = (
+  setter: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  closeAllModals(); // close previous modal
+  setIsProfileMenuOpen(false); // close dropdown
+  setter(true); // open new modal
+};
   return (
     <>
       <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5">
@@ -194,7 +212,7 @@ export default function Header() {
 
                     {/* Profile Menu Dropdown Overlay Layout */}
                     {isProfileMenuOpen && (
-                      <div className="absolute right-0 top-full mt-5 w-[330px] max-w-[330px] z-[9999] rounded bg-body-level-7  border-body-level-2 shadow-2xl p-5 text-sm text-typography-secondary">
+                      <div className="absolute right-0 top-full mt-5 w-[330px] max-w-[330px] z-40 rounded bg-body-level-7  border-body-level-2 shadow-2xl p-5 text-sm text-typography-secondary">
                         {/* User info section */}
                         <div className="flex items-center gap-3 pb-3 mb-3 border-b border-body-level-2">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg  text-white">
@@ -213,78 +231,67 @@ export default function Header() {
                         {/* Grid Links split layout matching production screen mock */}
                         <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                           <button
-                            onClick={() => setShowProfileModal(true)}
+                            onClick={() => openModal(setShowProfileModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
                             <ThemeIcons.SettingsIcon />
                             <span>User Profile</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowStatisticsModal(true);
-
-                            }}
+                            onClick={() => openModal(setShowStatisticsModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
                             <ThemeIcons.StatisticsIcon />
                             <span className="text-[13px]">Statistics</span>
                           </button>
-                          <button onClick={() => {
-                            setShowValutModal(true);
-
-                          }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.VaultIcon /> <span className="text-[13px]">Vault</span>
+                          <button
+                            onClick={() => openModal(setShowValutModal)}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.VaultIcon />
+                            <span className="text-[13px]">Vault</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowStatementModal(true);
-
-                            }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.Statement /> <span className="text-[13px]">Statement</span>
+                            onClick={() => openModal(setShowStatementModal)}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.Statement />
+                            <span className="text-[13px]">Statement</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShoWithdrwalModal(true);
-
-                            }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.WithdrwalIcon />{" "}
-                            <span className="text-[13px]">Withdrwal</span>
+                            onClick={() => openModal(setShoWithdrwalModal)}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.WithdrwalIcon />
+                            <span className="text-[13px]">Withdrawal</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowEditstakeModal(true);
-
-                            }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.EditStakeIcon />{" "}
+                            onClick={() => openModal(setShowEditstakeModal)}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.EditStakeIcon />
                             <span className="text-[13px]">Edit Stake</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowTransactionModal(true);
-
-                            }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.TransactionIcon /> <span className="text-[13px]">Transaction</span>
+                            onClick={() => openModal(setShowTransactionModal)}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.TransactionIcon />
+                            <span className="text-[13px]">Transaction</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowBonusModal(true);
-
-                            }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.BonusListIcon /> <span className="text-[13px]">Bonus List</span>
+                            onClick={() => openModal(setShowBonusModal)}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.BonusListIcon />
+                            <span className="text-[13px]">Bonus List</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowOpenbetModal(true);
-
-                            }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.OpenBetIcon /> <span className="text-[13px]">Open Bet</span>
+                            onClick={() => openModal(setShowOpenbetModal)}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.OpenBetIcon />
+                            <span className="text-[13px]">Open Bet</span>
                           </button>
 
                         </div>
@@ -353,7 +360,9 @@ export default function Header() {
 
             </button>
 
-            <UserProfileModal />
+            <UserProfileModal
+              onClose={() => setShowProfileModal(false)}
+            />
           </div>
         </div>
       )}

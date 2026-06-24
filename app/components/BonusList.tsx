@@ -1,35 +1,38 @@
 "use client";
 
-import { useState } from "react";
-import { X, ArrowLeftRight } from "lucide-react";
+import { X, Gift } from "lucide-react";
 
-interface BounsProps {
+interface BonusListModalProps {
   onClose: () => void;
 }
 
-export default function BonusModal({
+export default function BonusListModal({
   onClose,
-}:BounsProps) {
-  const [activeTab, setActiveTab] = useState("withdrawal");
-
+}: BonusListModalProps) {
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4">
-      <div className="w-full max-w-[760px] rounded-2xl border border-[#0e2534] bg-[#02131d] p-6">
-        {/* Header */}
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-[22px] font-semibold text-white">
-            💰Bouns
+    <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
+      {/* Header */}
+      <div className="mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Gift className="h-8 w-8 text-white" />
+
+          <h2 className="text-[24px] font-semibold text-white">
+            Bonus List
           </h2>
-
-          <button
-            onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2c3d58] text-white"
-          >
-            <X size={20} />
-          </button>
         </div>
-
+        <button
+          onClick={onClose}
+          className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px] bg-body-level-8 text-white"
+        >
+          <X size={20} />
+        </button>
       </div>
+
+      <div className="flex h-[280px] items-center justify-center rounded-[8px] bg-body-level-8">
+        <p className="text-[18px] text-white">
+          No records to display
+        </p></div>
     </div>
+
   );
 }
