@@ -1,14 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  Home,
-  Tv,
-  Star,
-  FileText,
-  Search,
-  Flame,
-  ChevronDown,
-} from "lucide-react";
+import Link from "next/link";
 import { NavIcons, ThemeIcons } from "./SvgIcons";
 import SportsNavDropdown from "./Sportsnavdropdown";
 
@@ -25,6 +17,12 @@ interface SportItem {
 
 export default function SportsNavbar() {
   const [isSportsMenuOpen, setIsSportsMenuOpen] = useState(false);
+
+  const openSportsSearch = () => {
+    setIsSportsMenuOpen(false);
+    window.dispatchEvent(new Event("sports-search:open"));
+  };
+
   const sportsItems: SportItem[] = [
     { id: "wc26", label: "WC 26", isCustomText: true, text: "WC 26" },
     { id: "soccer", icon: <SoccerIcon />, label: "Soccer", hasBadge: true },
@@ -63,11 +61,11 @@ export default function SportsNavbar() {
   ];
 
   return (
-    <div className="layout-container   px-4 h-14 flex items-center justify-between select-none font-sans">
+    <div className="layout-container h-14 flex items-center justify-between select-none px-4 font-sans relative">
       {/* Left Row Scroll Container */}
-      <div className="flex items-center space-x-4 flex-1 mr-4 py-2">
+      <div className="mr-2 flex min-w-0 flex-1 items-center space-x-3 py-2 lg:mr-4 lg:space-x-4">
         {/* Core Control Elements */}
-        <div className="flex items-center space-x-5 text-gray-400 shrink-0">
+        <div className="flex shrink-0 items-center space-x-4 text-gray-400 lg:space-x-5">
           <button className="hover:text-white transition-colors">
             <NavIcons.HomeIcon />
           </button>
@@ -111,7 +109,7 @@ export default function SportsNavbar() {
           </svg>
         </button>
 
-        <button className="hover:text-white transition-colors">
+        <button className="hidden transition-colors hover:text-white lg:inline-flex">
           <svg
             data-editor-id="navbarIcon"
             data-cy="sport-basketball"
@@ -129,7 +127,7 @@ export default function SportsNavbar() {
             />
           </svg>
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className="hidden transition-colors hover:text-white lg:inline-flex">
           <svg
             className="sc-xgfwjj-1 hiaOyi "
             viewBox="0 0 32 32"
@@ -141,7 +139,7 @@ export default function SportsNavbar() {
             <path d="M11.04 21.3793C12.368 22.0323 13.8288 22.393 15.3425 22.4261L17.8734 19.5272C17.9026 17.8165 17.5076 16.1267 16.7246 14.6139L11.7195 13.4485C10.675 14.4949 9.86495 15.7551 9.35078 17.1439L11.04 21.3793ZM10.7764 22.204L9.08458 23.6141C10.9111 25.274 13.3374 26.2857 16 26.2857C16.511 26.2857 17.0133 26.2485 17.5043 26.1765L15.3359 23.2833C13.7356 23.25 12.1884 22.8783 10.7764 22.204ZM5.7343 16.6469H8.62297C9.20019 15.1755 10.086 13.8441 11.2164 12.7406V9.62205C10.2129 9.37945 9.1786 9.29054 8.14698 9.35692C6.6294 11.1491 5.71429 13.4677 5.71429 16C5.71429 16.2173 5.72102 16.433 5.7343 16.6469ZM22.9116 19.3483C23.8049 18.4384 24.5225 17.3714 25.0254 16.2017L23.6597 11.542C22.5016 10.9523 21.2395 10.587 19.9272 10.4698L17.6048 14.4567C18.3 15.8824 18.6825 17.4437 18.7275 19.033L22.9116 19.3483ZM23.4088 20.0636V23.1348C25.0358 21.4457 26.0906 19.2017 26.2613 16.7145L25.7741 16.6293C25.2096 17.9111 24.4065 19.0765 23.4088 20.0636ZM23.9985 9.53268C22.4866 7.66509 20.3338 6.33759 17.8747 5.88473C17.5281 6.28981 17.2149 6.71981 16.9371 7.17124L19.7454 9.596C21.1338 9.68779 22.4749 10.0354 23.7142 10.6149L23.9985 9.53268ZM16.0845 6.92604C16.3235 6.51838 16.5885 6.12608 16.8785 5.75128C16.5889 5.72678 16.2959 5.71429 16 5.71429C13.2876 5.71429 10.8204 6.76421 8.98261 8.47983C9.78915 8.49238 10.5923 8.59246 11.3784 8.77945C11.4114 8.75319 11.4487 8.73155 11.4894 8.71569L16.0845 6.92604ZM16 28C9.37258 28 4 22.6274 4 16C4 9.37258 9.37258 4 16 4C22.6274 4 28 9.37258 28 16C28 22.6274 22.6274 28 16 28Z" />
           </svg>
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className="hidden transition-colors hover:text-white lg:inline-flex">
           <svg
             viewBox="0 0 32 32"
             width={32}
@@ -153,7 +151,7 @@ export default function SportsNavbar() {
             <path d="m12.655 23.679 5.917-2.536q2.217-.858 3.428-.857c.533 0 1.313.237 1.714.857s.26 1.195-.857 1.714q-.387.183-3.428 0-7.432 3.455-10.261 4.286l-.08.023a6 6 0 0 1-.681.335c-.794.332-1.683.507-2.695.507a.857.857 0 0 1 0-1.714c.787 0 1.452-.131 2.033-.374.757-.317 1.042-.55 2.102-1.583a7 7 0 0 1 .434-.396c.786-.786 1.316-1.737 2.42-4.127l.152-.326c2.019-4.35 3.517-6.081 6.58-6.051.622.004 1.433.266 2.893.845 2.304.913 2.119.843 2.333.873-.062-.01.038-.04.17-.097.22-.096.484-.239.737-.4.2-.126.382-.257.525-.376-.1-.037-.102-.039-.189-.078-1.985-.984-3.558-2.032-3.877-3.122-.15-.577-.58-.988-1.035-1.087a3 3 0 0 0-.385-.021l-.665.005c-.577 0-1.005-.032-1.418-.13-.722-.175-1.28-.55-1.584-1.187l-.037-.09c-.03-.086-.011-.017-.075-.261-.497.096-1.227.324-1.969.61l.134.04c.176.053.32.108.448.177.325.176.558.418.558.87 0 .692-2.308 2.93-3.746 4.095-.015.011-.015.011-.03.025-.034.028-.496.442-.691.603a8.3 8.3 0 0 1-1.23.848c-1.19.671-2.656 1.115-4.512 1.283a.857.857 0 0 1-.153-1.708c1.618-.146 2.849-.519 3.823-1.068a6.6 6.6 0 0 0 .98-.676c.161-.134.617-.543.682-.597l.052-.043c.35-.283 1.206-1.064 1.922-1.757a33 33 0 0 0 .606-.603l-.018-.004-.027-.005a13 13 0 0 1-.928-.219 2.5 2.5 0 0 1-.433-.16c-.343-.171-.582-.398-.582-.871 0-.98 3.216-2.295 5.014-2.562 1.023-.155 1.517.37 1.744 1.235l.036.138c.062.092.185.164.417.22.25.06.563.083 1.016.082.094 0 .55-.005.673-.004.28 0 .487.013.71.053 1.116.242 2.047 1.132 2.355 2.311.107.364 1.588 1.35 2.95 2.027.02.01.013.006.148.056.222.081.367.146.532.254.447.296.708.764.689 1.387-.068 1.065-2.536 2.628-3.55 2.508-.296-.043-.672-.164-1.238-.38-.317-.12-1.643-.652-1.513-.6-1.214-.482-1.961-.723-2.277-.725-2.124-.02-3.264 1.296-5.01 5.06l-.15.323c-.667 1.441-1.143 2.404-1.603 3.145M14.31 9.743l.019-.024zm12.041 4.64.007.006.003.003zm-.03-.323.01-.012.005-.006z" />
           </svg>
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className="hidden transition-colors hover:text-white lg:inline-flex">
           <svg
             viewBox="0 0 32 32"
             width={32}
@@ -165,7 +163,7 @@ export default function SportsNavbar() {
             <path d="M4.005 23.474c.274-2.66 1.24-4.527 3.34-7.004l-.687-.001c-1.471-.006-2.534-1.2-1.56-2.348.879-1 2.141-1.716 4.012-2.449.297-.116.6-.23.992-.373l.63-.23-.034-.017-.173-.085-.05-.024c-.473-.229-.659-.33-.868-.513-.573-.501-.596-1.324.11-1.795 1.67-1.13 3.516-1.684 5.72-1.919l.172-.018.486-.055c1.89-.217 3.002-.258 4.326-.033.299-.498.66-1.122.66-1.122.337-.552.62-.926.97-1.224l.156-.108c.666-.358 1.3-.065 1.636.518.156.27.252.578.349 1.02.025.115.099.473.099.475q.042.199.06.247c.076.284.618 2.47.899 3.579.1.269.308.78.642 1.585.186.45.946 2.274 1.079 2.593l.04.098c1.41 3.393 1.826 4.446 1.826 4.859l.002.243c.001.551-.038 1.014-.169 1.494-.187.691-.539 1.265-1.105 1.654-1.332.917-3.629.25-4.727-1.043a3.6 3.6 0 0 1-.392-.598 10 10 0 0 1-.375-.785c-.058-.134-.047-.106-.15-.352-1.117-.666-1.923-1.21-2.627-1.825-.256.746-.333 1.706-.236 2.732.126.249.262.511.453.876a72 72 0 0 1 .78 1.508c.77 1.544 1.223 2.72 1.436 3.924a.887.887 0 1 1-1.747.31c-.177-1.001-.575-2.037-1.277-3.44a71 71 0 0 0-.764-1.48c-.232-.443-.385-.74-.54-1.046a.9.9 0 0 1-.088-.3c-.221-1.993.074-3.861 1.081-5.094a.887.887 0 0 1 1.34-.04c.837.911 1.733 1.549 3.345 2.497a.9.9 0 0 1 .37.424c.22.53.183.441.252.6.114.264.214.475.306.646.076.14.143.243.191.302.562.661 1.892 1.047 2.363.723.18-.124.313-.34.4-.657.079-.295.107-.618.105-1.024l-.002-.243c0 .077 0 .072-.002.066a6 6 0 0 0-.096-.287 33 33 0 0 0-.386-1.013c-.288-.73-.67-1.664-1.205-2.95l-.04-.098c-.132-.317-.893-2.142-1.08-2.595a59 59 0 0 1-.684-1.692l-.027-.09c-.279-1.1-.835-3.34-.887-3.546a3 3 0 0 1-.1-.395l-.008-.04c-.17.293-.722 1.237-.951 1.588a.89.89 0 0 1-.932.381c-1.387-.303-2.369-.29-4.367-.06l-.493.056-.179.02c-1.513.16-2.807.484-3.967 1.068l1.608.804a.887.887 0 0 1 .018 1.578c-.411.217-.897.418-1.644.694-.2.075-.935.342-.929.34-.38.139-.671.248-.954.359-1.166.457-2.04.895-2.675 1.372h.651l1.59-.001c.772 0 1.175.92.65 1.488-2.785 3.018-3.929 4.805-4.204 7.473a.887.887 0 1 1-1.764-.182M20.829 12.92a.887.887 0 1 1 0-1.774.887.887 0 0 1 0 1.773" />
           </svg>
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className="hidden transition-colors hover:text-white lg:inline-flex">
           <svg
             width={30}
             height={30}
@@ -198,7 +196,7 @@ export default function SportsNavbar() {
             />
           </svg>
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className="hidden transition-colors hover:text-white lg:inline-flex">
           <svg
             width={30}
             height={30}
@@ -263,16 +261,23 @@ export default function SportsNavbar() {
         </button>
 
         {/* Sports Map Loop */}
-        <div className="flex items-center space-x-[18px] relative ">
+        <div className="flex items-center space-x-[18px]  ">
           {/* Dropdown Chevron arrow for extra items */}
           <button
-            className="text-white  "
+            className="text-white"
+            aria-expanded={isSportsMenuOpen}
             onClick={() => setIsSportsMenuOpen(!isSportsMenuOpen)}
           >
-            <ThemeIcons.ChevronDownIcon />
+            <span
+              className={`block transition-transform duration-200 ${
+                isSportsMenuOpen ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              <ThemeIcons.ChevronDownIcon />
+            </span>
           </button>
           {isSportsMenuOpen && (
-            <div className="absolute left-1/2 -translate-x-1/2 top-[40px] mt-2 w-[1260px] max-w-[1260px] z-[9999] rounded-xl bg-body-level-3 border border-body-level-3 shadow-2xl p-[24px] text-sm text-typography-secondary">
+            <div className="absolute left-0 right-0 mx-auto top-[60px] mt-2 w-auto min-w-[360px] lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-[100%] md:w-[100%] lg:max-w-[1264px] z-[9999] rounded-xl bg-body-level-2 border border-body-level-2 shadow-2xl p-[24px] text-sm text-typography-secondary">
               <SportsNavDropdown />
             </div>
           )}
@@ -281,9 +286,14 @@ export default function SportsNavbar() {
 
       {/* Global Right Action Element */}
       <div className="flex items-center text-gray-400 shrink-0 pl-2">
-        <button className="p-1 hover:text-white transition-colors">
-          <Search className="w-5 h-5" />
-        </button>
+        <Link
+          href="/sport/search"
+          onClick={openSportsSearch}
+          className="p-1 hover:text-white transition-colors"
+          aria-label="Open sports search"
+        >
+          <ThemeIcons.SearchIcon />
+        </Link>
       </div>
     </div>
   );
