@@ -23,14 +23,14 @@ const SectionToggle = ({
       >
         <span className="text-14 font-regular text-white pl-2">{title}</span>
         <svg
-          className={`size-12 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`size-7 transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="#fff"
           viewBox="0 0 24 24"
         >
           <path
             d="M7 10l5 5 5-5"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="0"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -46,13 +46,13 @@ const FooterMobile = () => {
 
   return (
     <>
-      <div className="space-y-2 md:hidden my-5">
+      <div className="space-y-2  md:hidden my-5">
         <SectionToggle
           title="Support"
           isOpen={open === "support"}
           onToggle={() => setOpen(open === "support" ? null : "support")}
         >
-          <ul className="space-y-2">
+          <ul className="space-y-2 pl-2">
             <li>
               <button
                 id="custom_launcher"
@@ -94,7 +94,7 @@ const FooterMobile = () => {
           isOpen={open === "policy"}
           onToggle={() => setOpen(open === "policy" ? null : "policy")}
         >
-          <ul className="space-y-2">
+          <ul className="space-y-2 pl-2">
             <li>
               <a
                 href="/tos"
@@ -143,7 +143,7 @@ const FooterMobile = () => {
           isOpen={open === "platform"}
           onToggle={() => setOpen(open === "platform" ? null : "platform")}
         >
-          <ul className="space-y-2">
+          <ul className="space-y-2 pl-2">
             <li>
               <a
                 href="/provably-fair"
