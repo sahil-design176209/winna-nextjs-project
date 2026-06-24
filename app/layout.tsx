@@ -5,6 +5,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import React, { useState } from "react";
+import BottomNavigation from "./components/BottomNavigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={poppins.variable}>
-      <body className="antialiased">
+      <body className="antialiased min-h-screen flex flex-col relative ">
         <Header
           isProfileMenuOpen={activeMenu === "profile"}
           onToggleProfile={() => toggleMenu("profile")}
@@ -38,10 +39,11 @@ export default function RootLayout({
           isPromotionMenuOpen={activeMenu === "promotions"}
           onTogglePromotions={() => toggleMenu("promotions")}
         />
-        <main className="layout-container mx-auto  h-full w-full  text-white p-5 mb-[50px] mt-[60px] lg:p-0 lg:py-2">
+        <main className="layout-container mx-auto flex-grow h-full w-full text-white p-5 pb-16 mt-[60px] lg:p-0 lg:py-2 lg:pb-0">
           {children}
         </main>
         <Footer />
+        <BottomNavigation />
       </body>
     </html>
   );
