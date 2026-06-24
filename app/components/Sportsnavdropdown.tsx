@@ -1,20 +1,33 @@
 import React, { useState } from "react";
+import { NavIcons, SportsMenuIcons } from "./SvgIcons";
 
 const SportsNavDropdown = () => {
   const [activeTab, setActiveTab] = useState("Sports");
 
   const sportsData = [
-    { name: "Cricket", count: 26 },
-    { name: "Tennis", count: 90 },
-    { name: "Football", count: 11 },
-    { name: "Cricket Casino", count: 0 },
-    { name: "Election", count: 0 },
-    { name: "Kabaddi", count: 0 },
+    { name: "Cricket", count: 26, icon: <SportsMenuIcons.CricketIcon /> },
+    { name: "Tennis", count: 90, icon: <NavIcons.TennisIcon /> },
+    { name: "Football", count: 11, icon: <NavIcons.FootballIcon /> },
+    {
+      name: "Cricket Casino",
+      count: 0,
+      icon: <NavIcons.LiveCasinoIcon />,
+    },
+    { name: "Election", count: 0, icon: <SportsMenuIcons.ElectionIcon /> },
+    { name: "Kabaddi", count: 0, icon: <SportsMenuIcons.KabaddiIcon /> },
   ];
 
   const racingData = [
-    { name: "Horse Racing", count: 5 },
-    { name: "Greyhounds", count: 14 },
+    {
+      name: "Horse Racing",
+      count: 5,
+      icon: <SportsMenuIcons.HorseRacingIcon />,
+    },
+    {
+      name: "Greyhounds",
+      count: 14,
+      icon: <SportsMenuIcons.GreyhoundRacingIcon />,
+    },
   ];
 
   const currentData = activeTab === "Sports" ? sportsData : racingData;
@@ -25,10 +38,10 @@ const SportsNavDropdown = () => {
       <div className="w-full max-w-7xl mx-auto rounded-[24px]  ">
         {/* Centered Top Nav Segment Links */}
         <div className="flex justify-center mb-8">
-          <div className="flex bg-body-level-2 p-1.5 rounded-xl min-w-[402px]">
+          <div className="flex bg-body-level-1 p-1.5 rounded-xl ">
             <button
               onClick={() => setActiveTab("Sports")}
-              className={`flex-1 py-2 text-[14px] font-bold rounded-lg transition-all duration-150 ${
+              className={` min-w-[120px] md:min-w-[190px] flex-1 py-2 text-[14px] font-bold rounded-lg transition-all duration-150 ${
                 activeTab === "Sports"
                   ? "bg-[#2C384E] text-white "
                   : "text-[#778599] hover:text-white"
@@ -38,7 +51,7 @@ const SportsNavDropdown = () => {
             </button>
             <button
               onClick={() => setActiveTab("Racing")}
-              className={`flex-1 py-2 text-[14px] font-bold rounded-lg transition-all duration-150 ${
+              className={`min-w-[120px] md:min-w-[190px] flex-1 py-2 text-[14px] font-bold rounded-lg transition-all duration-150 ${
                 activeTab === "Racing"
                   ? "bg-[#2C384E] text-white "
                   : "text-[#778599] hover:text-white"
@@ -59,6 +72,9 @@ const SportsNavDropdown = () => {
               {/* Item Wrapper Pill Layout */}
               <div className="flex items-center space-x-2 text-[#9BA8BC]">
                 {/* Text Title */}
+                <span className="text-[15px] font-semibold tracking-wide text-[#9BA8BC]">
+                  {item.icon}
+                </span>
                 <span className="text-[15px] font-semibold tracking-wide text-[#9BA8BC]">
                   {item.name}
                 </span>

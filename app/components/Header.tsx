@@ -56,17 +56,29 @@ export default function Header() {
     setIsWalletOpen(false);
   };
 
+  React.useEffect(() => {
+    const closeHeaderOverlays = () => {
+      setIsSearchOpen(false);
+      setIsProfileMenuOpen(false);
+      setIsWalletOpen(false);
+    };
+
+    window.addEventListener("sports-search:open", closeHeaderOverlays);
+    return () => {
+      window.removeEventListener("sports-search:open", closeHeaderOverlays);
+    };
+  }, []);
+
   return (
     <>
       <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5">
         <div className="layout-container flex h-[var(--header-height-sm)] items-center justify-between lg:h-[var(--header-height-lg)]">
-          <a
+          <Link
             className="block w-20 min-w-[48px] shrink-0 flex-none sm:w-[81px] sm:min-w-[81px]"
             href="/"
-            data-discover="true"
           >
             <Image src={WinnaLogo} alt="logo" />
-          </a>
+          </Link>
           <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:items-center">
             <div className="ml-5 hidden gap-3 lg:inline-flex">
               <Link
