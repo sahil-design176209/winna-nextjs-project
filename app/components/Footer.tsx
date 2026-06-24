@@ -177,7 +177,7 @@ const Footer = () => {
               </svg>
             </div>
           </div>
-          <p className="text-center text-10 text-typography-secondary lg:text-11">
+          <p className="text-center text-[10px] md:text-[12px] text-typography-secondary ">
             <span>Copyright © 2026 </span>
             <a href="https://winna.com/" target="_blank" className="underline">
               Winna.com

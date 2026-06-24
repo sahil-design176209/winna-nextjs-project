@@ -14,16 +14,22 @@ import { usePathname } from "next/navigation";
 import StatisticsModal from "./Statistics";
 import ValutModal from "./Vault";
 import StatementModal from "./Statement";
-import WithdrwalModal from "./Withdrwal"
-import EditstakeModal from "./EditStake"
-import TransactionModal from "./Transaction"
-import BonusModal from "./BonusList"
-import OpenbetModal from "./OpenBet"
-export default function Header() {
+import WithdrwalModal from "./Withdrwal";
+import EditstakeModal from "./EditStake";
+import TransactionModal from "./Transaction";
+import BonusModal from "./BonusList";
+import OpenbetModal from "./OpenBet";
+interface HeaderProps {
+  isProfileMenuOpen: boolean;
+  onToggleProfile: () => void; // A function that returns nothing
+}
+
+export default function Header({
+  isProfileMenuOpen,
+  onToggleProfile,
+}: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [isWalletOpen, setIsWalletOpen] = React.useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "signup">("login");
@@ -71,14 +77,14 @@ export default function Header() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setIsProfileMenuOpen(false);
+
     setIsWalletOpen(false);
   };
 
   React.useEffect(() => {
     const closeHeaderOverlays = () => {
       setIsSearchOpen(false);
-      setIsProfileMenuOpen(false);
+
       setIsWalletOpen(false);
     };
 
@@ -102,30 +108,27 @@ export default function Header() {
             <div className="ml-5 hidden gap-3 lg:inline-flex">
               <Link
                 href="/"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/casino"
-                  ? "bg-body-level-9 text-accent-blue border-body-level-2"
-                  : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                  }`}
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
+                  pathname === "/casino"
+                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
+                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                }`}
               >
                 Casino
               </Link>
 
               <Link
                 href="/sport"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/sport"
-                  ? "bg-body-level-9 text-accent-blue border-body-level-2"
-                  : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                  }`}
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
+                  pathname === "/sport"
+                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
+                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                }`}
               >
                 Sports
               </Link>
-              <button
-                className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 h-10 transition-colors font-medium bg-transparent border hover:border-accent-blue-hover active:text-accent-blue disabled:text-white disabled:border-accent-blue disabled:opacity-50 disabled:hover:bg-transparent min-w-[85px] gap-2 px-4 text-typography-secondary md:text-16 border-body-level-3"
-
-              >
-                <div>
-
-                </div>
+              <button className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 h-10 transition-colors font-medium bg-transparent border hover:border-accent-blue-hover active:text-accent-blue disabled:text-white disabled:border-accent-blue disabled:opacity-50 disabled:hover:bg-transparent min-w-[85px] gap-2 px-4 text-typography-secondary md:text-16 border-body-level-3">
+                <div></div>
                 VIP
               </button>
               <a
@@ -195,7 +198,7 @@ export default function Header() {
                   </div>
                   <div className="relative">
                     <button
-                      onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
+                      onClick={onToggleProfile}
                       className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-9 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 size-10 text-typography-secondary"
                       data-profile="true"
                     >
@@ -234,83 +237,89 @@ export default function Header() {
                           <button
                             onClick={() => {
                               setShowStatisticsModal(true);
-
                             }}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
                             <ThemeIcons.StatisticsIcon />
                             <span className="text-[13px]">Statistics</span>
                           </button>
-                          <button onClick={() => {
-                            setShowValutModal(true);
-
-                          }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.VaultIcon /> <span className="text-[13px]">Vault</span>
+                          <button
+                            onClick={() => {
+                              setShowValutModal(true);
+                            }}
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.VaultIcon />{" "}
+                            <span className="text-[13px]">Vault</span>
                           </button>
                           <button
                             onClick={() => {
                               setShowStatementModal(true);
-
                             }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.Statement /> <span className="text-[13px]">Statement</span>
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.Statement />{" "}
+                            <span className="text-[13px]">Statement</span>
                           </button>
                           <button
                             onClick={() => {
                               setShoWithdrwalModal(true);
-
                             }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
                             <ThemeIcons.WithdrwalIcon />{" "}
                             <span className="text-[13px]">Withdrwal</span>
                           </button>
                           <button
                             onClick={() => {
                               setShowEditstakeModal(true);
-
                             }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
                             <ThemeIcons.EditStakeIcon />{" "}
                             <span className="text-[13px]">Edit Stake</span>
                           </button>
                           <button
                             onClick={() => {
                               setShowTransactionModal(true);
-
                             }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.TransactionIcon /> <span className="text-[13px]">Transaction</span>
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.TransactionIcon />{" "}
+                            <span className="text-[13px]">Transaction</span>
                           </button>
                           <button
                             onClick={() => {
                               setShowBonusModal(true);
-
                             }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.BonusListIcon /> <span className="text-[13px]">Bonus List</span>
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.BonusListIcon />{" "}
+                            <span className="text-[13px]">Bonus List</span>
                           </button>
                           <button
                             onClick={() => {
                               setShowOpenbetModal(true);
-
                             }}
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.OpenBetIcon /> <span className="text-[13px]">Open Bet</span>
+                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
+                          >
+                            <ThemeIcons.OpenBetIcon />{" "}
+                            <span className="text-[13px]">Open Bet</span>
                           </button>
-
                         </div>
                         <div className="grid grid-cols-2 gap-x-4 gap-y-3 border-t border-body-level-2 pt-3 mt-3">
-                          <button
-                            className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
-                            <ThemeIcons.SupportIcon /> <span className="text-[13px]">Live Support</span>
+                          <button className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left">
+                            <ThemeIcons.SupportIcon />{" "}
+                            <span className="text-[13px]">Live Support</span>
                           </button>
                           <button
                             onClick={handleLogout}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.LogOutIcon /> <span className="text-[13px]"> Log Out</span>
-                          </button></div>
+                            <ThemeIcons.LogOutIcon />{" "}
+                            <span className="text-[13px]"> Log Out</span>
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -361,9 +370,7 @@ export default function Header() {
             <button
               onClick={() => setShowProfileModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
-
-            </button>
+            ></button>
 
             <UserProfileModal />
           </div>
@@ -375,13 +382,9 @@ export default function Header() {
             <button
               onClick={() => setShowProfileModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <StatisticsModal
-              onClose={() => setShowStatisticsModal(false)}
-            />
+            <StatisticsModal onClose={() => setShowStatisticsModal(false)} />
           </div>
         </div>
       )}
@@ -391,13 +394,9 @@ export default function Header() {
             <button
               onClick={() => setShowValutModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <ValutModal
-              onClose={() => setShowValutModal(false)}
-            />
+            <ValutModal onClose={() => setShowValutModal(false)} />
           </div>
         </div>
       )}
@@ -407,13 +406,9 @@ export default function Header() {
             <button
               onClick={() => setShowStatementModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <StatementModal
-              onClose={() => setShowStatementModal(false)}
-            />
+            <StatementModal onClose={() => setShowStatementModal(false)} />
           </div>
         </div>
       )}
@@ -423,13 +418,9 @@ export default function Header() {
             <button
               onClick={() => setShoWithdrwalModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <WithdrwalModal
-              onClose={() => setShoWithdrwalModal(false)}
-            />
+            <WithdrwalModal onClose={() => setShoWithdrwalModal(false)} />
           </div>
         </div>
       )}
@@ -439,13 +430,9 @@ export default function Header() {
             <button
               onClick={() => setShowEditstakeModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <EditstakeModal
-              onClose={() => setShowEditstakeModal(false)}
-            />
+            <EditstakeModal onClose={() => setShowEditstakeModal(false)} />
           </div>
         </div>
       )}
@@ -455,13 +442,9 @@ export default function Header() {
             <button
               onClick={() => setShowTransactionModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <TransactionModal
-              onClose={() => setShowTransactionModal(false)}
-            />
+            <TransactionModal onClose={() => setShowTransactionModal(false)} />
           </div>
         </div>
       )}
@@ -471,13 +454,9 @@ export default function Header() {
             <button
               onClick={() => setShowBonusModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <BonusModal
-              onClose={() => setShowBonusModal(false)}
-            />
+            <BonusModal onClose={() => setShowBonusModal(false)} />
           </div>
         </div>
       )}
@@ -487,13 +466,9 @@ export default function Header() {
             <button
               onClick={() => setShowOpenbetModal(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
-            >
+            ></button>
 
-            </button>
-
-            <OpenbetModal
-              onClose={() => setShowOpenbetModal(false)}
-            />
+            <OpenbetModal onClose={() => setShowOpenbetModal(false)} />
           </div>
         </div>
       )}
