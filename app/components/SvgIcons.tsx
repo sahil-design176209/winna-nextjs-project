@@ -347,91 +347,101 @@ export const SportsMenuIcons = {
 
   // 5. Election Submenu Icon
   ElectionIcon: ({ className = "" }) => (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect
         x="6"
         y="10"
         width="20"
         height="16"
         rx="2"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-
+        stroke="#99a1af"
+        stroke-width="2"
+      ></rect>
       <path
         d="M11 10L16 5L21 10"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
       <path
         d="M12 18L15 21L20 15"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
     </svg>
   ),
 
   // 6. Kabaddi Submenu Icon
   KabaddiIcon: ({ className = "" }) => (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx={11} cy={9} r={3} fill="currentColor" />
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="11" cy="9" r="3" fill="#99a1af"></circle>
       <path
         d="M11 12V18"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
+      ></path>
       <path
         d="M11 14L7 17"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
+      ></path>
       <path
         d="M11 14L16 16"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
+      ></path>
       <path
         d="M11 18L8 24"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
+      ></path>
       <path
         d="M11 18L15 24"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
-      <circle cx={22} cy={12} r="2.5" fill="currentColor" opacity="0.7" />
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
+      ></path>
+      <circle cx="22" cy="12" r="2.5" fill="#99a1af" opacity="0.7"></circle>
       <path
         d="M22 14.5V19"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
         opacity="0.7"
-      />
+      ></path>
       <path
         d="M22 16L19 18"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
         opacity="0.7"
-      />
+      ></path>
       <path
         d="M22 16L25 18"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
+        stroke="#99a1af"
+        stroke-width="2"
+        stroke-linecap="round"
         opacity="0.7"
-      />
+      ></path>
     </svg>
   ),
   AllSportsIcon: ({ className = "" }) => (
@@ -2604,7 +2614,6 @@ export const ThemeIcons = {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-
     >
       <path
         d="M18 4H6C4.9 4 4 4.9 4 6V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V6C20 4.9 19.1 4 18 4ZM18 18H6V6H18V18ZM12 8C10.3 8 9 9.3 9 11C9 12.7 10.3 14 12 14C13.7 14 15 12.7 15 11C15 9.3 13.7 8 12 8ZM12 12C11.4 12 11 11.6 11 11C11 10.4 11.4 10 12 10C12.6 10 13 10.4 13 11C13 11.6 12.6 12 12 12ZM12 15C11.2 15 10.5 15.3 10 15.8V17H14V15.8C13.5 15.3 12.8 15 12 15Z"
@@ -2613,7 +2622,14 @@ export const ThemeIcons = {
     </svg>
   ),
   Statement: ({ className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6"><path d="M6 2C4.9 2 4 2.9 4 4V20L7 18L10 20L13 18L16 20L19 18L20 20V4C20 2.9 19.1 2 18 2H6ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H13V17H8V15Z"></path></svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="size-6"
+    >
+      <path d="M6 2C4.9 2 4 2.9 4 4V20L7 18L10 20L13 18L16 20L19 18L20 20V4C20 2.9 19.1 2 18 2H6ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H13V17H8V15Z"></path>
+    </svg>
   ),
   WithdrwalIcon: ({ className = "" }) => (
     <svg
@@ -2621,7 +2637,7 @@ export const ThemeIcons = {
       width="20"
       height="20"
       viewBox="0 0 18 18"
-      fill="none" 
+      fill="none"
     >
       <path
         fillRule="evenodd"
@@ -2635,7 +2651,7 @@ export const ThemeIcons = {
     <svg
       width="15"
       height="15"
-      viewBox="0 0 15 15" 
+      viewBox="0 0 15 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -2658,7 +2674,7 @@ export const ThemeIcons = {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
-      height="24" 
+      height="24"
       viewBox="0 0 18 18"
       fill="none"
     >
@@ -2674,7 +2690,7 @@ export const ThemeIcons = {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
-      height="24" 
+      height="24"
       viewBox="0 0 18 18"
       fill="none"
     >
@@ -2690,7 +2706,7 @@ export const ThemeIcons = {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
-      height="24" 
+      height="24"
       viewBox="0 0 18 18"
       fill="none"
     >
