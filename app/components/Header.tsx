@@ -14,21 +14,14 @@ import { usePathname } from "next/navigation";
 import StatisticsModal from "./Statistics";
 import ValutModal from "./Vault";
 import StatementModal from "./Statement";
-import WithdrwalModal from "./Withdrwal";
-import EditstakeModal from "./EditStake";
-import TransactionModal from "./Transaction";
-import BonusModal from "./BonusList";
-import OpenbetModal from "./OpenBet";
-interface HeaderProps {
-  isProfileMenuOpen: boolean;
-  onToggleProfile: () => void; // A function that returns nothing
-}
-
-export default function Header({
-  isProfileMenuOpen,
-  onToggleProfile,
-}: HeaderProps) {
+import WithdrwalModal from "./Withdrwal"
+import EditstakeModal from "./EditStake"
+import TransactionModal from "./Transaction"
+import BonusModal from "./BonusList"
+import OpenbetModal from "./OpenBet"
+export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const [isWalletOpen, setIsWalletOpen] = React.useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -80,20 +73,25 @@ export default function Header({
 
     setIsWalletOpen(false);
   };
+const closeAllModals = () => {
+  setShowProfileModal(false);
+  setShowStatisticsModal(false);
+  setShowValutModal(false);
+  setShowStatementModal(false);
+  setShoWithdrwalModal(false);
+  setShowEditstakeModal(false);
+  setShowTransactionModal(false);
+  setShowBonusModal(false);
+  setShowOpenbetModal(false);
+};
 
-  React.useEffect(() => {
-    const closeHeaderOverlays = () => {
-      setIsSearchOpen(false);
-
-      setIsWalletOpen(false);
-    };
-
-    window.addEventListener("sports-search:open", closeHeaderOverlays);
-    return () => {
-      window.removeEventListener("sports-search:open", closeHeaderOverlays);
-    };
-  }, []);
-
+const openModal = (
+  setter: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  closeAllModals(); // close previous modal
+  setIsProfileMenuOpen(false); // close dropdown
+  setter(true); // open new modal
+};
   return (
     <>
       <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5">
@@ -209,7 +207,7 @@ export default function Header({
 
                     {/* Profile Menu Dropdown Overlay Layout */}
                     {isProfileMenuOpen && (
-                      <div className="absolute right-0 top-full mt-5 w-[330px] max-w-[330px] z-[9999] rounded bg-body-level-7  border-body-level-2 shadow-2xl p-5 text-sm text-typography-secondary">
+                      <div className="absolute right-0 top-full mt-5 w-[330px] max-w-[330px] z-40 rounded bg-body-level-7  border-body-level-2 shadow-2xl p-5 text-sm text-typography-secondary">
                         {/* User info section */}
                         <div className="flex items-center gap-3 pb-3 mb-3 border-b border-body-level-2">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg  text-white">
@@ -228,82 +226,66 @@ export default function Header({
                         {/* Grid Links split layout matching production screen mock */}
                         <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                           <button
-                            onClick={() => setShowProfileModal(true)}
+                            onClick={() => openModal(setShowProfileModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
                             <ThemeIcons.SettingsIcon />
                             <span>User Profile</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowStatisticsModal(true);
-                            }}
+                            onClick={() => openModal(setShowStatisticsModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
                             <ThemeIcons.StatisticsIcon />
                             <span className="text-[13px]">Statistics</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowValutModal(true);
-                            }}
+                            onClick={() => openModal(setShowValutModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.VaultIcon />{" "}
+                            <ThemeIcons.VaultIcon />
                             <span className="text-[13px]">Vault</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowStatementModal(true);
-                            }}
+                            onClick={() => openModal(setShowStatementModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.Statement />{" "}
+                            <ThemeIcons.Statement />
                             <span className="text-[13px]">Statement</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShoWithdrwalModal(true);
-                            }}
+                            onClick={() => openModal(setShoWithdrwalModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.WithdrwalIcon />{" "}
-                            <span className="text-[13px]">Withdrwal</span>
+                            <ThemeIcons.WithdrwalIcon />
+                            <span className="text-[13px]">Withdrawal</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowEditstakeModal(true);
-                            }}
+                            onClick={() => openModal(setShowEditstakeModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.EditStakeIcon />{" "}
+                            <ThemeIcons.EditStakeIcon />
                             <span className="text-[13px]">Edit Stake</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowTransactionModal(true);
-                            }}
+                            onClick={() => openModal(setShowTransactionModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.TransactionIcon />{" "}
+                            <ThemeIcons.TransactionIcon />
                             <span className="text-[13px]">Transaction</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowBonusModal(true);
-                            }}
+                            onClick={() => openModal(setShowBonusModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.BonusListIcon />{" "}
+                            <ThemeIcons.BonusListIcon />
                             <span className="text-[13px]">Bonus List</span>
                           </button>
                           <button
-                            onClick={() => {
-                              setShowOpenbetModal(true);
-                            }}
+                            onClick={() => openModal(setShowOpenbetModal)}
                             className="flex items-center gap-2 py-1 hover:text-white transition-colors text-left"
                           >
-                            <ThemeIcons.OpenBetIcon />{" "}
+                            <ThemeIcons.OpenBetIcon />
                             <span className="text-[13px]">Open Bet</span>
                           </button>
                         </div>
@@ -372,7 +354,9 @@ export default function Header({
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
             ></button>
 
-            <UserProfileModal />
+            <UserProfileModal
+              onClose={() => setShowProfileModal(false)}
+            />
           </div>
         </div>
       )}

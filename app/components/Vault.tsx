@@ -13,17 +13,16 @@ export default function ValutModal({
   const [activeTab, setActiveTab] = useState("withdrawal");
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4">
-      <div className="w-full max-w-[760px] rounded-2xl border border-[#0e2534] bg-[#02131d] p-6">
+   <div className="w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-5">
         {/* Header */}
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-[22px] font-semibold text-white">
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-[24px] font-semibold text-white">
             💰 Vault
           </h2>
 
           <button
             onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2c3d58] text-white"
+            className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px] bg-body-level-8 text-white"
           >
             <X size={20} />
           </button>
@@ -33,11 +32,11 @@ export default function ValutModal({
         <div className="mb-5 flex gap-3">
           <button
             onClick={() => setActiveTab("deposit")}
-            className={`h-12 rounded-xl border px-6 text-[18px] font-medium transition-all
+            className={`h-[40px] px-8 rounded-[8px] border px-6 text-[18px] font-medium transition-all
               ${
                 activeTab === "deposit"
-                  ? "bg-[#2c3d58] border-[#2c3d58] text-white"
-                  : "border-[#23415a] text-[#9db3c8]"
+                  ? "bg-body-level-8 border-body-level-8 text-accent-blue"
+                  : "border-body-level-9   text-typography-secondary"
               }`}
           >
             Deposit
@@ -45,11 +44,11 @@ export default function ValutModal({
 
           <button
             onClick={() => setActiveTab("withdrawal")}
-            className={`h-12 rounded-xl border px-6 text-[18px] font-medium transition-all
+            className={`h-[40px] rounded-xl border px-6 text-[18px] font-medium transition-all
               ${
                 activeTab === "withdrawal"
-                  ? "bg-[#2c3d58] border-[#2c3d58] text-[#ff8a00]"
-                  : "border-[#23415a] text-[#9db3c8]"
+                  ? "bg-body-level-8 border-body-level-8 text-accent-blue"
+                   : "border-body-level-9   text-typography-secondary"
               }`}
           >
             Withdrawal
@@ -57,18 +56,18 @@ export default function ValutModal({
         </div>
 
         {/* Wallet Header */}
-        <div className="mb-5 rounded-xl bg-[#2c3d58] p-4">
+        <div className="mb-5 rounded-xl bg-body-level-8 py-3 px-3.5 text-[14px]">
           <h3 className="font-semibold text-white">Wallet</h3>
         </div>
 
         {/* Wallet Card */}
-        <div className="rounded-xl bg-[#2c3d58] p-5">
+        <div className="rounded-xl bg-body-level-8 p-3">
           <div className="mb-4 flex items-start justify-between">
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="text-xl font-semibold text-white text-[15px]">
               Wallet
             </h3>
 
-            <p className="text-[#9db3c8]">
+            <p className="text-typography-secondary text-[13px]">
               Available:{" "}
               <span className="font-semibold text-white">
                 INR 8517.20
@@ -76,11 +75,11 @@ export default function ValutModal({
             </p>
           </div>
 
-          <div className="mb-4 text-[52px] font-bold text-white">
+          <div className="mb-4 text-[36px] font-bold text-white">
             INR 10007.20
           </div>
 
-          <p className="text-[#9db3c8]">
+          <p className="text-typography-secondary text-[13px]">
             Exposure:{" "}
             <span className="font-semibold text-white">
               INR 1490.00
@@ -89,22 +88,22 @@ export default function ValutModal({
         </div>
 
         {/* Transfer Icon */}
-        <div className="my-4 flex justify-center">
-          <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0d2c40] text-white">
-            <ArrowLeftRight size={18} />
+        <div className="my-3 flex justify-center">
+          <button className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-body-level-8 text-white">
+            <ArrowLeftRight size={16} />
           </button>
         </div>
 
         {/* Dynamic Section */}
-        <div className="rounded-xl bg-[#2c3d58] p-4">
+        <div className="rounded-xl bg-body-level-8 p-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="text-[15px] font-semibold text-white">
               {activeTab === "deposit"
                 ? "Deposit"
                 : "Withdrawal"}
             </h3>
 
-            <p className="text-[#9db3c8]">
+            <p className="text-typography-secondary text-[13px]">
               {activeTab === "deposit" ? (
                 <>
                   Available:{" "}
@@ -126,6 +125,6 @@ export default function ValutModal({
           
         </div>
       </div>
-    </div>
+
   );
 }

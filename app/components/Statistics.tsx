@@ -48,48 +48,49 @@ export default function StatisticsModal({
   ];
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4">
-      <div className="w-full max-w-[760px] rounded-2xl border border-[#0e2534] bg-[#02131d] p-5">
-        {/* Header */}
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="flex items-center gap-3 text-[22px] font-semibold text-white">
+  
+      
+  <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
+
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="flex items-center gap-3 text-[24px] font-semibold text-white">
             📊 Statistics
           </h2>
 
-          <button
+         <button
             onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2c3d58] text-white"
+            className="flex h-[32px] w-[32px] items-center justify-center rounded-[8px] bg-body-level-8 text-white"
           >
             <X size={20} />
           </button>
         </div>
 
-        {/* User Info */}
-        <div className="mb-8 flex items-center gap-4">
-          <div className="text-4xl font-bold text-gray-500">W</div>
+    
+        <div className="mb-3 flex items-center gap-4">
+          <div className="text-[32px] font-bold text-typography-secondary">W</div>
 
           <div>
-            <h3 className="font-semibold text-white">bbbuser01</h3>
+            <h3 className="font-bold text-[14px] text-white">bbbuser01</h3>
 
-            <p className="text-sm text-[#62b3ff]">
+            <p className="text-[12px] text-[#8fb6c4] ">
               Joined Jun 9, 2026
             </p>
           </div>
         </div>
 
         {/* Filter */}
-        <div className="mb-5 flex h-[42px] items-center rounded-xl bg-[#2c3d58] px-4 font-semibold text-white">
+        <div className="mb-3 flex h-[44px] items-center rounded-[8px] text-[14px] bg-body-level-8 py-2.5 px-3 font-semibold text-white">
           All time
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           {stats.map((item, index) => (
             <div
               key={index}
-              className="rounded-xl bg-[#2c3d58] p-4"
+              className="rounded-xl bg-body-level-8 p-3"
             >
-              <p className="mb-1 text-[15px] text-[#93a7bb]">
+              <p className="mb-1 text-[12px] text-typography-secondary">
                 {item.title}
               </p>
 
@@ -101,7 +102,7 @@ export default function StatisticsModal({
             </div>
           ))}
         </div>
-      </div>
+   
     </div>
   );
 }
