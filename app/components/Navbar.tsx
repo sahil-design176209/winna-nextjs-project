@@ -1,12 +1,18 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavIcons, ThemeIcons } from "./SvgIcons";
 import SportsNavbar from "./SportsNavbar";
+import PromotionsDropdown from "./PromotionsDropdown";
+interface NavbarProps {
+  isPromotionMenuOpen: boolean;
+  onTogglePromotions: () => void; // A function that returns nothing
+}
 
-const Navbar = () => {
+const Navbar = ({ isPromotionMenuOpen, onTogglePromotions }: NavbarProps) => {
   const pathname = usePathname() ?? "";
   const showSportsNavbar = pathname.startsWith("/sport");
 
@@ -80,11 +86,17 @@ const Navbar = () => {
 
           <li className="ml-auto">
             <div className="relative">
-              <button className="relative flex items-center gap-2 py-3 text-14 text-typography-secondary">
+              <button
+                className="relative flex items-center gap-2 py-3 text-14 text-typography-secondary cursor-pointer"
+                onClick={onTogglePromotions}
+              >
                 <NavIcons.PromotionsIcon />
                 Promotions
-                <ThemeIcons.ChevronDownIcon />
+                <span>
+                  <ThemeIcons.ChevronDownIcon />
+                </span>
               </button>
+              {isPromotionMenuOpen && <PromotionsDropdown />}
             </div>
           </li>
         </ul>
