@@ -277,7 +277,7 @@ export default function SportsNavbar() {
             </span>
           </button>
           {isSportsMenuOpen && (
-            <div className="absolute left-0 right-0 mx-auto top-[60px] mt-2 w-auto min-w-[360px] lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-[100%] md:w-[100%] lg:max-w-[1264px] z-[9999] rounded-xl bg-body-level-2 border border-body-level-2 shadow-2xl p-[24px] text-sm text-typography-secondary">
+            <div className="absolute left-0 right-0 mx-auto top-[60px] mt-2 w-auto min-w-[360px] lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-[100%] md:w-[100%] lg:max-w-[1264px] z-[9999] rounded-2xl bg-body-level-2 border border-body-level-2 shadow-2xl p-[24px] text-sm text-typography-secondary">
               <SportsNavDropdown />
             </div>
           )}
