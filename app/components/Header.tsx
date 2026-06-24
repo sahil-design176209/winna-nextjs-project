@@ -14,14 +14,22 @@ import { usePathname } from "next/navigation";
 import StatisticsModal from "./Statistics";
 import ValutModal from "./Vault";
 import StatementModal from "./Statement";
-import WithdrwalModal from "./Withdrwal"
-import EditstakeModal from "./EditStake"
-import TransactionModal from "./Transaction"
-import BonusModal from "./BonusList"
-import OpenbetModal from "./OpenBet"
-export default function Header() {
+import WithdrwalModal from "./Withdrwal";
+import EditstakeModal from "./EditStake";
+import TransactionModal from "./Transaction";
+import BonusModal from "./BonusList";
+import OpenbetModal from "./OpenBet";
+interface HeaderProps {
+  isProfileMenuOpen: boolean;
+  onToggleProfile: () => void;
+}
+
+export default function Header({
+  isProfileMenuOpen,
+  onToggleProfile,
+}: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const [isWalletOpen, setIsWalletOpen] = React.useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -73,25 +81,27 @@ const [activeModal, setActiveModal] = useState<string | null>(null);
 
     setIsWalletOpen(false);
   };
-const closeAllModals = () => {
-  setShowProfileModal(false);
-  setShowStatisticsModal(false);
-  setShowValutModal(false);
-  setShowStatementModal(false);
-  setShoWithdrwalModal(false);
-  setShowEditstakeModal(false);
-  setShowTransactionModal(false);
-  setShowBonusModal(false);
-  setShowOpenbetModal(false);
-};
+  const closeAllModals = () => {
+    setShowProfileModal(false);
+    setShowStatisticsModal(false);
+    setShowValutModal(false);
+    setShowStatementModal(false);
+    setShoWithdrwalModal(false);
+    setShowEditstakeModal(false);
+    setShowTransactionModal(false);
+    setShowBonusModal(false);
+    setShowOpenbetModal(false);
+  };
 
-const openModal = (
-  setter: React.Dispatch<React.SetStateAction<boolean>>
-) => {
-  closeAllModals(); // close previous modal
-  setIsProfileMenuOpen(false); // close dropdown
-  setter(true); // open new modal
-};
+  const openModal = (setter: React.Dispatch<React.SetStateAction<boolean>>) => {
+    closeAllModals();
+
+    if (isProfileMenuOpen) {
+      onToggleProfile();
+    }
+
+    setter(true);
+  };
   return (
     <>
       <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5">
@@ -354,9 +364,7 @@ const openModal = (
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-lg  text-white flex items-center justify-center"
             ></button>
 
-            <UserProfileModal
-              onClose={() => setShowProfileModal(false)}
-            />
+            <UserProfileModal onClose={() => setShowProfileModal(false)} />
           </div>
         </div>
       )}
