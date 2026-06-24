@@ -10,7 +10,7 @@ interface OpenbetModalProps {
 export default function OpenbetModal({
   onClose,
 }: OpenbetModalProps) {
-  const [showFilters, setShowFilters] = useState(true);
+  const [showFilters, setShowFilters] = useState(false);
 
   const [sport, setSport] = useState("All");
   const [tournament, setTournament] = useState("All");

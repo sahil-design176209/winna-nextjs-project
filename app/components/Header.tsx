@@ -217,7 +217,7 @@ export default function Header({
 
                     {/* Profile Menu Dropdown Overlay Layout */}
                     {isProfileMenuOpen && (
-                      <div className="absolute right-0 top-full mt-5 w-[330px] max-w-[330px] z-40 rounded bg-body-level-7  border-body-level-2 shadow-2xl p-5 text-sm text-typography-secondary">
+                      <div className="absolute right-0 top-full mt-5 w-[330px] max-w-[330px] z-40 rounded-[8px] bg-body-level-7  border-body-level-2 shadow-2xl p-5 text-sm text-typography-secondary">
                         {/* User info section */}
                         <div className="flex items-center gap-3 pb-3 mb-3 border-b border-body-level-2">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg  text-white">
