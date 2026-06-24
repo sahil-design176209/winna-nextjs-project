@@ -1,5 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import { CasinoIcons, SVGIcons } from "./SvgIcons";
+import Image from "next/image";
+import winnaLogo from "../../public/images/logo-winna.svg";
 
 type MainTab = "casino" | "sports";
 
@@ -78,21 +81,19 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
         <div className="flex-none">
           {/* Top Header Bar */}
           <div className="p-4 flex items-center justify-between border-b border-white/5">
-            <button className="text-[#7b8b9a] hover:text-white">
-              {/* Optional Grid Menu Icon */}
-              <div
-                className="w-5 h-5 bg-current rounded-sm opacity-70"
-                onClick={onClose}
-              />
+            <button
+              className="flex h-[24px] w-[24px] items-center justify-center [&>svg]:h-full [&>svg]:w-full [&>svg]:fill-current"
+              onClick={onClose}
+            >
+              <SVGIcons.SpadeIcon />
             </button>
 
             <button className="text-xl font-bold tracking-wide italic text-[#f5a623] cursor-pointer hover:opacity-80 active:scale-95 transition-transform outline-none">
-              Winna
+              <Image src={winnaLogo} alt="logo" />
             </button>
 
-            <button className="text-[#7b8b9a] hover:text-white">
-              {/* Optional Crown Icon */}
-              <div className="w-5 h-5 bg-current rounded-sm opacity-70" />
+            <button className="flex h-[24px] w-[24px] items-center justify-center ">
+              <CasinoIcons.BlackjackIcon />
             </button>
           </div>
 
@@ -221,7 +222,7 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
           )}
 
           <div className="flex-none p-4 pb-[88px] border-t border-white/5 bg-[#121b26]">
-            <button className="w-full flex items-center justify-center gap-2 bg-[#f5a623] hover:bg-[#e09216] text-[#07131e] font-bold py-3 px-4 rounded-xl shadow-lg transition-colors text-sm outline-none">
+            <button className="w-full flex items-center justify-center gap-2 bg-accent-blue hover:bg-accent-blue-hover text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-colors text-sm outline-none">
               <span>🎧</span>
               Live Support
             </button>
