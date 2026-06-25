@@ -27,7 +27,7 @@ export default function OpenbetModal({
         <div className="flex items-center gap-3">
           <Tag className="h-7 w-7 text-white" />
 
-          <h2 className="text-[24px] font-semibold text-white">
+          <h2 className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold">
             Open Bets
           </h2>
         </div>

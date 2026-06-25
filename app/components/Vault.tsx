@@ -13,10 +13,10 @@ export default function ValutModal({
   const [activeTab, setActiveTab] = useState("withdrawal");
 
   return (
-   <div className="w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-5">
+<div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
         {/* Header */}
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-[24px] font-semibold text-white">
+          <h2 className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold text-white">
             💰 Vault
           </h2>
 
@@ -29,10 +29,10 @@ export default function ValutModal({
         </div>
 
         {/* Tabs */}
-        <div className="mb-5 flex gap-3">
+     <div className="mb-5 flex gap-2 md:gap-3 overflow-x-auto scrollbar-hide">
           <button
             onClick={() => setActiveTab("deposit")}
-            className={`h-[40px] px-8 rounded-[8px] border px-6 text-[18px] font-medium transition-all
+            className={`h-[40px] whitespace-nowrap px-4 md:px-8 rounded-[8px] border text-[14px] md:text-[18px] font-medium transition-all flex-shrink-0
               ${
                 activeTab === "deposit"
                   ? "bg-body-level-8 border-body-level-8 text-accent-blue"
@@ -44,7 +44,7 @@ export default function ValutModal({
 
           <button
             onClick={() => setActiveTab("withdrawal")}
-            className={`h-[40px] rounded-xl border px-6 text-[18px] font-medium transition-all
+            className={`h-[40px] whitespace-nowrap px-4 md:px-8 rounded-[8px] border text-[14px] md:text-[18px] font-medium transition-all flex-shrink-0
               ${
                 activeTab === "withdrawal"
                   ? "bg-body-level-8 border-body-level-8 text-accent-blue"

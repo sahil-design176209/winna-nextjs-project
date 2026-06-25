@@ -16,7 +16,7 @@ export default function BonusListModal({
         <div className="flex items-center gap-3">
           <Gift className="h-8 w-8 text-white" />
 
-          <h2 className="text-[24px] font-semibold text-white">
+          <h2 className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold text-white">
             Bonus List
           </h2>
         </div>

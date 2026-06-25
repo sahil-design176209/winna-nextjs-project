@@ -116,22 +116,20 @@ export default function Header({
             <div className="ml-5 hidden gap-3 lg:inline-flex">
               <Link
                 href="/"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
-                  pathname === "/casino"
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/casino"
                     ? "bg-body-level-9 text-accent-blue border-body-level-2"
                     : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                }`}
+                  }`}
               >
                 Casino
               </Link>
 
               <Link
                 href="/sport"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
-                  pathname === "/sport"
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/sport"
                     ? "bg-body-level-9 text-accent-blue border-body-level-2"
                     : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                }`}
+                  }`}
               >
                 Sports
               </Link>
@@ -357,7 +355,7 @@ export default function Header({
         onClose={() => setIsSearchOpen(false)}
       />
       {showProfileModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowProfileModal(false)}
@@ -369,7 +367,7 @@ export default function Header({
         </div>
       )}
       {showStatisticsModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+               <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowProfileModal(false)}
@@ -381,7 +379,7 @@ export default function Header({
         </div>
       )}
       {showValutModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowValutModal(false)}
@@ -393,7 +391,7 @@ export default function Header({
         </div>
       )}
       {showStatementModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowStatementModal(false)}
@@ -405,7 +403,7 @@ export default function Header({
         </div>
       )}
       {showWithdrwalModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShoWithdrwalModal(false)}
@@ -417,7 +415,7 @@ export default function Header({
         </div>
       )}
       {showEditstakeModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowEditstakeModal(false)}
@@ -429,7 +427,7 @@ export default function Header({
         </div>
       )}
       {showTransactionModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowTransactionModal(false)}
@@ -441,7 +439,7 @@ export default function Header({
         </div>
       )}
       {showBonusModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowBonusModal(false)}
@@ -453,7 +451,7 @@ export default function Header({
         </div>
       )}
       {showOpenbetModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowOpenbetModal(false)}
