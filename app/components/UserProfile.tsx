@@ -78,7 +78,7 @@ export default function UserProfileModal({
             Personal Data
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
             {profileFields.map(({ label, value }) => (
               <div key={label}>
                 <label className="block text-[#9db1c5] mb-1 text-[14px]">
