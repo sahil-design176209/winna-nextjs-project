@@ -136,7 +136,7 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Search Box Wrapper */}
-          <div className="p-4 pb-2">
+          <div className="p-4 pb-1">
             <div className="relative flex items-center bg-[#07131e] rounded-xl px-3 py-2.5 border border-white/5 focus-within:border-white/10">
               <span className="text-gray-500 mr-2">
                 <SearchIcon />
@@ -199,8 +199,10 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
 
         <div className="flex-1 overflow-y-auto px-4 py-2 space-y-2">
           {activeTab === "casino" ? (
-            <div className="flex items-center gap-3 bg-[#0d2236] rounded-xl px-4 py-3 border border-white/5 cursor-pointer text-accent-blue">
-              <span className="text-sm">📡</span>
+            <div className="flex items-center gap-3  rounded-xl px-4 py-3  cursor-pointer text-accent-blue">
+              <span className="text-sm">
+                <NavIcons.LiveCasinoIcon />
+              </span>
               <span className="text-sm font-medium">Casino</span>
             </div>
           ) : (
@@ -216,12 +218,14 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
                       className={`w-full flex items-center justify-between px-4 py-3.5 transition-colors duration-150 outline-none
                         ${
                           isExpanded
-                            ? "bg-[#0d2236] text-accent-blue"
+                            ? "bg-[#0d2236] text-accent-blue "
                             : "bg-[#0d1a26] text-white hover:bg-[#132436]"
                         }`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-sm">{group.icon}</span>
+                        <span className="text-[#7b8b9a] group-hover:text-white text-sm transition-colors opacity-80">
+                          {group.icon}
+                        </span>
                         <span className="text-14 font-semibold tracking-wide">
                           {group.label}
                         </span>
@@ -270,7 +274,7 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
             </div>
           )}
 
-          <div className="flex-none p-4 pb-[88px] border-t border-white/5 bg-[#121b26]">
+          <div className="flex-none p-4 pb-[88px] bg-[#121b26]">
             <button className="w-full flex items-center justify-center gap-2 bg-accent-blue hover:bg-accent-blue-hover text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-colors text-15 outline-none">
               <span>
                 <ThemeIcons.SupportIcon />
