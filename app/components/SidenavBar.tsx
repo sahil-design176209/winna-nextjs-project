@@ -1,6 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { CasinoIcons, SVGIcons } from "./SvgIcons";
+import {
+  CasinoIcons,
+  NavIcons,
+  SearchIcon,
+  SportsMenuIcons,
+  SVGIcons,
+  ThemeIcons,
+} from "./SvgIcons";
 import Image from "next/image";
 import winnaLogo from "../../public/images/logo-winna.svg";
 
@@ -9,13 +16,13 @@ type MainTab = "casino" | "sports";
 interface SubItem {
   id: string;
   label: string;
-  icon?: string; // Optional custom string/emoji placeholder for sub-items
+  icon?: string;
 }
 
 interface AccordionItem {
   id: string;
   label: string;
-  icon: string; // Dynamic icon for the main item header
+  icon: string;
   subItems?: SubItem[];
 }
 
@@ -37,27 +44,54 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
     setExpandedAccordion((prev) => (prev === id ? null : id));
   };
 
+  interface AccordionItem {
+    id: string;
+    label: string;
+    icon: React.ReactNode;
+    subItems: any[] | any;
+  }
+
   const sportsData: AccordionItem[] = [
     {
       id: "all-sports",
       label: "All Sports",
-      icon: "⚽",
+      icon: <NavIcons.FootballIcon />,
       subItems: [
-        { id: "cricket", label: "Cricket", icon: "🏏" },
-        { id: "tennis", label: "Tennis", icon: "🎾" },
-        { id: "football", label: "Football", icon: "⚽" },
-        { id: "cricket-casino", label: "Cricket Casino", icon: "🎰" },
-        { id: "election", label: "Election", icon: "🗳️" },
-        { id: "kabaddi", label: "Kabaddi", icon: "🏃" },
+        { id: "cricket", label: "Cricket", icon: <NavIcons.CricketIcon /> },
+        { id: "tennis", label: "Tennis", icon: <NavIcons.TennisIcon /> },
+        { id: "football", label: "Football", icon: <NavIcons.FootballIcon /> },
+        {
+          id: "cricket-casino",
+          label: "Cricket Casino",
+          icon: <NavIcons.LiveCasinoIcon />,
+        },
+        {
+          id: "election",
+          label: "Election",
+          icon: <SportsMenuIcons.ElectionIcon />,
+        },
+        {
+          id: "kabaddi",
+          label: "Kabaddi",
+          icon: <SportsMenuIcons.KabaddiIcon />,
+        },
       ],
     },
     {
       id: "racing",
       label: "Racing",
-      icon: "🏇",
+      icon: <SportsMenuIcons.RacingIcon />,
       subItems: [
-        { id: "horse-racing", label: "Horse Racing", icon: "🏇" },
-        { id: "greyhound", label: "Greyhound", icon: "🐕" },
+        {
+          id: "horse-racing",
+          label: "Horse Racing",
+          icon: <SportsMenuIcons.HorseRacingIcon />,
+        },
+        {
+          id: "greyhound",
+          label: "Greyhound",
+          icon: <SportsMenuIcons.GreyhoundRacingIcon />,
+        },
       ],
     },
   ];
@@ -88,7 +122,7 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
               <SVGIcons.SpadeIcon />
             </button>
 
-            <button className="text-xl font-bold tracking-wide italic text-[#f5a623] cursor-pointer hover:opacity-80 active:scale-95 transition-transform outline-none">
+            <button className="text-xl font-bold tracking-wide italic text-accent-blue cursor-pointer hover:opacity-80 active:scale-95 transition-transform outline-none">
               <Image src={winnaLogo} alt="logo" />
             </button>
 
@@ -100,11 +134,13 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
           {/* Search Box Wrapper */}
           <div className="p-4 pb-2">
             <div className="relative flex items-center bg-[#07131e] rounded-xl px-3 py-2.5 border border-white/5 focus-within:border-white/10">
-              <span className="text-gray-500 mr-2">🔍</span>
+              <span className="text-gray-500 mr-2">
+                <SearchIcon />
+              </span>
               <input
                 type="text"
                 placeholder="Search Game"
-                className="w-full bg-transparent text-sm text-gray-300 placeholder-gray-500 outline-none"
+                className="w-full bg-transparent text-md text-gray-300 placeholder-gray-500 outline-none"
               />
             </div>
           </div>
@@ -114,21 +150,23 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
             <div className="flex bg-[#07131e] p-1 rounded-2xl gap-1">
               <button
                 onClick={() => setActiveTab("casino")}
-                className={`flex flex-1 items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all duration-200 outline-none
+                className={`flex flex-1 items-center justify-center gap-2 py-3 rounded-xl  font-semibold transition-all duration-200 outline-none
                   ${
                     activeTab === "casino"
-                      ? "bg-[#1d2b3a] text-[#f5a623] shadow-md"
+                      ? "bg-[#1d2b3a] text-accent-blue shadow-md"
                       : "text-[#7b8b9a] hover:text-gray-300"
                   }`}
               >
                 <span
                   className={
-                    activeTab === "casino" ? "text-[#f5a623]" : "text-gray-500"
+                    activeTab === "casino"
+                      ? "text-accent-blue"
+                      : "text-gray-500"
                   }
                 >
-                  🎲
+                  <SVGIcons.CasinoIcon />
                 </span>
-                Casino
+                <span className="text-15">Casino</span>
               </button>
 
               <button
@@ -136,18 +174,20 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
                 className={`flex flex-1 items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all duration-200 outline-none
                   ${
                     activeTab === "sports"
-                      ? "bg-[#1d2b3a] text-[#f5a623] shadow-md"
+                      ? "bg-[#1d2b3a] text-accent-blue shadow-md"
                       : "text-[#7b8b9a] hover:text-gray-300"
                   }`}
               >
                 <span
                   className={
-                    activeTab === "sports" ? "text-[#f5a623]" : "text-gray-500"
+                    activeTab === "sports"
+                      ? "text-accent-blue"
+                      : "text-gray-500"
                   }
                 >
-                  🏀
+                  <SportsMenuIcons.CricketIcon />
                 </span>
-                Sports
+                <span className="text-15">Sports</span>
               </button>
             </div>
           </div>
@@ -155,7 +195,7 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
 
         <div className="flex-1 overflow-y-auto px-4 py-2 space-y-2">
           {activeTab === "casino" ? (
-            <div className="flex items-center gap-3 bg-[#0d2236] rounded-xl px-4 py-3 border border-white/5 cursor-pointer text-[#f5a623]">
+            <div className="flex items-center gap-3 bg-[#0d2236] rounded-xl px-4 py-3 border border-white/5 cursor-pointer text-accent-blue">
               <span className="text-sm">📡</span>
               <span className="text-sm font-medium">Casino</span>
             </div>
@@ -172,13 +212,13 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
                       className={`w-full flex items-center justify-between px-4 py-3.5 transition-colors duration-150 outline-none
                         ${
                           isExpanded
-                            ? "bg-[#0d2236] text-[#f5a623]"
+                            ? "bg-[#0d2236] text-accent-blue"
                             : "bg-[#0d1a26] text-white hover:bg-[#132436]"
                         }`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="text-sm">{group.icon}</span>
-                        <span className="text-sm font-semibold tracking-wide">
+                        <span className="text-14 font-semibold tracking-wide">
                           {group.label}
                         </span>
                       </div>
@@ -188,31 +228,36 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
                         <span
                           className={`text-[9px] block transform transition-transform duration-200 ${
                             isExpanded
-                              ? "rotate-180 text-[#f5a623]"
+                              ? "rotate-180 text-accent-blue"
                               : "text-gray-400"
                           }`}
                         >
-                          ▼
+                          <ThemeIcons.ChevronDownIcon />
                         </span>
                       </div>
                     </button>
 
                     {isExpanded && group.subItems && (
                       <div className="bg-[#121b26] pt-1">
-                        {group.subItems.map((sub) => (
-                          <div
-                            key={sub.id}
-                            className="flex items-center gap-4 px-5 py-3 hover:bg-white/5 cursor-pointer transition-colors group"
-                          >
-                            {/* Render modern icon mappings side-by-side with label text */}
-                            <span className="text-[#7b8b9a] group-hover:text-white text-sm transition-colors opacity-80">
-                              {sub.icon || "🔹"}
-                            </span>
-                            <span className="text-sm text-[#ccd6e0] font-medium group-hover:text-white transition-colors">
-                              {sub.label}
-                            </span>
-                          </div>
-                        ))}
+                        {group.subItems.map(
+                          (sub: {
+                            id: string | number;
+                            label: string;
+                            icon?: string;
+                          }) => (
+                            <div
+                              key={sub.id}
+                              className="flex items-center gap-4 px-5 py-3 hover:bg-white/5 cursor-pointer transition-colors group"
+                            >
+                              <span className="text-[#7b8b9a] group-hover:text-white text-sm transition-colors opacity-80">
+                                {sub.icon || "🔹"}
+                              </span>
+                              <span className="text-sm text-[#ccd6e0] font-medium group-hover:text-white transition-colors">
+                                {sub.label}
+                              </span>
+                            </div>
+                          ),
+                        )}
                       </div>
                     )}
                   </div>
@@ -222,8 +267,10 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
           )}
 
           <div className="flex-none p-4 pb-[88px] border-t border-white/5 bg-[#121b26]">
-            <button className="w-full flex items-center justify-center gap-2 bg-accent-blue hover:bg-accent-blue-hover text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-colors text-sm outline-none">
-              <span>🎧</span>
+            <button className="w-full flex items-center justify-center gap-2 bg-accent-blue hover:bg-accent-blue-hover text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-colors text-15 outline-none">
+              <span>
+                <ThemeIcons.SupportIcon />
+              </span>
               Live Support
             </button>
           </div>
