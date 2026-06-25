@@ -16,13 +16,13 @@ export default function StatementModal({
 
   return (
 
-   <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
+    <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
       {/* Header */}
       <div className="mb-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <FileText className="h-7 w-7 text-white" />
 
-          <h2 className="text-[24px] font-semibold text-white">
+          <h2 className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold">
             Account Statement
           </h2>
         </div>
@@ -36,8 +36,8 @@ export default function StatementModal({
         </button>
       </div>
 
-      {/* Filters */}
-      <div className="mb-6 flex flex-wrap items-center gap-4">
+
+      <div className="mb-6 flex flex-col md:flex-row md:flex-wrap gap-4 items-start">
         {/* From Date */}
         <div className="flex items-center gap-3">
           <label className="text-[13px] text-typography-secondary">
@@ -68,13 +68,13 @@ export default function StatementModal({
         </div>
 
         {/* Search */}
-        <div className="ml-auto flex items-center gap-3">
+        <div className="flex items-center gap-3 md:ml-auto w-full md:w-auto">
           <input
             type="text"
             placeholder="Search..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="h-[36px] w-[100px] rounded-[8px]  text-[14px] border-none bg-body-level-8 px-4 text-white outline-none"
+            className="h-[36px] w-[100%] md:w-[100px] rounded-[8px] bg-body-level-8 px-4 text-white outline-none"
           />
 
           <button className="h-[36px] w-[88px]  flex   justify-center items-center  rounded-[8px] text-[14px] bg-accent-blue px-7 text-lg font-medium text-white hover:bg-accent-blue">
@@ -88,7 +88,7 @@ export default function StatementModal({
         <p className="text-[18px] text-white">
           No records to display
         </p>
-        </div>
+      </div>
     </div>
 
   );

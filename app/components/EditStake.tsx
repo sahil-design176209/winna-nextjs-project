@@ -37,7 +37,7 @@ export default function EditstakeModal({
     <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
-        <h2 className="text-[24px] font-semibold text-white">
+        <h2 className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold">
           Change Stake Button
         </h2>
 

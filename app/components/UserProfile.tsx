@@ -22,10 +22,10 @@ export default function UserProfileModal({
   ];
 
   return (
-    <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-4 md:p-5">
+    <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="flex items-center gap-2 md:gap-3 text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold">
+          <h2 className="flex items-center gap-2 text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold">
           <User size={24} />
           User Profile
         </h2>
@@ -38,47 +38,47 @@ export default function UserProfileModal({
         </button>
       </div>
 
-      {/* Tabs */}
-      <div className="flex flex-wrap gap-3 justify-center mb-6">
-        <button
-          onClick={() => setActiveTab("details")}
-          className={`h-[40px] px-8 rounded-[8px] border text-[14px] transition-all ${activeTab === "details"
-            ? "bg-body-level-8 border-body-level-8 text-accent-blue"
-            : "border-body-level-9 text-typography-secondary"
-            }`}
-        >
-          Details
-        </button>
+      <div className="w-full overflow-x-auto scrollbar-hide mb-6">
+        <div className="flex justify-center gap-2 md:gap-3 min-w-max mx-auto">
+          <button
+            onClick={() => setActiveTab("details")}
+            className={`h-[40px] min-w-fit whitespace-nowrap px-4 md:px-8 rounded-[8px] border text-[12px] md:text-[14px] transition-all flex-shrink-0 ${activeTab === "details"
+              ? "bg-body-level-8 border-body-level-8 text-accent-blue"
+              : "border-body-level-9 text-typography-secondary"
+              }`}
+          >
+            Details
+          </button>
 
-        <button
-          onClick={() => setActiveTab("edit")}
-          className={`h-[40px] px-8 rounded-[8px] border text-[14px] transition-all ${activeTab === "edit"
-            ? "bg-body-level-8 border-[#2c3d58] text-accent-blue"
-            : "border-body-level-9 text-typography-secondary"
-            }`}
-        >
-          Edit Name
-        </button>
+          <button
+            onClick={() => setActiveTab("edit")}
+            className={`h-[40px] min-w-fit whitespace-nowrap px-4 md:px-8 rounded-[8px] border text-[12px] md:text-[14px] transition-all flex-shrink-0 ${activeTab === "edit"
+              ? "bg-body-level-8 border-[#2c3d58] text-accent-blue"
+              : "border-body-level-9 text-typography-secondary"
+              }`}
+          >
+            Edit Name
+          </button>
 
-        <button
-          onClick={() => setActiveTab("password")}
-          className={`h-[40px] px-8 rounded-[8px] border text-[14px] transition-all ${activeTab === "password"
-            ? "bg-body-level-8-[#2c3d58] border-[#2c3d58] text-accent-blue"
-            : "border-body-level-9 text-typography-secondary"
-            }`}
-        >
-          Change Password
-        </button>
+          <button
+            onClick={() => setActiveTab("password")}
+            className={`h-[40px] min-w-fit whitespace-nowrap px-4 md:px-8 rounded-[8px] border text-[12px] md:text-[14px] transition-all flex-shrink-0 ${activeTab === "password"
+              ? "bg-body-level-8 border-[#2c3d58] text-accent-blue"
+              : "border-body-level-9 text-typography-secondary"
+              }`}
+          >
+            Change Password
+          </button>
+        </div>
       </div>
 
-      {/* Details Tab */}
       {activeTab === "details" && (
         <div className="bg-body-level-7 rounded-xl p-5">
           <h3 className="text-white text-[20px] font-semibold mb-5">
             Personal Data
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
             {profileFields.map(({ label, value }) => (
               <div key={label}>
                 <label className="block text-[#9db1c5] mb-1 text-[14px]">
@@ -91,6 +91,7 @@ export default function UserProfileModal({
               </div>
             ))}
           </div>
+
         </div>
       )}
 
@@ -101,7 +102,7 @@ export default function UserProfileModal({
             Edit Name
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
             <div>
               <label className="block text-[#9db1c5] mb-2 text-[14px]">
                 First Name
@@ -134,14 +135,15 @@ export default function UserProfileModal({
       )}
 
       {/* Password Tab */}
-      <div className="max-h-[320px] overflow-y-auto scrollbar-hide pr-1">
-        {activeTab === "password" && (
-          <div className="bg-body-level-7 rounded-xl p-5">e
+
+      {activeTab === "password" && (
+        <div className="max-h-[60vh] md:max-h-[320px] overflow-y-auto scrollbar-hide pr-1">
+          <div className="bg-body-level-7 rounded-xl p-5">
             <h3 className="text-white text-[20px] font-semibold mb-6">
               Change Password
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-5 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
               <div>
                 <label className="block text-[#9db1c5] mb-2  text-[14px] ">
                   Old Password
@@ -200,8 +202,8 @@ export default function UserProfileModal({
             <button className="w-full h-[40px]  text-[14px] rounded-[8px] bg-accent-blue text-white font-semibold">
               Reset Password
             </button>
-          </div>
-        )}
-      </div></div>
+          </div></div>
+      )}
+    </div>
   );
 }

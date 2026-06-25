@@ -16,7 +16,7 @@ export default function WithdrawalModal({
           <div className="flex items-center gap-3">
             <Shield className="h-7 w-7 text-white" />
 
-            <h2 className="text-[22px] font-semibold text-white">
+            <h2 className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold">
               Withdraw
             </h2>
           </div>

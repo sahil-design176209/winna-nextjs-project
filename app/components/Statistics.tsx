@@ -53,7 +53,7 @@ export default function StatisticsModal({
   <div className="w-full max-w-[718px] mx-auto bg-profile-model-bg border border-profile-model-bg rounded-2xl p-3 sm:p-4 md:p-5">
 
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="flex items-center gap-3 text-[24px] font-semibold text-white">
+          <h2 className="flex items-center gap-3 text-white text-[18px] sm:text-[20px] md:text-[24px] font-semibold text-white">
             📊 Statistics
           </h2>
 

@@ -45,7 +45,7 @@ export function SignupModal({
   }
 
   return (
-    <div className="fixed inset-0 z-[400] bg-[#01090e]/80 flex items-center justify-center px-4 py-6">
+  <div className="fixed inset-0 z-[400] bg-[#01090e]/80 flex items-start md:items-center justify-center px-3 md:px-4 py-6 overflow-y-auto">
       <div className="absolute inset-0" aria-hidden="true" onClick={onClose} />
       <div className="relative z-10 flex w-full max-w-5xl overflow-hidden rounded-[12px] border border-body-level-2 bg-[#061116] shadow-2xl lg:flex-row">
         <div className="hidden w-full lg:flex lg:w-1/2 bg-[#08131b]">
