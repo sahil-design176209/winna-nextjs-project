@@ -57,7 +57,11 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
       label: "All Sports",
       icon: <NavIcons.FootballIcon />,
       subItems: [
-        { id: "cricket", label: "Cricket", icon: <NavIcons.CricketIcon /> },
+        {
+          id: "cricket",
+          label: "Cricket",
+          icon: <SportsMenuIcons.CricketIcon />,
+        },
         { id: "tennis", label: "Tennis", icon: <NavIcons.TennisIcon /> },
         { id: "football", label: "Football", icon: <NavIcons.FootballIcon /> },
         {
