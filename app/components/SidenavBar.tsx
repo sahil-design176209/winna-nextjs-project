@@ -147,10 +147,10 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
 
           {/* Segment Toggle Buttons */}
           <div className="p-4 pt-2">
-            <div className="flex bg-[#07131e] p-1 rounded-2xl gap-1">
+            <div className="flex bg-[#07131e] p-1 rounded-full gap-1">
               <button
                 onClick={() => setActiveTab("casino")}
-                className={`flex flex-1 items-center justify-center gap-2 py-3 rounded-xl  font-semibold transition-all duration-200 outline-none
+                className={`flex flex-1 items-center justify-center gap-2 py-3 rounded-full  font-semibold transition-all duration-200 outline-none
                   ${
                     activeTab === "casino"
                       ? "bg-[#1d2b3a] text-accent-blue shadow-md"
@@ -171,7 +171,7 @@ const SidenavBar: React.FC<SidenavBarProps> = ({ isOpen, onClose }) => {
 
               <button
                 onClick={() => setActiveTab("sports")}
-                className={`flex flex-1 items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all duration-200 outline-none
+                className={`flex flex-1 items-center justify-center gap-2 py-3 rounded-full text-sm font-semibold transition-all duration-200 outline-none
                   ${
                     activeTab === "sports"
                       ? "bg-[#1d2b3a] text-accent-blue shadow-md"
