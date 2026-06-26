@@ -14,7 +14,8 @@ interface NavbarProps {
 
 const Navbar = ({ isPromotionMenuOpen, onTogglePromotions }: NavbarProps) => {
   const pathname = usePathname() ?? "";
-  const showSportsNavbar = pathname.startsWith("/sport");
+  const showSportsNavbar =
+    pathname.startsWith("/sport") || pathname.startsWith("/racing");
 
   return (
     <nav
