@@ -2,7 +2,13 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
-import { NavIcons, SportsIcon, SportsMenuIcons, ThemeIcons } from "./SvgIcons";
+import {
+  NavIcons,
+  SportsIcon,
+  SportsMenuIcons,
+  SVGIcons,
+  ThemeIcons,
+} from "./SvgIcons";
 import SportsNavDropdown from "./Sportsnavdropdown";
 
 // Types for navigation items
@@ -60,6 +66,24 @@ export default function SportsNavbar() {
       hasSubBadge: true,
       route: "/racing?type=greyhound",
     },
+    {
+      id: "casino",
+      icon: <SVGIcons.LiveCasinoIcon />,
+      label: "casino",
+      hasBadge: true,
+    },
+    {
+      id: "election",
+      icon: <SportsMenuIcons.ElectionIcon />,
+      label: "elction",
+      hasBadge: true,
+    },
+    {
+      id: "kabaddi",
+      icon: <SportsMenuIcons.KabaddiIcon />,
+      label: "kabaddi",
+      hasBadge: true,
+    },
   ];
 
   return (
@@ -89,7 +113,8 @@ export default function SportsNavbar() {
         <div className="h-6 w-[1px] bg-body-level-5 shrink-0" />
 
         <div className="flex items-center space-x-[18px]">
-          {sportsItems.map((item) => (
+          {/* Replace your existing sportsItems.map block with this: */}
+          {sportsItems.map((item, index) => (
             <button
               key={item.id}
               onClick={() => {
@@ -97,14 +122,16 @@ export default function SportsNavbar() {
                   router.push(item.route);
                 }
               }}
-              className="flex cursor-pointer items-center gap-2 text-gray-400 hover:text-white transition-colors"
+              className={`items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer ${
+                index < 2 ? "flex" : "hidden lg:flex"
+              }`}
             >
               {item.icon}
             </button>
           ))}
 
           <button
-            className="text-white"
+            className="text-white cursor-pointer"
             aria-expanded={isSportsMenuOpen}
             onClick={() => setIsSportsMenuOpen(!isSportsMenuOpen)}
           >

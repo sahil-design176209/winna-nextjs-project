@@ -314,112 +314,62 @@ export const SportsMenuIcons = {
   // 3. Football Submenu Icon
   FootballIcon: ({ className = "" }) => (
     <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
-      width="100%"
-      height="100%"
     >
-      <circle
-        cx="256"
-        cy="256"
-        r="240"
-        fill="#E0E0E0"
-        stroke="#000000"
-        stroke-width="12"
-      />
-
-      <polygon
-        points="256,128 358,162 390,264 288,328 152,288"
-        fill="#1A1A1A"
-        stroke="#000000"
-        stroke-width="4"
-      />
-
-      <polygon
-        points="256,128 152,288 88,198 128,98 212,82"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-      <polygon
-        points="256,128 212,82 298,80 358,162"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-
-      <polygon
-        points="358,162 390,264 480,228 460,122 398,108"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-      <polygon
-        points="390,264 288,328 372,402 438,348 480,228"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-
-      <polygon
-        points="288,328 152,288 122,398 222,434 312,414"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-      <polygon
-        points="288,328 312,414 412,398 438,348 372,402"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-
-      <polygon
-        points="152,288 88,198 52,108 82,62 168,102"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-      <polygon
-        points="152,288 168,102 232,102 122,398 32,348 52,108"
-        fill="#FFFFFF"
-        stroke="#000000"
-        stroke-width="4"
-      />
-
-      <circle
-        cx="256"
-        cy="256"
-        r="240"
-        fill="none"
-        stroke="#FFFFFF"
-        stroke-width="8"
-        stroke-dasharray="120,40"
-        transform="rotate(-45 256 256)"
-      />
+      <path
+        d="M4.51562 16C4.51562 19.1353 5.76945 21.9778 7.80615 24.0535C8.12199 23.2957 8.57016 22.5457 9.10764 21.8336C10.219 20.3611 11.8029 18.931 13.7421 17.7657C14.702 17.1889 15.7541 16.6741 16.8854 16.2496C16.6144 15.5395 16.3241 14.8603 16.0244 14.2106C12.3167 15.3973 8.05505 16.0669 4.52311 15.547C4.51731 15.6972 4.51563 15.8483 4.51562 16Z"
+        fill="currentColor"
+      ></path>
+      <path
+        d="M10.3704 5.97868C7.71174 7.47985 5.71086 10.0075 4.90495 13.0202C7.78062 13.4417 11.4457 12.9427 14.8452 11.9034C13.3118 9.18429 11.6475 7.1797 10.3704 5.97868Z"
+        fill="currentColor"
+      ></path>
+      <path
+        d="M16.0156 4.5C14.9433 4.5 13.9066 4.64681 12.9235 4.92052C14.2916 6.36812 15.8621 8.42894 17.2909 11.0424C18.99 10.3616 20.4747 9.58218 21.5822 8.78754C22.2393 8.31604 22.7297 7.86435 23.0546 7.45736C23.1575 7.32845 23.2351 7.20862 23.298 7.10297C21.314 5.47683 18.7807 4.5 16.0156 4.5Z"
+        fill="currentColor"
+      ></path>
+      <path
+        d="M25.0524 9.05084C24.5364 9.69745 23.8511 10.305 23.0721 10.8639C21.8063 11.7722 20.2008 12.6134 18.4352 13.3346C18.7507 14.0294 19.0524 14.7547 19.3361 15.5096C21.8081 14.9371 24.5622 14.8079 27.4957 15.3511C27.3624 12.9532 26.4954 10.7534 25.1136 8.96848C25.0926 8.99557 25.0737 9.02414 25.0524 9.05084Z"
+        fill="currentColor"
+      ></path>
+      <path
+        d="M27.3522 17.9254C24.7577 17.3982 22.3289 17.4747 20.1522 17.9454C20.8775 20.3995 21.3906 23.1144 21.5697 26.0687C24.5785 24.4053 26.7605 21.4353 27.3522 17.9254Z"
+        fill="currentColor"
+      ></path>
+      <path
+        d="M17.7027 18.6741C16.751 19.0368 15.8662 19.4715 15.0585 19.9569C13.3732 20.9697 12.0427 22.185 11.1466 23.3722C10.4671 24.2725 10.0821 25.094 9.92871 25.7568C11.6938 26.8606 13.7782 27.5 16.0156 27.5C17.0722 27.5 18.0932 27.3552 19.0628 27.0895C18.9519 23.9987 18.4442 21.1847 17.7027 18.6741Z"
+        fill="currentColor"
+      ></path>
     </svg>
   ),
 
   // 4. Cricket Casino Submenu Icon
   CricketCasinoIcon: ({ className = "" }) => (
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="2.5" />
-
+      <circle
+        cx="16"
+        cy="16"
+        r="10"
+        stroke="currentColor"
+        stroke-width="2.5"
+      ></circle>
       <path
         d="M12 8C15 12 15 20 12 24"
         stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-
+        stroke-width="2"
+        stroke-linecap="round"
+      ></path>
       <path
         d="M20 8C17 12 17 20 20 24"
         stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-
-      <circle cx="16" cy="16" r="4" fill="currentColor" />
+        stroke-width="2"
+        stroke-linecap="round"
+      ></path>
+      <circle cx="16" cy="16" r="4" fill="currentColor"></circle>
     </svg>
   ),
 

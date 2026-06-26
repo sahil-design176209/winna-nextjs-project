@@ -47,7 +47,7 @@ export default function SportRacingTabs() {
   const currentTrack = activeSport === "greyhound" ? "Richmond" : "Flemington";
 
   return (
-    <div className="min-h-screen text-white p-6 font-sans">
+    <div className="min-h-screen text-white  font-sans">
       <div className="flex items-center gap-2 mb-4">
         <span>{currentSvg}</span>
         <h1 className="text-2xl font-bold tracking-wide">{currentTitle}</h1>
@@ -83,7 +83,7 @@ export default function SportRacingTabs() {
         </button>
       </div>
 
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 mb-6 flex-wrap">
         <button className="flex items-center gap-2 bg-accent-blue text-white font-bold px-4 py-2.5 rounded-md text-14">
           Today
           <span className="bg-accent-blue-hover text-white px-1.5 py-0.5 rounded-full text-[10px] font-black">
