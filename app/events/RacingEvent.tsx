@@ -137,7 +137,7 @@ const RacingEvent = () => {
           {currentRunners.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-center justify-between rounded-lg bg-body-level-9 px-2 py-2"
+              className="flex items-start justify-between rounded-lg bg-body-level-9 px-2 py-2"
             >
               <div className="start-tag">
                 <span className="truncate text-[12px] font-bold text-typography-gray">

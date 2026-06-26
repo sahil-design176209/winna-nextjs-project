@@ -131,7 +131,7 @@ export default function SportRacingTabs() {
           {currentRunners.map((runner) => (
             <div
               key={runner.id}
-              className="flex justify-between items-center rounded-lg hover:border-zinc-700 transition duration-150"
+              className="flex justify-between items-center rounded-lg hover:border-zinc-700 transition duration-150 mb-5"
             >
               <span className="text-xs font-semibold text-zinc-200">
                 {runner.name}
