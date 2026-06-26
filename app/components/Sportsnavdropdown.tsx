@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import { NavIcons, SportsMenuIcons } from "./SvgIcons";
+import { useRouter } from "next/navigation";
+
+interface racingData {
+  name: string;
+  count: number;
+  icon?: React.ReactNode;
+  route?: string;
+  hasBadge?: boolean;
+  isCustomText?: boolean;
+  text?: string;
+  hasSubBadge?: boolean;
+}
 
 const SportsNavDropdown = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("Sports");
 
   const sportsData = [
@@ -22,11 +35,15 @@ const SportsNavDropdown = () => {
       name: "Horse Racing",
       count: 5,
       icon: <SportsMenuIcons.HorseRacingIcon />,
+      hasSubBadge: true,
+      route: "/racing?type=horse",
     },
     {
       name: "Greyhounds",
       count: 14,
       icon: <SportsMenuIcons.GreyhoundRacingIcon />,
+      hasSubBadge: true,
+      route: "/racing?type=greyhound",
     },
   ];
 
