@@ -15,9 +15,9 @@ const RacingEvent = () => {
   };
 
   const greyhoundRunners = [
-    { id: 1, name: "1. No Spark Left", odd: "1.4" },
-    { id: 2, name: "2. Go Forward Kenny", odd: "1.4" },
-    { id: 3, name: "3. Midnight Arrow", odd: "2.04" },
+    { id: 1, name: " No Spark Left", odd: "1.4" },
+    { id: 2, name: " Go Forward Kenny", odd: "1.4" },
+    { id: 3, name: " Midnight Arrow", odd: "2.04" },
   ];
 
   const horseRunners = [
