@@ -7,17 +7,17 @@ export default function SportRacingTabs() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // 1. Get active sport from URL parameter (?type=), fallback to "horse" or "greyhound"
-  // If the top navigation routes to /racing or /racing?type=horse, it defaults perfectly
   const activeSport =
     searchParams.get("type") === "greyhound" ? "greyhound" : "horse";
 
-  // Setter function to update the URL when tabs inside this page are clicked
   const setActiveSport = (sportType: "horse" | "greyhound") => {
     router.push(`/racing?type=${sportType}`);
   };
 
-  // Mock data matching the respective tabs while retaining the exact UI structure
+  const handleGoToAllRunners = () => {
+    router.push(`/events?type=${activeSport}`);
+  };
+
   const greyhoundRunners = [
     { id: 1, name: "1. No Spark Left", time: "02:27 PM" },
     { id: 2, name: "2. Go Forward Kenny", time: "02:27 PM" },
@@ -48,13 +48,11 @@ export default function SportRacingTabs() {
 
   return (
     <div className="min-h-screen text-white p-6 font-sans">
-      {/* Title Header with Icon */}
       <div className="flex items-center gap-2 mb-4">
         <span>{currentSvg}</span>
         <h1 className="text-2xl font-bold tracking-wide">{currentTitle}</h1>
       </div>
 
-      {/* Main Tabs Selection Row */}
       <div className="flex items-center gap-3 mb-6">
         <button
           onClick={() => setActiveSport("greyhound")}
@@ -85,7 +83,6 @@ export default function SportRacingTabs() {
         </button>
       </div>
 
-      {/* Filter Sub-Tabs Day Row */}
       <div className="flex items-center gap-2 mb-6">
         <button className="flex items-center gap-2 bg-accent-blue text-white font-bold px-4 py-2.5 rounded-md text-14">
           Today
@@ -107,7 +104,6 @@ export default function SportRacingTabs() {
         </button>
       </div>
 
-      {/* Dynamic Event Track Area Header */}
       <div className="flex items-center gap-2 mb-3">
         <svg
           className="w-4 h-4 text-zinc-400"
@@ -125,15 +121,12 @@ export default function SportRacingTabs() {
         <h2 className="text-lg font-bold tracking-wide">{currentTrack}</h2>
       </div>
 
-      {/* Runner Table Block Element Container */}
       <div className="max-w-sm bg-[#131c2e]/90 border border-zinc-800/60 rounded-xl p-2 shadow-xl backdrop-blur-md">
-        {/* Table Column Headings */}
         <div className="flex justify-between items-center text-[11px] font-semibold text-zinc-400 tracking-wider mb-3 px-1">
           <span>Runner</span>
           <span>Time</span>
         </div>
 
-        {/* Dynamic List Render based on URL state */}
         <div className="space-y-2 mb-4">
           {currentRunners.map((runner) => (
             <div
@@ -150,8 +143,10 @@ export default function SportRacingTabs() {
           ))}
         </div>
 
-        {/* Go To All Runners Anchor Trigger */}
-        <button className="w-full bg-body-level-2 text-white rounded-lg py-2.5 text-center text-[10px] font-bold tracking-wider transition uppercase flex items-center justify-center gap-1.5">
+        <button
+          onClick={handleGoToAllRunners}
+          className="w-full bg-body-level-2 text-white rounded-lg py-2.5 text-center text-[10px] font-bold tracking-wider transition uppercase flex items-center justify-center gap-1.5"
+        >
           Go To All Runners
           <span className="text-[8px] text-white opacity-75 rotate-270">
             <ThemeIcons.ChevronDownIcon />
