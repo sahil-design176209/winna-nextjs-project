@@ -35,7 +35,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={poppins.variable}>
-      <body className="antialiased min-h-screen flex flex-col relative bg-[#07131e]">
+      <body className="antialiased min-h-screen flex flex-col relative bg-[#07131e] ">
         <Header
           isProfileMenuOpen={activeMenu === "profile"}
           onToggleProfile={() => toggleMenu("profile")}
@@ -47,7 +47,7 @@ export default function RootLayout({
         />
 
         {/* Added extra bottom padding (pb-24) to prevent bottom nav overlaying content on mobile */}
-        <main className="layout-container mx-auto flex-grow h-full w-full text-white p-5 pb-24 mt-[60px] lg:p-0 lg:py-2 lg:pb-0">
+        <main className="layout-container mx-auto flex-grow h-full w-full text-white p- pb-24 mt-[60px] lg:p-0 lg:py-2 lg:pb-0 w-full max-w-[1312px]">
           {children}
         </main>
 

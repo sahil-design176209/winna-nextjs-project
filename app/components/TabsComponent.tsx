@@ -30,14 +30,14 @@ const TabsComponent = ({
                 key={tab.key}
                 type="button"
                 onClick={() => onTabChange(tab.key)}
-                className={`flex h-10 items-center gap-2 rounded-lg border px-3 text-16 font-medium capitalize transition-colors ${
+                className={`flex h-10 items-center gap-2 rounded-lg border px-2 text-16 font-medium capitalize transition-colors ${
                   isActive
                     ? "border-accent-blue bg-accent-blue/10 text-accent-blue"
-                    : "border-body-level-4 bg-body-level-3 text-typography-secondary hover:text-accent-blue"
+                    : "border-body-level-4 bg-body-level-7 text-typography-secondary hover:text-accent-blue"
                 }`}
               >
                 {tab.icon}
-                {tab.label}
+              <span className="text-[14px]"> {tab.label}</span> 
               </button>
             );
           })}
