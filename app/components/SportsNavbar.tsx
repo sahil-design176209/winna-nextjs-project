@@ -160,7 +160,7 @@ export default function SportsNavbar() {
           className="p-1 hover:text-white transition-colors"
           aria-label="Open sports search"
         >
-          <ThemeIcons.SearchIcon />
+          <ThemeIcons.SearchIcon  className="-rotate-[180]"/>
         </Link>
       </div>
     </div>

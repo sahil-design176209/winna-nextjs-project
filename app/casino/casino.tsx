@@ -3,85 +3,102 @@
 import { Search, ChevronDown, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
+
+
+
 const games = [
   {
+    id: 1,
     name: "Winna Trillion",
     provider: "BGaming",
     image:
       "https://winna.imgix.net/game-image/1765979909535/DICE%20v2%20%282%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 2,
     name: "Le Winna",
     provider: "Hacksaw Gaming",
     image:
       "https://winna.imgix.net/game-image/1765979929769/KENO%20v1%20%281%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 3,
     name: "Sweet Bonanza",
     provider: "Pragmatic Play",
     image:
       "https://winna.imgix.net/game-image/1765979896635/LIMBO%20v5%20%281%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 4,
     name: "Money Train 4",
     provider: "Relax Gaming",
     image:
       "https://winna.imgix.net/game-image/1770982234729/Blackjack%20v2.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 5,
     name: "Swoll",
     provider: "Shady Lady",
     image:
       "https://winna.imgix.net/game-image/1765979860581/PLINKO%20v6%20%283%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 6,
     name: "Duck Hunters",
     provider: "Nolimit City",
     image:
       "https://winna.imgix.net/game-image/1765979887709/MINES%20v2%20%282%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 7,
     name: "Le Fisherman",
     provider: "Hacksaw Gaming",
     image:
       "https://winna.imgix.net/game-image/1770982246315/HILO%20v2.avif?format=auto&auto=format&dpr=1.6&w=180",
   }, {
+    id: 8,
     name: "Winna Trillion",
     provider: "BGaming",
     image:
       "https://winna.imgix.net/game-image/1765979909535/DICE%20v2%20%282%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 9,
     name: "Le Winna",
     provider: "Hacksaw Gaming",
     image:
       "https://winna.imgix.net/game-image/1765979929769/KENO%20v1%20%281%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 10,
     name: "Sweet Bonanza",
     provider: "Pragmatic Play",
     image:
       "https://winna.imgix.net/game-image/1765979896635/LIMBO%20v5%20%281%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 11,
     name: "Money Train 4",
     provider: "Relax Gaming",
     image:
       "https://winna.imgix.net/game-image/1770982234729/Blackjack%20v2.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 12,
     name: "Swoll",
     provider: "Shady Lady",
     image:
       "https://winna.imgix.net/game-image/1765979860581/PLINKO%20v6%20%283%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 13,
     name: "Duck Hunters",
     provider: "Nolimit City",
     image:
       "https://winna.imgix.net/game-image/1765979887709/MINES%20v2%20%282%29.avif?format=auto&auto=format&dpr=1.6&w=180",
   },
   {
+    id: 11,
     name: "Le Fisherman",
     provider: "Hacksaw Gaming",
     image:
@@ -239,7 +256,7 @@ export default function Casino() {
               onClick={() => setShowFilter(!showFilter)}
             >
               <div className="casino-fillter-drop-down active bg-body-level-8 rounded-[8px] px-3 py-2 flex items-center" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 5.5H20.5M6.5 11.5H17.5M9.5 17.5H14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 5.5H20.5M6.5 11.5H17.5M9.5 17.5H14.5" stroke="currentColor" ></path></svg></div>
             </div>
 
 
@@ -333,9 +350,9 @@ export default function Casino() {
 
         {/* Games Grid */}
         <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-3">
-          {games.map((game) => (
+          {games.map((game, index) => (
             <div
-              key={game.name}
+              key={`${game.name}-${index}`}
               className="group cursor-pointer"
             >
               <div className="overflow-hidden rounded-2xl transition-transform duration-300 ease-out hover:-translate-y-2.5   ">

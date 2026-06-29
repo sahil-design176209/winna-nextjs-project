@@ -26,7 +26,7 @@ body {
   --body-level-8: #0c1d25;
   --body-level-9: #16272f;
 
-  --body-levl-10: #567484;
+  --body-level-10: #567484;
   /* Accent */
   --accent-blue: #10abe1;
   --accent-blue-hover: #0b7fa9;
@@ -36,6 +36,8 @@ body {
   /* Typography */
   --typography-primary: #ffffff;
   --typography-secondary: #567484;
+  --typography-gray: #ffffff80;
+    --typography-dark-gray: #ffffff1a;
   --profile-model-bg: #03121a;
   /* Status */
   --green: #41bc2c;
@@ -68,8 +70,9 @@ body {
   --color-body-level-0: var(--body-level-0);
   --color-body-level-10: var(--body-level-10);
   --color-cs-text-color: var(--cs-text-color);
+  --color-typography-gray: var(--typography-gray);
   --color-profile-model-bg: var(--profile-model-bg);
-
+  --color-typography-dark-gray: var(--typography-dark-gray);
   --color-body-level-9: var(--body-level-9);
   --color-body-level-8: var(--body-level-8);
   --color-body-level-6: var(--body-level-6);
@@ -110,7 +113,7 @@ body {
 .layout-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1264px;
+  max-width: 1312px;
 }
 
 @media (min-width: 768px) {
@@ -131,7 +134,7 @@ body {
   /* .lg\:layout-container {
     margin-left: auto;
     margin-right: auto;
-   
+    max-width: 1312px;
     padding-left: var(--layout-px);
     padding-right: var(--layout-px);
   } */
@@ -236,11 +239,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="date"] {
   color-scheme: dark;
 }
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
