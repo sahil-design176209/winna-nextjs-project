@@ -14,7 +14,6 @@ const RacingEvent = () => {
   const activeSport =
     searchParams.get("type") === "greyhound" ? "greyhound" : "horse";
 
-  // Kept exactly as your original functionality requested
   const handleTabClick = (sportType: "horse" | "greyhound") => {
     router.push(`/racing?type=${sportType}`);
   };
@@ -39,14 +38,11 @@ const RacingEvent = () => {
   const mainTitleText =
     activeSport === "greyhound" ? "Richmond Dogs" : "ZIMBABWE";
 
-  // Selects correct background image automatically based on the URL query param (?type=horse or ?type=greyhound)
   const currentBackgroundImage =
     activeSport === "greyhound" ? greyHound : horsey;
 
   return (
-    /* Added 'relative isolate' layout hooks so background graphics sit strictly underneath text elements */
     <div className="mb-[30px] text-white font-sans relative isolate">
-      {/* Background Graphic Dynamic Render Block */}
       <div className="absolute top-[-15px] left-1/2 z-[2] w-full max-w-[60%] -translate-x-1/2 h-auto bg-top bg-no-repeat opacity-20 transition-opacity duration-1000 ease-in ">
         <Image
           src={currentBackgroundImage}
@@ -88,7 +84,6 @@ const RacingEvent = () => {
         </button>
       </div>
 
-      {/* Top Main Countdown Card */}
       <div className="rounded-[8px] bg-body-level-7 mb-5">
         <div className="px-3 py-4 flex items-center gap-2 text-sm text-cs-text-color">
           <span className="text-[12px]">Sunday</span>
@@ -116,7 +111,6 @@ const RacingEvent = () => {
             </h3>
           </div>
 
-          {/* Countdown */}
           <div className="hidden md:flex gap-5 items-center">
             {[
               { value: "2", label: "Days" },
