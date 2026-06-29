@@ -59,7 +59,7 @@ export default function SportRacingTabs() {
         <h1 className="text-2xl font-bold tracking-wide">{currentTitle}</h1>
       </div>
 
-      <div className="absolute top-[-15px] left-1/2 z-[-1] w-full max-w-[60%] -translate-x-1/2 h-auto bg-top bg-no-repeat opacity-20 transition-opacity duration-1000 ease-in">
+      <div className="absolute top-[-15px] left-1/2 z-[-1] w-full   md:max-w-[60%] -translate-x-1/2 h-auto bg-top bg-no-repeat opacity-20 transition-opacity duration-1000 ease-in">
         <Image
           src={currentBackgroundImage}
           alt={`${currentTitle} background`}
