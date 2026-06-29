@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-
-const Betslip = () => {
+interface BetSlipProps {
+  selectedBet: {
+    team: string;
+    odd: string;
+  } | null;
+}
+const Betslip = ({ selectedBet }: BetSlipProps) => {
   // State to manage whether the entire panel is collapsed or open
   const [isCollapsed, setIsCollapsed] = useState(true);
 
@@ -54,9 +59,8 @@ const Betslip = () => {
               fill="#fff"
               xmlns="http://www.w3.org/2000/svg"
               // Flips the arrow upside-down smoothly when collapsed
-              className={`transform transition-transform duration-200 ${
-                isCollapsed ? "rotate-180" : "rotate-0"
-              }`}
+              className={`transform transition-transform duration-200 ${isCollapsed ? "rotate-180" : "rotate-0"
+                }`}
             >
               <path d="M8.7542 11.1529C8.35634 11.6157 7.64366 11.6157 7.2458 11.1529L4.24545 7.66298C3.68586 7.01207 4.14485 6 4.99964 6L11.0004 6C11.8551 6 12.3141 7.01207 11.7546 7.66298L8.7542 11.1529Z"></path>
             </svg>
@@ -64,14 +68,18 @@ const Betslip = () => {
         </div>
       </div>
 
-      {/* DYNAMIC BODY CONTENT (Conditionally hidden when collapsed) */}
+
       {!isCollapsed && (
         <div className="p-5 min-h-[140px] flex flex-col justify-center transition-all">
           {!isOneClickBet ? (
             /* SCREENSHOT 2: Default Empty Betslip State */
             <div className="flex items-center gap-4">
               {/* Ticket Icon Container */}
-              <div className="flex-shrink-0">
+             
+
+              {!selectedBet ? (
+                <div className="flex flex-col gap-0.5">
+                   <div className="flex-shrink-0">
                 <svg
                   width="54"
                   height="54"
@@ -98,18 +106,74 @@ const Betslip = () => {
                 </svg>
               </div>
 
-              {/* Text Information */}
-              <div className="flex flex-col gap-0.5">
-                <h3 className="font-bold text-[17px] text-white tracking-wide">
-                  Place your bets
-                </h3>
-                <p className="text-sm text-gray-400 font-medium leading-tight">
-                  Your selections will appear in this area
-                </p>
-              </div>
+                  <h3 className="font-bold text-[17px] text-white">
+                    Place your bets
+                  </h3>
+
+                  <p className="text-sm text-gray-400">
+                    Your selections will appear in this area
+                  </p>
+                </div>
+              ) : (
+                <div className="w-full max-w-[340px] rounded-lg bg-[#1b2433] text-white overflow-hidden border border-[#2b3647]">
+                  {/* Selection */}
+                  <div className="border-b border-[#2b3647] p-4">
+                    <h3 className="text-[#F5A623] font-semibold text-[16px]">
+                      Zimbabwe
+                    </h3>
+
+                    <p className="text-gray-400 text-sm mt-1">
+                      Match Odds • Zimbabwe v Bangladesh
+                    </p>
+
+                    <p className="text-white font-bold text-3xl mt-2">
+                      1.08
+                    </p>
+                  </div>
+
+                  {/* Stake */}
+                  <div className="p-4">
+                    <label className="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
+                      Stake
+                    </label>
+
+                    <input
+                      type="number"
+                      placeholder="Enter amount"
+
+                      className="w-full h-12 rounded-lg border border-[#35577D] bg-[#0d1724] px-4 text-white outline-none focus:border-blue-500"
+                    />
+
+                    {/* Quick Stake */}
+                    <div className="grid grid-cols-3 gap-3 mt-6">
+
+                      <button
+
+                        className="h-12 rounded-lg bg-[#2B3647] font-semibold transition hover:bg-blue-600"
+                      >
+
+                      </button>
+
+                    </div>
+
+                    {/* Buttons */}
+                    <button
+                      className="mt-8 h-12 w-full rounded-lg bg-[#A86A12] font-bold uppercase hover:bg-[#c67c18] transition"
+                    >
+                      Place Bet
+                    </button>
+
+                    <button
+                      className="mt-3 h-12 w-full rounded-lg bg-[#313F55] font-semibold hover:bg-[#3b4b63] transition"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
-            /* SCREENSHOT 1: Active QuickBet / 1-Click State */
+          
             <div className="flex flex-col gap-4 w-full">
               <p className="text-sm text-gray-300 leading-normal font-medium">
                 QuickBet mode is on! After single click on any selection, it
