@@ -56,7 +56,7 @@ const RacingEvent = () => {
         <button
           type="button"
           onClick={() => handleTabClick("horse")}
-          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition ${
+          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition  relative z-[3] ${
             activeSport === "horse"
               ? "bg-accent-blue text-white"
               : "bg-[#1b263b]  hover:bg-accent-blue"
@@ -71,7 +71,7 @@ const RacingEvent = () => {
         <button
           type="button"
           onClick={() => handleTabClick("greyhound")}
-          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition ${
+          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition relative z-[3]  ${
             activeSport === "greyhound"
               ? "bg-accent-blue text-white"
               : "bg-[#1b263b]  hover:bg-accent-blue"
