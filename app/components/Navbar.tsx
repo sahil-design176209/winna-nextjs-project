@@ -17,7 +17,8 @@ const Navbar = ({ isPromotionMenuOpen, onTogglePromotions }: NavbarProps) => {
   const showSportsNavbar =
     pathname.startsWith("/sport") ||
     pathname.startsWith("/racing") ||
-    pathname.startsWith("/events");
+    pathname.startsWith("/events") ||
+    pathname.startsWith("/event");
 
   return (
     <nav
