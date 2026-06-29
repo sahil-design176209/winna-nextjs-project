@@ -6,10 +6,10 @@ import crown from "../../public/images/crown-blue.webp";
 
 export default function PromotionsDropdown() {
   return (
-    <div className="absolute right-0 top-full mt-5  w-[400px] rounded-xl bg-body-level-1 p-3 shadow-xl ">
+    <div className="absolute right-0 top-full mt-5  w-[400px] rounded-xl bg-profile-model-bg p-3 shadow-xl ">
       <div className="grid grid-cols-2 gap-2">
         {/* Daily Race */}
-        <div className="flex items-center gap-3 bg-body-level-2 p-[8px] rounded-lg cursor-pointer hover:bg-[#1f2635] transition">
+        <div className="flex items-center gap-3 bg-body-level-0 p-[8px] rounded-lg cursor-pointer transition">
           {/* Image Placeholder */}
           <div className="w-12 h-12 flex-shrink-0  rounded-md flex items-center justify-center text-xl">
             <Image src={trophy} alt="trophy" />
@@ -23,7 +23,7 @@ export default function PromotionsDropdown() {
         </div>
 
         {/* Weekly Race */}
-        <div className="flex items-center gap-3 bg-body-level-2 p-[8px] rounded-lg cursor-pointer hover:bg-[#1f2635] transition">
+        <div className="flex items-center gap-3 bg-body-level-0 p-[8px] rounded-lg cursor-pointer transition">
           {/* Image Placeholder */}
           <div className="w-12 h-12 flex-shrink-0  rounded-md flex items-center justify-center text-xl">
             <Image src={crown} alt="crown" />
@@ -37,7 +37,7 @@ export default function PromotionsDropdown() {
         </div>
 
         {/* Challenges */}
-        <div className="flex items-center gap-3 bg-body-level-2 p-[8px] rounded-lg cursor-pointer hover:bg-[#1f2635] transition">
+        <div className="flex items-center gap-3 bg-body-level-0 p-[8px] rounded-lg cursor-pointer transition">
           {/* Image Placeholder */}
           <div className="w-12 h-12 flex-shrink-0  rounded-md flex items-center justify-center text-xl">
             <Image src={promo} alt="promo" />
