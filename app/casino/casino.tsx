@@ -3,6 +3,8 @@
 import { Search, ChevronDown, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
+import classNames from 'classnames';
+
 
 
 
@@ -126,7 +128,7 @@ export default function Casino() {
     <main className="min-h-screen  text-white">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-6 hidden lg:flex">
           <button className="w-9 h-9 rounded bg-body-level-8 flex items-center justify-center" onClick={() => router.push('/')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path d="M9.75741 12L15.7255 5.95215C16.1032 5.56938 16.1032 4.80383 15.65 4.3445C15.1967 3.88517 14.5168 3.88517 14.0635 4.3445L7.33995 11.2344C6.88668 11.6938 6.88668 12.3828 7.33995 12.8421L14.0635 19.6555C14.5168 20.1148 15.1967 20.1148 15.65 19.6555C16.1032 19.1962 16.1032 18.5072 15.65 18.0478L9.75741 12Z" fill="currentColor"></path></svg>
           </button>
@@ -248,15 +250,31 @@ export default function Casino() {
             )}
           </div>
           <div className="  lg:hidden">
-            {/* Filter Icon */}
             <div
-              className="casino-fillter-drop-down cursor-pointer"
+              className={classNames("casino-fillter-drop-down", {
+                active: showFilter,
+              })}
               role="button"
               tabIndex={0}
-              onClick={() => setShowFilter(!showFilter)}
+              onClick={() => setShowFilter((prev) => !prev)}
             >
-              <div className="casino-fillter-drop-down active bg-body-level-8 rounded-[8px] px-3 py-2 flex items-center" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 5.5H20.5M6.5 11.5H17.5M9.5 17.5H14.5" stroke="currentColor" ></path></svg></div>
+              <div className="bg-body-level-8 rounded-[8px] px-3 py-2 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className={showFilter ? "text-accent-blue" : "text-typography-secondary"}
+                >
+                  <path
+                    d="M3.5 5.5H20.5M6.5 11.5H17.5M9.5 17.5H14.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
             </div>
 
 

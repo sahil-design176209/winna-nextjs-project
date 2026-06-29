@@ -38,12 +38,14 @@ export default function SportsNavbar() {
       icon: <SportsMenuIcons.CricketIcon />,
       label: "Cricket",
       hasBadge: true,
+      route: "/sport/sportNavEvent",
     },
     {
       id: "tennis",
       icon: <SportsMenuIcons.TennisIcon />,
       label: "Tennis",
       hasBadge: true,
+      route: "/sport/sportNavEvent",
     },
 
     {
@@ -51,6 +53,7 @@ export default function SportsNavbar() {
       icon: <NavIcons.FootballIcon />,
       label: "Soccer",
       hasBadge: true,
+      route: "/sport/sportNavEvent",
     },
     {
       id: "horse",
@@ -65,6 +68,7 @@ export default function SportsNavbar() {
       label: "greyhound",
       hasSubBadge: true,
       route: "/racing?type=greyhound",
+      
     },
 
     {
@@ -72,36 +76,38 @@ export default function SportsNavbar() {
       icon: <SportsMenuIcons.ElectionIcon />,
       label: "elction",
       hasBadge: true,
+      route: "/sport/sportNavEvent",
     },
     {
       id: "kabaddi",
       icon: <SportsMenuIcons.KabaddiIcon />,
       label: "kabaddi",
       hasBadge: true,
+      route: "/sport/sportNavEvent",
     },
   ];
 
   return (
-    <div className="layout-container h-14 flex items-center justify-between select-none px-4 font-sans relative">
+    <div className="layout-container h-14 flex items-center justify-between select-none px-4 font-sans relative w-full max-w-[1312px] mx-auto">
       {/* Left Row Scroll Container */}
       <div className="mr-2 flex min-w-0 flex-1 items-center space-x-3 py-2 lg:mr-4 lg:space-x-4">
         {/* Core Control Elements */}
         <div className="flex shrink-0 items-center space-x-4 text-gray-400 lg:space-x-5">
-          <button className="hover:text-white transition-colors">
+          <Link className="hover:text-white transition-colors" href="/">
             <NavIcons.HomeIcon />
-          </button>
+          </Link>
 
-          <button className="hover:text-white transition-colors">
+          <Link className="hover:text-white transition-colors" href="/sport/live">
             <NavIcons.LiveIcon />
-          </button>
+          </Link>
 
-          <button className="hover:text-white transition-colors">
+          <Link className="hover:text-white transition-colors" href="/sport/favourite">
             <NavIcons.StarIcon />
-          </button>
+          </Link>
 
-          <button className="hover:text-white transition-colors">
+          <Link className="hover:text-white transition-colors" href="/sport/bet">
             <NavIcons.BetdIcon />
-          </button>
+          </Link>
         </div>
 
         {/* Vertical Divider Line */}
@@ -132,9 +138,8 @@ export default function SportsNavbar() {
             onClick={() => setIsSportsMenuOpen(!isSportsMenuOpen)}
           >
             <span
-              className={`block transition-transform duration-200 ${
-                isSportsMenuOpen ? "rotate-180" : "rotate-0"
-              }`}
+              className={`block transition-transform duration-200 ${isSportsMenuOpen ? "rotate-180" : "rotate-0"
+                }`}
             >
               <ThemeIcons.ChevronDownIcon />
             </span>

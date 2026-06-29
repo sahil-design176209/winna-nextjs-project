@@ -2,7 +2,7 @@ import Popular from "./Popular";
 import Upcoming from "./Upcoming";
 import LiveSport from "./LiveSport";
 
-import HotComboSection from "../sport/HotComboSection" ;
+import HotComboSection from "./HotComboSection" ;
 import MobileBanner from "../components/Mobilebanner";
 export default function sport() {
   return (

@@ -29,7 +29,7 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-body-level-1 border-t border-body-level-3 px-2.5 ">
-        <div className="layout-container py-6 lg:py-10">
+        <div className="layout-container py-6 lg:py-10 w-full max-w-[1312px] mx-auto">
           <FooterMobile />
           <FooterMenu />
           <section className="mb-6 space-y-3">
