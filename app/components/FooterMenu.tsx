@@ -247,7 +247,7 @@ const FooterMenu = () => {
                 aria-haspopup="listbox"
                 aria-expanded="false"
                 aria-controls="_r_1_"
-                className="flex h-10 w-[172px] items-center justify-between gap-2 rounded-lg bg-body-level-3 py-2 pl-4 pr-2 text-white transition-colors hover:bg-body-level-4"
+                className="flex h-10 w-[172px] z-[1] relative items-center justify-between gap-2 rounded-lg bg-body-level-3 py-2 pl-4 pr-2 text-white transition-colors hover:bg-body-level-4"
               >
                 <span className="flex items-center gap-3">
                   <span className="flex size-6 items-center justify-center overflow-hidden rounded-full">

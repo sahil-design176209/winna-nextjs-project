@@ -2,6 +2,9 @@
 import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SportsMenuIcons, ThemeIcons } from "../components/SvgIcons";
+import greyHound from "../../public/images/greyHound.png";
+import horsey from "../../public/images/horsey.png";
+import Image from "next/image";
 
 export default function SportRacingTabs() {
   const router = useRouter();
@@ -46,11 +49,23 @@ export default function SportRacingTabs() {
     );
   const currentTrack = activeSport === "greyhound" ? "Richmond" : "Flemington";
 
+  const currentBackgroundImage =
+    activeSport === "greyhound" ? greyHound : horsey;
+
   return (
-    <div className="min-h-screen text-white  font-sans">
+    <div className="min-h-screen text-white font-sans relative isolate">
       <div className="flex items-center gap-2 mb-4">
         <span>{currentSvg}</span>
         <h1 className="text-2xl font-bold tracking-wide">{currentTitle}</h1>
+      </div>
+
+      <div className="absolute top-[-15px] left-1/2 z-[-1] w-full   md:max-w-[60%] -translate-x-1/2 h-auto bg-top bg-no-repeat opacity-20 transition-opacity duration-1000 ease-in">
+        <Image
+          src={currentBackgroundImage}
+          alt={`${currentTitle} background`}
+          className="aspect-video w-full h-auto object-cover"
+          loading="lazy"
+        />
       </div>
 
       <div className="flex items-center gap-3 mb-6">
@@ -59,7 +74,7 @@ export default function SportRacingTabs() {
           className={`flex items-center gap-2 font-bold px-4 py-1.5 rounded-lg text-sm transition ${
             activeSport === "greyhound"
               ? "bg-accent-blue text-white"
-              : "bg-[#1b263b] text-zinc-300 hover:bg-[#22304a]"
+              : "bg-[#1b263b] text-zinc-300 hover:bg-accent-blue"
           }`}
         >
           <span>
@@ -73,7 +88,7 @@ export default function SportRacingTabs() {
           className={`flex items-center gap-2 font-bold px-4 py-1.5 rounded-lg text-sm transition ${
             activeSport === "horse"
               ? "bg-accent-blue text-white"
-              : "bg-[#1b263b] text-zinc-300 hover:bg-[#22304a]"
+              : "bg-[#1b263b] text-zinc-300 hover:bg-accent-blue"
           }`}
         >
           <span>
@@ -84,19 +99,19 @@ export default function SportRacingTabs() {
       </div>
 
       <div className="flex items-center gap-2 mb-6 flex-wrap">
-        <button className="flex items-center gap-2 bg-accent-blue text-white font-bold px-4 py-2.5 rounded-md text-14">
+        <button className="flex items-center gap-2 bg-accent-blue text-white font-bold px-4 py-1.5 rounded-md text-14">
           Today
           <span className="bg-accent-blue-hover text-white px-1.5 py-0.5 rounded-full text-[10px] font-black">
             1
           </span>
         </button>
-        <button className="flex items-center gap-2 bg-[#131c2e] text-white font-semibold px-4 py-2.5 rounded-md text-14 border border-zinc-800/80">
+        <button className="flex items-center gap-2 bg-[#131c2e] text-white font-semibold px-4 py-1.5 rounded-md text-14 border border-zinc-800/80">
           Tomorrow
           <span className="bg-body-level-4 text-zinc-400 px-1.5 py-0.5 rounded-full text-[10px]">
             0
           </span>
         </button>
-        <button className="flex items-center gap-2 bg-[#131c2e] text-white font-semibold px-4 py-2.5 rounded-md text-14 border border-zinc-800/80">
+        <button className="flex items-center gap-2 bg-[#131c2e] text-white font-semibold px-4 py-1.5 rounded-md text-14 border border-zinc-800/80">
           Upcoming
           <span className="bg-body-level-4 text-zinc-400 px-1.5 py-0.5 rounded-full text-[10px]">
             0
@@ -121,7 +136,7 @@ export default function SportRacingTabs() {
         <h2 className="text-lg font-bold tracking-wide">{currentTrack}</h2>
       </div>
 
-      <div className="max-w-sm bg-[#131c2e]/90 border border-zinc-800/60 rounded-xl p-2 shadow-xl backdrop-blur-md">
+      <div className="max-w-sm bg-body-level-1 border border-body-level-2 rounded-xl p-2 shadow-xl backdrop-blur-md">
         <div className="flex justify-between items-center text-[11px] font-semibold text-zinc-400 tracking-wider mb-3 px-1">
           <span>Runner</span>
           <span>Time</span>
@@ -136,7 +151,7 @@ export default function SportRacingTabs() {
               <span className="text-xs font-semibold text-zinc-200">
                 {runner.name}
               </span>
-              <span className="bg-[#1b263b] text-white text-[11px] font-bold px-3 py-4.5 rounded-md min-w-[85px] text-center">
+              <span className="bg-[#1b263b] hover:bg-body-level-2 text-white text-[11px] font-bold px-3 py-4.5 rounded-md min-w-[85px] text-center">
                 {runner.time}
               </span>
             </div>

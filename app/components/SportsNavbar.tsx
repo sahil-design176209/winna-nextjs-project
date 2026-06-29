@@ -68,14 +68,9 @@ export default function SportsNavbar() {
       label: "greyhound",
       hasSubBadge: true,
       route: "/racing?type=greyhound",
+      
     },
-    {
-      id: "casino",
-      icon: <SVGIcons.LiveCasinoIcon />,
-      label: "casino",
-      hasBadge: true,
-      route: "/sport/sportNavEvent",
-    },
+
     {
       id: "election",
       icon: <SportsMenuIcons.ElectionIcon />,
@@ -119,7 +114,6 @@ export default function SportsNavbar() {
         <div className="h-6 w-[1px] bg-body-level-5 shrink-0" />
 
         <div className="flex items-center space-x-[18px]">
-          {/* Replace your existing sportsItems.map block with this: */}
           {sportsItems.map((item, index) => (
             <button
               key={item.id}
@@ -128,10 +122,13 @@ export default function SportsNavbar() {
                   router.push(item.route);
                 }
               }}
-              className={`items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer ${index < 2 ? "flex" : "hidden lg:flex"
-                }`}
+              className={`items-center w-[32px] h-[32px] gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer ${
+                index < 2 ? "flex" : "hidden lg:flex"
+              }`}
             >
-              {item.icon}
+              <span className="w-[32px] h-[32px] flex items-center justify-center [&>svg]:!w-full [&>svg]:!h-full [&>svg]:block">
+                {item.icon}
+              </span>
             </button>
           ))}
 
@@ -164,7 +161,7 @@ export default function SportsNavbar() {
           className="p-1 hover:text-white transition-colors"
           aria-label="Open sports search"
         >
-          <ThemeIcons.SearchIcon className="-rotate-[180]" />
+          <ThemeIcons.SearchIcon />
         </Link>
       </div>
     </div>
