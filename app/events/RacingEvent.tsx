@@ -1,15 +1,20 @@
 "use client";
 import React from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { ThemeIcons, SportsMenuIcons } from "../components/SvgIcons";
+import greyHound from "../../public/images/greyHound.png";
+import horsey from "../../public/images/horsey.png";
+import Image from "next/image";
 
 const RacingEvent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const activeSport =
     searchParams.get("type") === "greyhound" ? "greyhound" : "horse";
 
+  // Kept exactly as your original functionality requested
   const handleTabClick = (sportType: "horse" | "greyhound") => {
     router.push(`/racing?type=${sportType}`);
   };
@@ -34,16 +39,31 @@ const RacingEvent = () => {
   const mainTitleText =
     activeSport === "greyhound" ? "Richmond Dogs" : "ZIMBABWE";
 
+  // Selects correct background image automatically based on the URL query param (?type=horse or ?type=greyhound)
+  const currentBackgroundImage =
+    activeSport === "greyhound" ? greyHound : horsey;
+
   return (
-    <div className="mb-[30px] text-white font-sans">
+    /* Added 'relative isolate' layout hooks so background graphics sit strictly underneath text elements */
+    <div className="mb-[30px] text-white font-sans relative isolate">
+      {/* Background Graphic Dynamic Render Block */}
+      <div className="absolute top-[-15px] left-1/2 z-[2] w-full max-w-[60%] -translate-x-1/2 h-auto bg-top bg-no-repeat opacity-20 transition-opacity duration-1000 ease-in ">
+        <Image
+          src={currentBackgroundImage}
+          alt={`${mainTitleText} background`}
+          className="aspect-video w-full h-auto object-cover"
+          loading="lazy"
+        />
+      </div>
+
       <div className="flex items-center gap-3 mb-5 ">
         <button
           type="button"
           onClick={() => handleTabClick("horse")}
-          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[14px] transition ${
+          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition ${
             activeSport === "horse"
               ? "bg-accent-blue text-white"
-              : "bg-body-level-3  hover:bg-[#22304a]"
+              : "bg-[#1b263b]  hover:bg-accent-blue"
           }`}
         >
           <span>
@@ -55,10 +75,10 @@ const RacingEvent = () => {
         <button
           type="button"
           onClick={() => handleTabClick("greyhound")}
-          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[14px] transition ${
+          className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition ${
             activeSport === "greyhound"
               ? "bg-accent-blue text-white"
-              : "bg-body-level-3  hover:bg-[#22304a]"
+              : "bg-[#1b263b]  hover:bg-accent-blue"
           }`}
         >
           <span>
@@ -118,7 +138,7 @@ const RacingEvent = () => {
         </div>
       </div>
 
-      <div className="bg-body-level-9 rounded-md p-2 flex items-center justify-between ">
+      <div className="bg-body-level-7 rounded-md p-2 flex items-center justify-between ">
         <div className="game-title-heading text-[12px] flex items-center justify-center gap-2 m-0 race-event-heading text-zinc-300">
           <span>{currentTrackHeading}</span>
           <ThemeIcons.InfoIcon />
@@ -137,7 +157,7 @@ const RacingEvent = () => {
           {currentRunners.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-start justify-between rounded-lg bg-body-level-9 px-2 py-2"
+              className="flex items-start justify-between rounded-lg bg-body-level-7 px-2 py-2"
             >
               <div className="start-tag">
                 <span className="truncate text-[12px] font-bold text-typography-gray">
@@ -146,7 +166,7 @@ const RacingEvent = () => {
               </div>
               <div className="end-tag ">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="px-[10px] py-[16px] rounded-md w-[300px] w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-3 flex items-center justify-between">
+                  <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-2 flex items-center justify-between">
                     <span className="text-[12px] font-semibold text-white">
                       {item.odd}
                     </span>
@@ -154,7 +174,7 @@ const RacingEvent = () => {
                       {item.odd}
                     </span>
                   </div>
-                  <div className="px-[10px] py-[16px] rounded-md w-[300px] w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-3 flex items-center justify-between">
+                  <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-2 flex items-center justify-between">
                     <span className="text-[12px] font-semibold text-white">
                       {item.odd}
                     </span>
