@@ -125,7 +125,7 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
                       Match Odds • Zimbabwe v Bangladesh
                     </p>
 
-                    <p className="text-white font-bold text-3xl mt-2">1.08</p>
+                    <p className="text-white font-bold text-xl mt-2">1.08</p>
                   </div>
 
                   {/* Stake */}
