@@ -34,7 +34,8 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={poppins.variable}>
+    // FIX: Added suppressHydrationWarning to ignore extension-injected styles
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <body className="antialiased min-h-screen flex flex-col relative bg-[#07131e] ">
         <Header
           isProfileMenuOpen={activeMenu === "profile"}
@@ -46,8 +47,8 @@ export default function RootLayout({
           onTogglePromotions={() => toggleMenu("promotions")}
         />
 
-        {/* Added extra bottom padding (pb-24) to prevent bottom nav overlaying content on mobile */}
-        <main className="layout-container mx-auto flex-grow h-full w-full text-white p- pb-24 mt-[60px] lg:p-0 lg:py-2 lg:pb-0 w-full max-w-[1312px]">
+        {/* Cleaned up the broken 'p-' class and duplicate 'w-full' here */}
+        <main className="layout-container mx-auto flex-grow h-full text-white pb-24 mt-[60px] lg:p-0 lg:py-2 lg:pb-0 w-full max-w-[1312px]">
           {children}
         </main>
 
