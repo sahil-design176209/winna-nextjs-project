@@ -58,12 +58,12 @@ const SportsNavDropdown = () => {
       <div className="w-full max-w-7xl mx-auto rounded-[24px]">
         {/* Centered Top Nav Segment Links */}
         <div className="flex justify-center mb-8">
-          <div className="flex bg-body-level-1 p-1.5 rounded-xl">
+          <div className="flex bg-body-level-7 p-1.5 rounded-xl">
             <button
               onClick={() => setActiveTab("Sports")}
               className={`min-w-[120px] md:min-w-[190px] flex-1 py-2 text-[14px] font-bold rounded-lg transition-all duration-150 ${
                 activeTab === "Sports"
-                  ? "bg-[#2C384E] text-white"
+                  ? "bg-body-level-9 text-white"
                   : "text-[#778599] hover:text-white"
               }`}
             >
@@ -73,7 +73,7 @@ const SportsNavDropdown = () => {
               onClick={() => setActiveTab("Racing")}
               className={`min-w-[120px] md:min-w-[190px] flex-1 py-2 text-[14px] font-bold rounded-lg transition-all duration-150 ${
                 activeTab === "Racing"
-                  ? "bg-[#2C384E] text-white"
+                  ? "bg-body-level-9 text-white"
                   : "text-[#778599] hover:text-white"
               }`}
             >

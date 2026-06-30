@@ -160,7 +160,7 @@ export default function EventComponent() {
           </div>
         </div>
         {showMatchOdds && (
-          <div className="rounded-xl bg-body-level-7 p-4">
+          <div className="rounded-xl bg-body-level-7 p-2">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-[14px] font-semibold text-white flex gap-2 items-center">
                 <span className="bg-body-level-9 h-[32px] w-[32px] flex items-center justify-center rounded-[8px]">
@@ -245,7 +245,7 @@ export default function EventComponent() {
           </div>
         )}
         {showBookmaker && (
-          <div className="rounded-xl bg-body-level-7 p-4">
+          <div className="rounded-xl bg-body-level-7 p-2">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-[14px]font-semibold text-white  flex gap-2 items-center">
                 <span className="bg-body-level-9 h-[32px] w-[32px] flex items-center justify-center rounded-[8px]">
@@ -329,7 +329,7 @@ export default function EventComponent() {
           </div>
         )}
         {showToss && (
-          <div className="rounded-xl bg-body-level-7 p-4">
+          <div className="rounded-xl bg-body-level-7 p-2">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-[14px] font-semibold text-white flex gap-2 items-center">
                 <span className="bg-body-level-9 h-[32px] w-[32px] flex items-center justify-center rounded-[8px]">

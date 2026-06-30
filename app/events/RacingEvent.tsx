@@ -61,7 +61,7 @@ const RacingEvent = () => {
             className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition  relative z-[3] ${
               activeSport === "horse"
                 ? "bg-accent-blue text-white"
-                : "bg-[#1b263b]  hover:bg-accent-blue"
+                : "bg-body-level-7  hover:bg-accent-blue"
             }`}
           >
             <span>
@@ -76,7 +76,7 @@ const RacingEvent = () => {
             className={`flex items-center gap-2 font-semibold px-4 py-2 rounded-lg text-[13px] transition relative z-[3]  ${
               activeSport === "greyhound"
                 ? "bg-accent-blue text-white"
-                : "bg-[#1b263b]  hover:bg-accent-blue"
+                : "bg-body-level-7  hover:bg-accent-blue"
             }`}
           >
             <span>
@@ -162,7 +162,7 @@ const RacingEvent = () => {
                 </div>
                 <div className="end-tag ">
                   <div className="flex items-center justify-between gap-2">
-                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-2 flex items-center justify-between">
+                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-9 flex items-center justify-between">
                       <span className="text-[12px] font-semibold text-white">
                         {item.odd}
                       </span>
@@ -170,7 +170,7 @@ const RacingEvent = () => {
                         {item.odd}
                       </span>
                     </div>
-                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-2 flex items-center justify-between">
+                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-9 flex items-center justify-between">
                       <span className="text-[12px] font-semibold text-white">
                         {item.odd}
                       </span>
