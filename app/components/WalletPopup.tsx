@@ -92,7 +92,7 @@ const WalletPopup = ({
                         <span className="option-label pl-2 font-medium text-14">
                           Ethereum
                         </span>
-                        <span className="option-sub-label pl-2 fs-6 leading-none text-typography-grey">
+                        <span className="option-sub-label pl-2 text-[11px] leading-none text-typography-grey">
                           $0
                         </span>
                       </div>
@@ -169,7 +169,7 @@ const WalletPopup = ({
                               <p className="mt-2 text-16 text-white">
                                 {item.name}
                               </p>
-                              <span className="fs-6 leading-none text-typography-grey">
+                              <span className="text-[11px] leading-none text-typography-grey">
                                 {item.balance}
                               </span>
                             </div>
@@ -199,7 +199,7 @@ const WalletPopup = ({
                                 <p className="mt-2 text-14 text-white text-center px-1 truncate w-full">
                                   {card.name}
                                 </p>
-                                <span className="fs-6 leading-none text-typography-grey mt-0.5">
+                                <span className="text-[11px] leading-none text-typography-grey mt-0.5">
                                   Select
                                 </span>
                               </div>

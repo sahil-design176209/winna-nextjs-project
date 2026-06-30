@@ -45,11 +45,11 @@ export function SignupModal({
   }
 
   return (
-  <div className="fixed inset-0 z-[400] bg-[#01090e]/80 flex items-start md:items-center justify-center px-3 md:px-4 py-6 overflow-y-auto">
+    <div className="fixed inset-0 z-[400] bg-[#01090e]/80 flex items-start md:items-center justify-center px-3 md:px-4 py-6 overflow-y-auto">
       <div className="absolute inset-0" aria-hidden="true" onClick={onClose} />
       <div className="relative z-10 flex w-full max-w-5xl overflow-hidden rounded-[12px] border border-body-level-2 bg-[#061116] shadow-2xl lg:flex-row">
         <div className="hidden w-full lg:flex lg:w-1/2 bg-[#08131b]">
-          <div className="h-full w-full rounded-l-[32px]  left-image bg-[radial-gradient(circle_at_top_left,_rgba(0,121,255,0.14),_transparent_30%),_radial-gradient(circle_at_bottom_left,_rgba(0,121,255,0.08),_transparent_40%)]" />
+          <div className="h-full w-full rounded-l-[32px]  left-image bg-center bg-no-repeat bg-cover  bg-[url('/images/sign.webp')] bg-[radial-gradient(circle_at_top_left,_rgba(0,121,255,0.14),_transparent_30%),_radial-gradient(circle_at_bottom_left,_rgba(0,121,255,0.08),_transparent_40%)]" />
         </div>
         <div className="w-full bg-body-level-1 p-6 sm:p-8 lg:w-1/2">
           <button
