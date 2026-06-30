@@ -174,9 +174,6 @@ const RacingEvent = () => {
                 </div>
                 <div className="end-tag">
                   <div className="flex items-center justify-between gap-2">
-<<<<<<< feature/winna/tailwind
-                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-9 flex items-center justify-between">
-=======
                     {/* First Odds Box */}
                     <div
                       onClick={() =>
@@ -189,7 +186,6 @@ const RacingEvent = () => {
                           : "bg-body-level-2"
                       }`}
                     >
->>>>>>> feature-winna-nextjs
                       <span className="text-[12px] font-semibold text-white">
                         {item.odd}
                       </span>
@@ -197,9 +193,6 @@ const RacingEvent = () => {
                         {item.odd}
                       </span>
                     </div>
-<<<<<<< feature/winna/tailwind
-                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-9 flex items-center justify-between">
-=======
 
                     {/* Second Odds Box (Optional: kept identical if it triggers the same selection) */}
                     <div
@@ -213,7 +206,6 @@ const RacingEvent = () => {
                           : "bg-body-level-2"
                       }`}
                     >
->>>>>>> feature-winna-nextjs
                       <span className="text-[12px] font-semibold text-white">
                         {item.odd}
                       </span>
