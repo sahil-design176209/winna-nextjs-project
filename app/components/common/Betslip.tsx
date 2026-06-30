@@ -169,7 +169,7 @@ const Betslip = ({
                       </button>
                     </div>
 
-                    <button className="mt-8 h-12 w-full rounded-lg bg-accent-blue font-bold uppercase hover:bg-[#c67c18] transition text-[13px]">
+                    <button className="mt-8 h-12 w-full rounded-lg bg-accent-blue font-bold uppercase hover:bg-accent-blue-hover transition text-[13px]">
                       Place Bet
                     </button>
                     <button className="mt-3 h-12 w-full rounded-lg bg-[#313F55] font-bold hover:bg-[#3b4b63] transition text-[13px]">
@@ -230,7 +230,7 @@ const Betslip = ({
                 <div className="flex flex-col gap-2.5 w-full">
                   <button
                     type="button"
-                    className="h-12 w-full rounded-xl bg-accent-blue hover:bg-[#e07f00] text-white font-medium uppercase tracking-wider transition text-[13px]"
+                    className="h-12 w-full rounded-xl bg-accent-blue hover:bg-accent-blue-hover text-white font-medium uppercase tracking-wider transition text-[13px]"
                   >
                     PLACE BET
                   </button>
