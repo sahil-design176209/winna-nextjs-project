@@ -2,14 +2,16 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { ThemeIcons } from "./SvgIcons";
-
-const PROVIDER_OPTIONS = [
-  "Pragmatic Play",
-  "Evolution",
-  "Hacksaw Gaming",
-  "Nolimit City",
-  "Play'n GO",
+import { useRouter } from 'next/navigation';
+const providers = [
+  "3 Oaks Gaming",
+  "7rings",
+  "Ace Roll",
+  "Amusnet",
+  "Avatar UX",
+  "Aviatrix",
 ];
+import { Search, ChevronDown, ArrowLeft } from "lucide-react";
 
 const HeaderSearch = ({
   isOpen: isModalOpen,
@@ -21,12 +23,10 @@ const HeaderSearch = ({
   // --- 1. React Hooks (Must be defined at the very top) ---
   const dropdownRef = React.useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedOption, setSelectedOption] = React.useState({
-    label: "Popular",
-    value: "popular",
-  });
-
+   const [search, setSearch] = useState(""); const router = useRouter();
+  const [showProvider, setShowProvider] = useState(false);
   const providersRef = React.useRef<HTMLDivElement>(null);
+    const [showSort, setShowSort] = useState(false);
   const [isProvidersOpen, setIsProvidersOpen] = React.useState(false);
   const [selectedProviders, setSelectedProviders] = React.useState<string[]>(
     [],
@@ -98,113 +98,94 @@ const HeaderSearch = ({
               </div>
 
               <div className="min-w-full gap-2 lg:flex lg:w-max lg:min-w-max lg:items-center hidden">
-                {/* 1. Sort By Dropdown */}
-                <div className="relative w-full lg:w-[200px]" ref={dropdownRef}>
-                  <div
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="flex items-center justify-between h-11 px-3 hover:cursor-pointer hover:bg-body-level-3 text-14 font-normal rounded-lg bg-body-level-2 text-typography-secondary border border-transparent transition-all select-none"
-                  >
-                    <div className="flex items-center gap-1 truncate">
-                      <span>Sort by:</span>
-                      <span className="text-white ml-1 font-medium">
-                        {selectedOption.label}
-                      </span>
-                    </div>
-                    <div
-                      className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                    >
-                      <ThemeIcons.ChevronDownIcon />
-                    </div>
-                  </div>
+              <div className="relative hidden lg:block">
+            <button
+              onClick={() => setShowSort(!showSort)}
+              className="h-10 min-w-[220px] px-4 rounded-xl bg-body-level-8 hover:bg-hover-color  flex items-center justify-between "
+            >
+              <span className="text-typography-secondary hover:text-typography-primary  text-[16px] ">  Sort by: Popular</span>
 
-                  {isOpen && (
-                    <div className="absolute left-0 right-0 mt-1 z-50 rounded-lg bg-body-level-2 border border-body-level-3 shadow-xl overflow-hidden py-1">
-                      {[
-                        { label: "Popular", value: "popular" },
-                        { label: "Newest", value: "newest" },
-                        { label: "A-Z", value: "alphabetical" },
-                      ].map((option) => (
-                        <button
-                          key={option.value}
-                          onClick={() => {
-                            setSelectedOption(option);
-                            setIsOpen(false);
-                          }}
-                          className={`w-full text-left px-3 py-2.5 text-14 transition-colors hover:bg-body-level-3 ${
-                            selectedOption.value === option.value
-                              ? "text-white font-medium bg-body-level-3/40"
-                              : "text-typography-secondary"
-                          }`}
-                        >
-                          {option.label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
+              <svg
+                className={`w-[18px] h-[18px] transition-transform duration-300 ${showSort ? "rotate-180" : ""
+                  }`}
+                viewBox="0 0 18 18"
+                fill="#567484"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4.14516 7.96L8.42815 12.76C8.71384 13.08 9.28522 13.08 9.57091 12.76L13.8563 7.9598C14.2086 7.5644 13.873 7 13.2849 7L4.71654 7C4.12611 7 3.79043 7.5644 4.14516 7.96Z"
+                />
+              </svg>      </button>
+
+            {showSort && (
+              <div className="absolute top-12 left-0 w-full rounded-xl bg-body-level-8 p-3 z-50">
+                <div className="py-2 font-semibold hover:text-typography-primary  text-[14px]">Popular
+
                 </div>
-
-                {/* 2. Providers Dropdown with Checkbox Rows */}
-                <div
-                  className="relative w-full lg:w-[200px]"
-                  ref={providersRef}
-                >
-                  <button
-                    onClick={() => setIsProvidersOpen(!isProvidersOpen)}
-                    className="px-3 hover:cursor-pointer hover:bg-body-level-3 text-14 font-normal rounded-lg bg-body-level-2 flex w-full items-center justify-between h-11 border border-transparent transition-all select-none"
-                  >
-                    <span className="text-typography-secondary font-medium truncate">
-                      {selectedProviders.length === 0
-                        ? "All providers"
-                        : `${selectedProviders.length} selected`}
-                    </span>
-                    <div
-                      className={`transition-transform duration-200 ${isProvidersOpen ? "rotate-180" : ""}`}
-                    >
-                      <ThemeIcons.ChevronDownIcon />
-                    </div>
-                  </button>
-
-                  {isProvidersOpen && (
-                    <div className="absolute right-0 left-0 mt-1 z-50 rounded-lg bg-body-level-2 border border-body-level-3 shadow-xl overflow-hidden py-1 max-h-[240px] overflow-y-auto">
-                      {PROVIDER_OPTIONS.map((provider) => {
-                        const isChecked = selectedProviders.includes(provider);
-                        return (
-                          <label
-                            key={provider}
-                            className="flex items-center gap-3 w-full px-3 py-2.5 text-14 text-typography-secondary transition-colors hover:bg-body-level-3 hover:text-white cursor-pointer select-none"
-                          >
-                            <input
-                              type="checkbox"
-                              checked={isChecked}
-                              onChange={() => {
-                                if (isChecked) {
-                                  setSelectedProviders(
-                                    selectedProviders.filter(
-                                      (p) => p !== provider,
-                                    ),
-                                  );
-                                } else {
-                                  setSelectedProviders([
-                                    ...selectedProviders,
-                                    provider,
-                                  ]);
-                                }
-                              }}
-                              className="h-4 w-4 appearance-none rounded border border-body-level-4 bg-body-level-3 checked:bg-accent-blue focus:ring-0 focus:ring-offset-0 cursor-pointer relative checked:after:content-['✓'] checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-white checked:after:text-[10px] checked:after:font-bold transition-all"
-                            />
-                            <span
-                              className={
-                                isChecked ? "text-white font-medium" : ""
-                              }
-                            >
-                              {provider}
-                            </span>
-                          </label>
-                        );
-                      })}
-                    </div>
-                  )}
+                <div className="py-2 text-typography-secondary hover:text-typography-primary  text-[14px]">
+                  A-Z (alphabetically)
                 </div>
+                <div className="py-2 text-typography-secondary hover:text-typography-primary  text-[14px]">
+                  Z-A (alphabetically)
+                </div>
+                <div className="py-2 text-typography-secondary  hover:text-typography-primary  text-[14px]">Recently Added</div>
+              </div>
+            )}
+          </div>
+
+
+          <div className="relative hidden lg:block">
+            <button
+              onClick={() => setShowProvider(!showProvider)}
+              className="h-10 min-w-[220px] px-4 rounded-xl bg-body-level-8  hover:bg-hover-color flex items-center justify-between text-typography-secondary-300"
+            >
+              <span className="text-typography-secondary hover:text-typography-primary  text-[16px]"> All providers</span>
+              <svg
+                className={`w-[18px] h-[18px] transition-transform duration-300 ${showProvider ? "rotate-180" : ""
+                  }`}
+                viewBox="0 0 18 18"
+                fill="#567484"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4.14516 7.96L8.42815 12.76C8.71384 13.08 9.28522 13.08 9.57091 12.76L13.8563 7.9598C14.2086 7.5644 13.873 7 13.2849 7L4.71654 7C4.12611 7 3.79043 7.5644 4.14516 7.96Z"
+                />
+              </svg>    </button>
+
+            {showProvider && (
+              <div className="absolute top-12 left-0 w-full rounded-xl bg-body-level-8 p-3 z-50">
+                <div className="flex-1 relative items-center">
+                  <Search
+                    size={20}
+                    className="absolute left-3 top-5 -translate-y-1/2 text-typography-secondary "
+                  />
+
+
+                  <input
+                    placeholder="Search..."
+                    className="w-full h-10 rounded-lg ps-10 bg-body-level-9 px-3 outline-none mb-3  text-[14px]"
+                  />
+
+                </div>
+                <div className="max-h-72 overflow-y-auto">
+                  {providers.map((provider) => (
+                    <label
+                      key={provider}
+                      className="flex items-center gap-3 p-2 text-typography-secondary "
+                    >
+                      <input type="checkbox" />
+                      <span className="hover:text-typography-primary  text-[14px]"> {provider}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+               
               </div>
             </div>
 

@@ -30,7 +30,7 @@ export default function Header({
 }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
-
+  const [showSort, setShowSort] = useState(false);
   const [isWalletOpen, setIsWalletOpen] = React.useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "signup">("login");
@@ -104,7 +104,7 @@ export default function Header({
   };
   return (
     <>
-      <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5 ">
+      <header className="fixed top-0 z-[200] w-full bg-profile-model-bg px-2.5 ">
         <div className="layout-container flex h-[var(--header-height-sm)] items-center justify-between lg:h-[var(--header-height-lg)] w-full max-w-[1312px] mx-auto">
           <Link
             className="block w-20 min-w-[48px] shrink-0 flex-none sm:w-[81px] sm:min-w-[81px]"
@@ -117,8 +117,8 @@ export default function Header({
               <Link
                 href="/"
                 className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/casino"
-                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
-                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                  ? "bg-body-level-9 text-accent-blue border-body-level-2"
+                  : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
                   }`}
               >
                 Casino
@@ -127,8 +127,8 @@ export default function Header({
               <Link
                 href="/sport"
                 className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/sport"
-                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
-                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                  ? "bg-body-level-9 text-accent-blue border-body-level-2"
+                  : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
                   }`}
               >
                 Sports
@@ -167,23 +167,43 @@ export default function Header({
               {/* logged in data starts */}
               {isLoggedIn ? (
                 <>
-                  <div className="relative">
+
+                  <div className="relative hidden lg:block">
                     <button
-                      className="flex rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium px-4 bg-body-level-9 text-white hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 min-w-[100px] shrink-0 pr-2"
-                      data-profile="currency"
+                      onClick={() => setShowSort(!showSort)}
+                      className="h-10 min-w-[109px] px-2 rounded-[8px] bg-body-level-9 hover:bg-hover-color  flex items-center justify-between gap-2 "
                     >
-                      <span className="flex pt-[2px]">
-                        <span className="relative flex">
-                          <span className="absolute left-0 text-green opacity-0 ">
-                            $0.00{" "}
-                          </span>
-                          $0.00{" "}
-                        </span>
-                      </span>
-                      <span className="flex h-5 w-5 items-center justify-center">
-                        <ThemeIcons.ChevronDownIcon />
-                      </span>
-                    </button>
+                      <span className="text-white hover:text-white  text-[14px] "> $0.00</span>
+
+                      <svg
+                        className={`w-[18px] h-[18px] transition-transform duration-300 ${showSort ? "rotate-180" : ""
+                          }`}
+                        viewBox="0 0 18 18"
+                        fill="#fff"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M4.14516 7.96L8.42815 12.76C8.71384 13.08 9.28522 13.08 9.57091 12.76L13.8563 7.9598C14.2086 7.5644 13.873 7 13.2849 7L4.71654 7C4.12611 7 3.79043 7.5644 4.14516 7.96Z"
+                        />
+                      </svg>      </button>
+
+                    {showSort && (
+                      <div className="absolute top-14 left-0 rounded-[4px] bg-profile-model-bg p-2 z-50 w-[150px]">
+                        <div className="py-2  text-typography-secondary hover:text-white  hover:bg-body-level-7 text-[14px] bg:transperent rounded-[4px] px-2">
+                          Balance : 0
+                        </div>
+                        <div className="py-2  text-typography-secondary hover:text-white  hover:bg-body-level-7 text-[14px] bg:transperent rounded-[4px] px-2">
+                          Withdrawal : 0
+                        </div>
+                        <div className="py-2  text-typography-secondary hover:text-white  hover:bg-body-level-7 text-[14px] bg:transperent rounded-[4px] px-2">
+                          Bonus : 0
+                        </div>
+                        <div className="py-2  text-typography-secondary hover:text-white  hover:bg-body-level-7 text-[14px] bg:transperent rounded-[4px] px-2">
+                          Exposure : 0</div>
+                      </div>
+                    )}
                   </div>
                   <div className="relative">
                     <button
@@ -367,7 +387,7 @@ export default function Header({
         </div>
       )}
       {showStatisticsModal && (
-               <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
+        <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/60 overflow-y-auto p-3 md:p-6 mt-[60px] md:mt-0 mb-[60px] mb:mt-0">
           <div className="relative w-full max-w-4xl mx-4">
             <button
               onClick={() => setShowProfileModal(false)}

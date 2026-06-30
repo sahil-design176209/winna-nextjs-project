@@ -71,11 +71,10 @@ export default function SportRacingTabs() {
       <div className="flex items-center gap-3 mb-6">
         <button
           onClick={() => setActiveSport("greyhound")}
-          className={`flex items-center gap-2 font-bold px-4 py-1.5 rounded-lg text-sm transition ${
-            activeSport === "greyhound"
+          className={`flex items-center gap-2 font-bold px-4 py-1.5 rounded-lg text-sm transition ${activeSport === "greyhound"
               ? "bg-accent-blue text-white"
-              : "bg-[#1b263b] text-zinc-300 hover:bg-accent-blue"
-          }`}
+              : "bg-body-level-7 text-zinc-300 hover:bg-accent-blue"
+            }`}
         >
           <span>
             <SportsMenuIcons.GreyhoundRacingIcon />
@@ -85,11 +84,10 @@ export default function SportRacingTabs() {
 
         <button
           onClick={() => setActiveSport("horse")}
-          className={`flex items-center gap-2 font-bold px-4 py-1.5 rounded-lg text-sm transition ${
-            activeSport === "horse"
+          className={`flex items-center gap-2 font-bold px-4 py-1.5 rounded-lg text-sm transition ${activeSport === "horse"
               ? "bg-accent-blue text-white"
-              : "bg-[#1b263b] text-zinc-300 hover:bg-accent-blue"
-          }`}
+              : "bg-body-level-7 text-zinc-300 hover:bg-accent-blue"
+            }`}
         >
           <span>
             <SportsMenuIcons.HorseRacingIcon />
@@ -105,13 +103,13 @@ export default function SportRacingTabs() {
             1
           </span>
         </button>
-        <button className="flex items-center gap-2 bg-[#131c2e] text-white font-semibold px-4 py-1.5 rounded-md text-14 border border-zinc-800/80">
+        <button className="flex items-center gap-2 bg-body-level-7 text-white font-semibold px-4 py-1.5 rounded-md text-14 border border-zinc-800/80">
           Tomorrow
           <span className="bg-body-level-4 text-zinc-400 px-1.5 py-0.5 rounded-full text-[10px]">
             0
           </span>
         </button>
-        <button className="flex items-center gap-2 bg-[#131c2e] text-white font-semibold px-4 py-1.5 rounded-md text-14 border border-zinc-800/80">
+        <button className="flex items-center gap-2 bg-body-level-7 text-white font-semibold px-4 py-1.5 rounded-md text-14 border border-zinc-800/80">
           Upcoming
           <span className="bg-body-level-4 text-zinc-400 px-1.5 py-0.5 rounded-full text-[10px]">
             0
@@ -136,10 +134,10 @@ export default function SportRacingTabs() {
         <h2 className="text-lg font-bold tracking-wide">{currentTrack}</h2>
       </div>
 
-      <div className="max-w-sm bg-body-level-1 border border-body-level-2 rounded-xl p-2 shadow-xl backdrop-blur-md">
-        <div className="flex justify-between items-center text-[11px] font-semibold text-zinc-400 tracking-wider mb-3 px-1">
-          <span>Runner</span>
-          <span>Time</span>
+      <div className="max-w-sm bg-body-level-7 border border-body-level-2 rounded-xl p-2 shadow-xl backdrop-blur-md">
+        <div className="flex justify-between items-center text-[11px] font-semibold text-zinc-400 tracking-wider mt-2 mb-2 px-1">
+          <span className="mx-2 text-[12px] font-extrabold">Runner</span>
+          <span className="text-[12px] font-extrabold me-6">Time</span>
         </div>
 
         <div className="space-y-2 mb-4">
@@ -148,10 +146,10 @@ export default function SportRacingTabs() {
               key={runner.id}
               className="flex justify-between items-center rounded-lg hover:border-zinc-700 transition duration-150 mb-5"
             >
-              <span className="text-xs font-semibold text-zinc-200">
+              <span className="text-[12px] font-semibold text-zinc-200">
                 {runner.name}
               </span>
-              <span className="bg-[#1b263b] hover:bg-body-level-2 text-white text-[11px] font-bold px-3 py-4.5 rounded-md min-w-[85px] text-center">
+              <span className="bg-body-level-9 hover:bg-body-level-9 text-white text-[12px] font-bold px-3 py-4.5 rounded-md min-w-[85px] text-center">
                 {runner.time}
               </span>
             </div>
@@ -160,7 +158,7 @@ export default function SportRacingTabs() {
 
         <button
           onClick={handleGoToAllRunners}
-          className="w-full bg-body-level-2 text-white rounded-lg py-2.5 text-center text-[10px] font-bold tracking-wider transition uppercase flex items-center justify-center gap-1.5"
+          className="w-full bg-body-level-9 text-white rounded-lg py-2.5 text-center text-[12px] font-bold tracking-wider transition uppercase flex items-center justify-center gap-1.5"
         >
           Go To All Runners
           <span className="text-[8px] text-white opacity-75 rotate-270">
