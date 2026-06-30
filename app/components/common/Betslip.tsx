@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 interface BetSlipProps {
-  selectedBet: {
-    team: string;
-    odd: string;
-  } | null;
+  selectedBet: { team: string; odd: string } | null; // your existing line
+  isCollapsed: boolean;
+  setIsCollapsed: (collapsed: boolean) => void;
 }
-const Betslip = ({ selectedBet }: BetSlipProps) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-
+const Betslip = ({
+  selectedBet,
+  isCollapsed,
+  setIsCollapsed,
+}: BetSlipProps) => {
   const [isOneClickBet, setIsOneClickBet] = useState(false);
 
   const quickBetAmounts = [100, 200, 500, 1000];
