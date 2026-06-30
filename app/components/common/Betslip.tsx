@@ -183,11 +183,11 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
                     </div>
 
                     {/* Buttons */}
-                    <button className="mt-8 h-12 w-full rounded-lg bg-accent-blue font-bold uppercase hover:bg-[#c67c18] transition">
+                    <button className="mt-8 h-12 w-full rounded-lg bg-accent-blue font-bold uppercase hover:bg-[#c67c18] transition text-[13px]">
                       Place Bet
                     </button>
 
-                    <button className="mt-3 h-12 w-full rounded-lg bg-[#313F55] font-semibold hover:bg-[#3b4b63] transition">
+                    <button className="mt-3 h-12 w-full rounded-lg bg-[#313F55] font-bold hover:bg-[#3b4b63] transition text-[13px]">
                       Cancel
                     </button>
                   </div>
