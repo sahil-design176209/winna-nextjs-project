@@ -423,13 +423,15 @@ export default function EventComponent() {
                     className={`flex items-center justify-between rounded-lg px-4 py-3 h-[30px] transition-colors ${
                       selectedBet?.team === item.team &&
                       selectedBet?.odd === item.odd
-                        ? "bg-accent-blue" // Your active/selected background color
-                        : "bg-body-level-9" // Your default background color
+                        ? "bg-accent-blue !text-white" // <-- Added !text-white here
+                        : "bg-body-level-9"
                     }`}
                   >
-                    <span className="text-typography-gray text-[12px] font-bold">
+                    {/* Change text-typography-gray to text-[inherit] so it listens to the parent */}
+                    <span className="text-[inherit] text-[12px] font-bold">
                       {item.team}
                     </span>
+
                     <span className="font-semibold text-white text-[12px]">
                       {item.odd}
                     </span>
