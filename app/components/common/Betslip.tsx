@@ -6,20 +6,15 @@ interface BetSlipProps {
   } | null;
 }
 const Betslip = ({ selectedBet }: BetSlipProps) => {
-  // State to manage whether the entire panel is collapsed or open
   const [isCollapsed, setIsCollapsed] = useState(true);
 
-  // State to manage whether "1 Click Bet" mode is active
   const [isOneClickBet, setIsOneClickBet] = useState(false);
 
-  // Quick bet chip values shown when mode is active
   const quickBetAmounts = [100, 200, 500, 1000];
 
   return (
     <div className=" hidden md:block w-full max-w-[320px] bg-black text-white font-sans rounded-t-lg overflow-hidden shadow-xl select-none transition-all duration-300">
-      {/* HEADER SECTION */}
       <div className="flex items-center justify-between px-4 py-3 bg-accent-blue">
-        {/* Clicking the title also toggles collapse for better UX */}
         <div
           className="flex items-center gap-2 cursor-pointer select-none"
           onClick={() => setIsCollapsed(!isCollapsed)}
@@ -34,7 +29,6 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
             1 Click Bet
           </span>
 
-          {/* Custom Toggle Switch */}
           <label className="relative inline-flex items-center cursor-pointer">
             <input
               type="checkbox"
@@ -45,7 +39,6 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
             <div className="w-11 h-6 bg-accent-blue-hover rounded-full peer peer-focus:ring-0 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-blue-pressed"></div>
           </label>
 
-          {/* Dropdown Arrow/Icon - Toggles panel open/close */}
           <button
             type="button"
             onClick={() => setIsCollapsed(!isCollapsed)}
@@ -58,7 +51,6 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
               viewBox="0 0 16 16"
               fill="#fff"
               xmlns="http://www.w3.org/2000/svg"
-              // Flips the arrow upside-down smoothly when collapsed
               className={`transform transition-transform duration-200 ${
                 isCollapsed ? "rotate-180" : "rotate-0"
               }`}
@@ -72,12 +64,9 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
       {!isCollapsed && (
         <div className="p-3 min-h-[140px] flex flex-col justify-center transition-all">
           {!isOneClickBet ? (
-            /* SCREENSHOT 2: Default Empty Betslip State */
             <div className="flex items-center gap-4">
-              {/* Ticket Icon Container */}
-
               {!selectedBet ? (
-                <div className="flex flex-col gap-0.5">
+                <div className="flex  gap-3">
                   <div className="flex-shrink-0">
                     <svg
                       width="54"
@@ -105,44 +94,40 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
                     </svg>
                   </div>
 
-                  <h3 className="font-bold text-[17px] text-white">
-                    Place your bets
-                  </h3>
+                  <div className="right">
+                    <h3 className="font-bold text-[17px] text-white">
+                      Place your bets
+                    </h3>
 
-                  <p className="text-sm text-gray-400">
-                    Your selections will appear in this area
-                  </p>
+                    <p className="text-sm text-gray-400">
+                      Your selections will appear in this area
+                    </p>
+                  </div>
                 </div>
               ) : (
                 <div className="w-full max-w-[340px] rounded-lg text-white overflow-hidden ">
-                  {/* Selection */}
                   <div className=" py-4">
-                    <h3 className="text-accent-blue font-semibold text-[16px]">
+                    <h3 className="text-accent-blue font-bold text-[16px]">
                       Zimbabwe
                     </h3>
-
                     <p className="text-gray-400 text-sm mt-1">
                       Match Odds • Zimbabwe v Bangladesh
                     </p>
-
                     <p className="text-white font-bold text-xl mt-2">1.08</p>
                   </div>
 
-                  {/* Stake */}
-                  <div className="">
+                  <div>
                     <div className="flex items-center justify-center gap-2">
                       <label className="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-0">
                         Stake
                       </label>
-
                       <input
                         type="number"
                         placeholder="Enter amount"
-                        className="w-full h-12 rounded-lg border border-[#35577D] bg-[#0d1724] px-4 text-white outline-none focus:border-blue-500"
+                        className="w-full h-12 rounded-lg border border-[#35577D] bg-[#0d1724] px-4 text-white outline-none focus:border-accent-blue"
                       />
                     </div>
 
-                    {/* Quick Stake */}
                     <div className="grid grid-cols-3 gap-2 mt-6">
                       <button
                         type="button"
@@ -182,17 +167,79 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
                       </button>
                     </div>
 
-                    {/* Buttons */}
                     <button className="mt-8 h-12 w-full rounded-lg bg-accent-blue font-bold uppercase hover:bg-[#c67c18] transition text-[13px]">
                       Place Bet
                     </button>
-
                     <button className="mt-3 h-12 w-full rounded-lg bg-[#313F55] font-bold hover:bg-[#3b4b63] transition text-[13px]">
                       Cancel
                     </button>
                   </div>
                 </div>
               )}
+            </div>
+          ) : selectedBet ? (
+            <div className="text-sm text-gray-300 font-medium">
+              <div className="flex flex-col w-full transition-all duration-200">
+                <div className="text-left mb-4">
+                  <h3 className="text-accent-blue font-bold text-base tracking-wide">
+                    Bangladesh
+                  </h3>
+                  <p className="text-gray-400 text-xs mt-0.5 font-medium lowercase first-letter:uppercase">
+                    match odds Zimbabwe v Bangladesh
+                  </p>
+                  <p className="text-white font-bold text-xl mt-1.5">10</p>
+                </div>
+
+                <div className="h-[1px] bg-body-level-7 w-full mb-4" />
+
+                <div className="grid grid-cols-4 gap-3 mb-5">
+                  {quickBetAmounts.map((amount, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      className="bg-[#1c2a38] hover:bg-[#243648] text-gray-200 font-bold py-2.5 rounded-full text-center text-sm transition-colors cursor-pointer"
+                    >
+                      {amount}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="h-[1px] bg-body-level-7 w-full mb-4" />
+
+                {/* Input Stake Row */}
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <label className="text-sm font-semibold text-gray-400">
+                    Stake
+                  </label>
+                  <input
+                    type="number"
+                    defaultValue="100"
+                    className="w-[70%] h-11 rounded-lg border border-[#1e2f42] bg-[#09111a] px-4 text-white text-right font-bold outline-none focus:border-accent-blue"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between bg-[#121924] px-4 py-3 rounded-md mb-5 w-full">
+                  <span className="text-xs text-gray-400 font-medium">
+                    Total Stake
+                  </span>
+                  <span className="text-sm font-bold text-white">100</span>
+                </div>
+
+                <div className="flex flex-col gap-2.5 w-full">
+                  <button
+                    type="button"
+                    className="h-12 w-full rounded-xl bg-accent-blue hover:bg-[#e07f00] text-white font-medium uppercase tracking-wider transition text-[13px]"
+                  >
+                    PLACE BET
+                  </button>
+                  <button
+                    type="button"
+                    className="h-12 w-full rounded-xl bg-[#202b36] hover:bg-[#2a3847] text-gray-200 font-bold transition text-[14px]"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
             <div className="flex flex-col gap-4 w-full">
@@ -201,7 +248,6 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
                 will place your bet immediately.
               </p>
 
-              {/* Quick Stake Preset Chips */}
               <div className="grid grid-cols-4 gap-2.5 w-full pt-1">
                 {quickBetAmounts.map((amount) => (
                   <button
