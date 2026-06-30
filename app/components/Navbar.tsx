@@ -24,8 +24,8 @@ const Navbar = ({ isPromotionMenuOpen, onTogglePromotions }: NavbarProps) => {
     <nav
       className={`sticky top-14 z-30 border-b border-body-level-1 lg:top-14 ${
         showSportsNavbar
-          ? "block bg-body-level-2"
-          : "hidden bg-body-level-0 lg:block"
+          ? "block bg-body-level-9"
+          : "hidden bg-body-level-9 lg:block"
       }`}
     >
       {showSportsNavbar ? (
