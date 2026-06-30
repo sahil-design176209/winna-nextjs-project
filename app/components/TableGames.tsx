@@ -3,7 +3,7 @@ import React from "react";
 const TableGames = () => {
   return (
     <div>
-      <section className="mb-4"> 
+      <section className="hidden md:block mb-4">
         <header className="flex items-center justify-between gap-2 mt-5">
           <h4 className="flex items-center gap-2 text-18 font-semibold capitalize text-typography-blue lg:text-20">
             <a
