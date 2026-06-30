@@ -59,8 +59,9 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
               fill="#fff"
               xmlns="http://www.w3.org/2000/svg"
               // Flips the arrow upside-down smoothly when collapsed
-              className={`transform transition-transform duration-200 ${isCollapsed ? "rotate-180" : "rotate-0"
-                }`}
+              className={`transform transition-transform duration-200 ${
+                isCollapsed ? "rotate-180" : "rotate-0"
+              }`}
             >
               <path d="M8.7542 11.1529C8.35634 11.6157 7.64366 11.6157 7.2458 11.1529L4.24545 7.66298C3.68586 7.01207 4.14485 6 4.99964 6L11.0004 6C11.8551 6 12.3141 7.01207 11.7546 7.66298L8.7542 11.1529Z"></path>
             </svg>
@@ -68,43 +69,41 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
         </div>
       </div>
 
-
       {!isCollapsed && (
-        <div className="p-5 min-h-[140px] flex flex-col justify-center transition-all">
+        <div className="p-3 min-h-[140px] flex flex-col justify-center transition-all">
           {!isOneClickBet ? (
             /* SCREENSHOT 2: Default Empty Betslip State */
             <div className="flex items-center gap-4">
               {/* Ticket Icon Container */}
-             
 
               {!selectedBet ? (
                 <div className="flex flex-col gap-0.5">
-                   <div className="flex-shrink-0">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g>
-                    <path
-                      opacity="0.15"
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z"
-                      fill="var(--accent-blue)"
-                    ></path>
-                    <path
-                      opacity="0.8"
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M39.1395 42.6234C35.0096 45.9848 29.7401 48 24 48C18.3243 48 13.1088 46.0298 9 42.7361V14H12C12 15.6569 13.3431 17 15 17C16.6569 17 18 15.6569 18 14H21C21 15.6569 22.3431 17 24 17C25.6569 17 27 15.6569 27 14H30C30 15.6569 31.3431 17 33 17C34.6569 17 36 15.6569 36 14H39.1395V42.6234ZM16.5 24C15.6716 24 15 24.6716 15 25.5C15 26.3284 15.6716 27 16.5 27H31.5C32.3284 27 33 26.3284 33 25.5C33 24.6716 32.3284 24 31.5 24H16.5ZM16.5 31C15.6716 31 15 31.6716 15 32.5C15 33.3284 15.6716 34 16.5 34H27.5C28.3284 34 29 33.3284 29 32.5C29 31.6716 28.3284 31 27.5 31H16.5Z"
-                      fill="var(--accent-blue)"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
+                  <div className="flex-shrink-0">
+                    <svg
+                      width="54"
+                      height="54"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g>
+                        <path
+                          opacity="0.15"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z"
+                          fill="var(--accent-blue)"
+                        ></path>
+                        <path
+                          opacity="0.8"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M39.1395 42.6234C35.0096 45.9848 29.7401 48 24 48C18.3243 48 13.1088 46.0298 9 42.7361V14H12C12 15.6569 13.3431 17 15 17C16.6569 17 18 15.6569 18 14H21C21 15.6569 22.3431 17 24 17C25.6569 17 27 15.6569 27 14H30C30 15.6569 31.3431 17 33 17C34.6569 17 36 15.6569 36 14H39.1395V42.6234ZM16.5 24C15.6716 24 15 24.6716 15 25.5C15 26.3284 15.6716 27 16.5 27H31.5C32.3284 27 33 26.3284 33 25.5C33 24.6716 32.3284 24 31.5 24H16.5ZM16.5 31C15.6716 31 15 31.6716 15 32.5C15 33.3284 15.6716 34 16.5 34H27.5C28.3284 34 29 33.3284 29 32.5C29 31.6716 28.3284 31 27.5 31H16.5Z"
+                          fill="var(--accent-blue)"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
 
                   <h3 className="font-bold text-[17px] text-white">
                     Place your bets
@@ -115,10 +114,10 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
                   </p>
                 </div>
               ) : (
-                <div className="w-full max-w-[340px] rounded-lg bg-[#1b2433] text-white overflow-hidden border border-[#2b3647]">
+                <div className="w-full max-w-[340px] rounded-lg text-white overflow-hidden ">
                   {/* Selection */}
-                  <div className="border-b border-[#2b3647] p-4">
-                    <h3 className="text-[#F5A623] font-semibold text-[16px]">
+                  <div className=" py-4">
+                    <h3 className="text-accent-blue font-semibold text-[16px]">
                       Zimbabwe
                     </h3>
 
@@ -126,46 +125,69 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
                       Match Odds • Zimbabwe v Bangladesh
                     </p>
 
-                    <p className="text-white font-bold text-3xl mt-2">
-                      1.08
-                    </p>
+                    <p className="text-white font-bold text-3xl mt-2">1.08</p>
                   </div>
 
                   {/* Stake */}
-                  <div className="p-4">
-                    <label className="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
-                      Stake
-                    </label>
+                  <div className="">
+                    <div className="flex items-center justify-center gap-2">
+                      <label className="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-0">
+                        Stake
+                      </label>
 
-                    <input
-                      type="number"
-                      placeholder="Enter amount"
-
-                      className="w-full h-12 rounded-lg border border-[#35577D] bg-[#0d1724] px-4 text-white outline-none focus:border-blue-500"
-                    />
+                      <input
+                        type="number"
+                        placeholder="Enter amount"
+                        className="w-full h-12 rounded-lg border border-[#35577D] bg-[#0d1724] px-4 text-white outline-none focus:border-blue-500"
+                      />
+                    </div>
 
                     {/* Quick Stake */}
-                    <div className="grid grid-cols-3 gap-3 mt-6">
-
+                    <div className="grid grid-cols-3 gap-2 mt-6">
                       <button
-
-                        className="h-12 rounded-lg bg-[#2B3647] font-semibold transition hover:bg-blue-600"
+                        type="button"
+                        className="quick-btn  h-12 bg-body-level-3 rounded-lg"
                       >
-
+                        100
                       </button>
-
+                      <button
+                        type="button"
+                        className="quick-btn  h-12 bg-body-level-3 rounded-lg"
+                      >
+                        100
+                      </button>
+                      <button
+                        type="button"
+                        className="quick-btn  h-12 bg-body-level-3 rounded-lg"
+                      >
+                        100
+                      </button>
+                      <button
+                        type="button"
+                        className="quick-btn  h-12 bg-body-level-3 rounded-lg"
+                      >
+                        100
+                      </button>
+                      <button
+                        type="button"
+                        className="quick-btn  h-12 bg-body-level-3 rounded-lg"
+                      >
+                        100
+                      </button>
+                      <button
+                        type="button"
+                        className="quick-btn  h-12 bg-body-level-3 rounded-lg"
+                      >
+                        100
+                      </button>
                     </div>
 
                     {/* Buttons */}
-                    <button
-                      className="mt-8 h-12 w-full rounded-lg bg-[#A86A12] font-bold uppercase hover:bg-[#c67c18] transition"
-                    >
+                    <button className="mt-8 h-12 w-full rounded-lg bg-accent-blue font-bold uppercase hover:bg-[#c67c18] transition">
                       Place Bet
                     </button>
 
-                    <button
-                      className="mt-3 h-12 w-full rounded-lg bg-[#313F55] font-semibold hover:bg-[#3b4b63] transition"
-                    >
+                    <button className="mt-3 h-12 w-full rounded-lg bg-[#313F55] font-semibold hover:bg-[#3b4b63] transition">
                       Cancel
                     </button>
                   </div>
@@ -173,7 +195,6 @@ const Betslip = ({ selectedBet }: BetSlipProps) => {
               )}
             </div>
           ) : (
-          
             <div className="flex flex-col gap-4 w-full">
               <p className="text-sm text-gray-300 leading-normal font-medium">
                 QuickBet mode is on! After single click on any selection, it
