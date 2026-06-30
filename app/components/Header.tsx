@@ -116,20 +116,22 @@ export default function Header({
             <div className="ml-5 hidden gap-3 lg:inline-flex">
               <Link
                 href="/"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/casino"
-                  ? "bg-body-level-9 text-accent-blue border-body-level-2"
-                  : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                  }`}
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
+                  pathname === "/casino"
+                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
+                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                }`}
               >
                 Casino
               </Link>
 
               <Link
                 href="/sport"
-                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${pathname === "/sport"
-                  ? "bg-body-level-9 text-accent-blue border-body-level-2"
-                  : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
-                  }`}
+                className={`flex rounded-lg cursor-pointer items-center justify-center text-14 h-10 transition-colors gap-1 font-medium min-w-10 px-4 md:text-16 border ${
+                  pathname === "/sport"
+                    ? "bg-body-level-9 text-accent-blue border-body-level-2"
+                    : "bg-transparent text-typography-secondary border-body-level-3 hover:border-accent-blue-hover"
+                }`}
               >
                 Sports
               </Link>
@@ -158,7 +160,7 @@ export default function Header({
             <div className="flex flex-wrap items-center gap-2 lg:ml-auto justify-center">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className=" hidden  rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-9 hover:bg-body-level-5 active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 size-10 text-typography-secondary flex lg:flex"
+                className=" hidden  rounded-lg cursor-pointer items-center justify-center disabled:cursor-not-allowed text-14 md:text-sm h-10 transition-colors gap-1 font-medium min-w-10 bg-body-level-9  active:bg-body-level-3 disabled:bg-body-level-9 disabled:opacity-50 size-10 text-typography-secondary flex lg:flex"
               >
                 <div className="flex h-4 w-4 items-center justify-center mr-0 md:mr-0 md:h-6 md:w-6">
                   <ThemeIcons.SearchIcon />
@@ -167,17 +169,19 @@ export default function Header({
               {/* logged in data starts */}
               {isLoggedIn ? (
                 <>
-
                   <div className="relative hidden lg:block">
                     <button
                       onClick={() => setShowSort(!showSort)}
                       className="h-10 min-w-[109px] px-2 rounded-[8px] bg-body-level-9 hover:bg-hover-color  flex items-center justify-between gap-2 "
                     >
-                      <span className="text-white hover:text-white  text-[14px] "> $0.00</span>
-
+                      <span className="text-white hover:text-white  text-[14px] ">
+                        {" "}
+                        $0.00
+                      </span>
                       <svg
-                        className={`w-[18px] h-[18px] transition-transform duration-300 ${showSort ? "rotate-180" : ""
-                          }`}
+                        className={`w-[18px] h-[18px] transition-transform duration-300 ${
+                          showSort ? "rotate-180" : ""
+                        }`}
                         viewBox="0 0 18 18"
                         fill="#fff"
                         xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +191,8 @@ export default function Header({
                           clipRule="evenodd"
                           d="M4.14516 7.96L8.42815 12.76C8.71384 13.08 9.28522 13.08 9.57091 12.76L13.8563 7.9598C14.2086 7.5644 13.873 7 13.2849 7L4.71654 7C4.12611 7 3.79043 7.5644 4.14516 7.96Z"
                         />
-                      </svg>      </button>
+                      </svg>{" "}
+                    </button>
 
                     {showSort && (
                       <div className="absolute top-14 left-0 rounded-[4px] bg-profile-model-bg p-2 z-50 w-[150px]">
@@ -201,7 +206,8 @@ export default function Header({
                           Bonus : 0
                         </div>
                         <div className="py-2  text-typography-secondary hover:text-white  hover:bg-body-level-7 text-[14px] bg:transperent rounded-[4px] px-2">
-                          Exposure : 0</div>
+                          Exposure : 0
+                        </div>
                       </div>
                     )}
                   </div>
