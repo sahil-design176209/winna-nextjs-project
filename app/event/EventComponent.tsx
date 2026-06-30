@@ -13,10 +13,17 @@ export default function EventComponent() {
   const [showMatchOdds, setShowMatchOdds] = useState(true);
   const [showBookmaker, setShowBookmaker] = useState(true);
   const [showToss, setShowToss] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [selectedBet, setSelectedBet] = useState<{
     team: string;
     odd: string;
   } | null>(null);
+
+  const handleBetClick = (item: { team: string; odd: string }) => {
+    setSelectedBet(item);
+    setIsCollapsed(false); // Opens the betslip when a bet is clicked
+  };
+
   return (
     <>
       <section className="w-full space-y-5">
@@ -232,8 +239,13 @@ export default function EventComponent() {
                 ].map((item) => (
                   <div
                     key={item.team}
-                    onClick={() => setSelectedBet(item)}
-                    className="flex items-center justify-between rounded-lg bg-body-level-9 px-4 py-3 h-[30px] cursor-pointer"
+                    onClick={() => handleBetClick(item)}
+                    className={`flex items-center justify-between rounded-lg px-4 py-3 h-[30px] transition-colors ${
+                      selectedBet?.team === item.team &&
+                      selectedBet?.odd === item.odd
+                        ? "bg-accent-blue" // Your active/selected background color
+                        : "bg-body-level-9" // Your default background color
+                    }`}
                   >
                     <span className="text-typography-gray text-[12px] font-bold">
                       {item.team}
@@ -317,8 +329,13 @@ export default function EventComponent() {
                 ].map((item) => (
                   <div
                     key={item.team}
-                    onClick={() => setSelectedBet(item)}
-                    className="flex items-center justify-between rounded-lg bg-body-level-9 px-4 py-3 h-[30px]"
+                    onClick={() => handleBetClick(item)}
+                    className={`flex items-center justify-between rounded-lg px-4 py-3 h-[30px] transition-colors ${
+                      selectedBet?.team === item.team &&
+                      selectedBet?.odd === item.odd
+                        ? "bg-accent-blue" // Your active/selected background color
+                        : "bg-body-level-9" // Your default background color
+                    }`}
                   >
                     <span className="text-typography-gray text-[12px] font-bold">
                       {item.team}
@@ -402,8 +419,13 @@ export default function EventComponent() {
                 ].map((item) => (
                   <div
                     key={item.team}
-                    onClick={() => setSelectedBet(item)}
-                    className="flex items-center justify-between rounded-lg bg-body-level-9 px-4 py-3 h-[30px]"
+                    onClick={() => handleBetClick(item)}
+                    className={`flex items-center justify-between rounded-lg px-4 py-3 h-[30px] transition-colors ${
+                      selectedBet?.team === item.team &&
+                      selectedBet?.odd === item.odd
+                        ? "bg-accent-blue" // Your active/selected background color
+                        : "bg-body-level-9" // Your default background color
+                    }`}
                   >
                     <span className="text-typography-gray text-[12px] font-bold">
                       {item.team}
@@ -419,7 +441,11 @@ export default function EventComponent() {
         )}
       </section>
       <div className="fixed bottom-0 right-4 z-50 w-full max-w-[360px] sm:right-6 md:right-8">
-        <Betslip selectedBet={selectedBet} />
+        <Betslip
+          selectedBet={selectedBet}
+          isCollapsed={isCollapsed}
+          setIsCollapsed={setIsCollapsed}
+        />
       </div>
     </>
   );
