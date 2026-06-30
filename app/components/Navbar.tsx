@@ -18,15 +18,15 @@ const Navbar = ({ isPromotionMenuOpen, onTogglePromotions }: NavbarProps) => {
     pathname.startsWith("/sport") ||
     pathname.startsWith("/racing") ||
     pathname.startsWith("/events") ||
-    pathname.startsWith("/bet") ||
-    pathname.startsWith("/live");
+    pathname.startsWith("/event");
 
   return (
     <nav
-      className={`sticky top-14 z-30 border-b border-body-level-1 lg:top-14 ${showSportsNavbar
-        ? "block bg-body-level-2"
-        : "hidden bg-body-level-0 lg:block"
-        }`}
+      className={`sticky top-14 z-30 border-b border-body-level-1 lg:top-14 ${
+        showSportsNavbar
+          ? "block bg-body-level-2"
+          : "hidden bg-body-level-0 lg:block"
+      }`}
     >
       {showSportsNavbar ? (
         <SportsNavbar />
