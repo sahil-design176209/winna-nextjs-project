@@ -104,8 +104,8 @@ export default function Header({
   };
   return (
     <>
-      <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5">
-        <div className="layout-container flex h-[var(--header-height-sm)] items-center justify-between lg:h-[var(--header-height-lg)]">
+      <header className="fixed top-0 z-[200] w-full bg-body-level-1 px-2.5 ">
+        <div className="layout-container flex h-[var(--header-height-sm)] items-center justify-between lg:h-[var(--header-height-lg)] w-full max-w-[1312px] mx-auto">
           <Link
             className="block w-20 min-w-[48px] shrink-0 flex-none sm:w-[81px] sm:min-w-[81px]"
             href="/"

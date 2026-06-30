@@ -13,6 +13,10 @@ export default function EventComponent() {
   const [showMatchOdds, setShowMatchOdds] = useState(true);
   const [showBookmaker, setShowBookmaker] = useState(true);
   const [showToss, setShowToss] = useState(true);
+  const [selectedBet, setSelectedBet] = useState<{
+    team: string;
+    odd: string;
+  } | null>(null);
   return (
     <>
       <section className="w-full space-y-5">
@@ -80,11 +84,10 @@ export default function EventComponent() {
           <div className="flex items-center gap-6">
             <button
               onClick={() => setActiveTab("all")}
-              className={`rounded-full px-4 py-2 text-[14px] font-semibold ${
-                activeTab === "all"
+              className={`rounded-full px-4 py-2 text-[14px] font-semibold ${activeTab === "all"
                   ? "bg-body-level-7 text-white"
                   : "text-typography-dark-gray"
-              }`}
+                }`}
             >
               All{" "}
               <span className="ml-1 text-[12px] bg-body-level-4 rounded-full text-typography-gray px-1.5 py-0">
@@ -94,9 +97,8 @@ export default function EventComponent() {
 
             <button
               onClick={() => setActiveTab("market")}
-              className={`text-[14px] ${
-                activeTab === "market" ? "text-white" : "text-typography-gray"
-              }`}
+              className={`text-[14px] ${activeTab === "market" ? "text-white" : "text-typography-gray"
+                }`}
             >
               Market{" "}
               <span className="text-[12px] bg-gray-800 text-typography-gray rounded-full px-1.5 py-0">
@@ -106,9 +108,8 @@ export default function EventComponent() {
 
             <button
               onClick={() => setActiveTab("odds")}
-              className={`text-[14px] ${
-                activeTab === "odds" ? "text-white" : "text-typography-gray"
-              }`}
+              className={`text-[14px] ${activeTab === "odds" ? "text-white" : "text-typography-gray"
+                }`}
             >
               Odds{" "}
               <span className="text-[12px] bg-gray-800 text-typography-gray rounded-full px-1.5 py-0">
@@ -228,7 +229,8 @@ export default function EventComponent() {
                 ].map((item) => (
                   <div
                     key={item.team}
-                    className="flex items-center justify-between rounded-lg bg-body-level-9 px-4 py-3 h-[30px]"
+                    onClick={() => setSelectedBet(item)}
+                    className="flex items-center justify-between rounded-lg bg-body-level-9 px-4 py-3 h-[30px] cursor-pointer"
                   >
                     <span className="text-typography-gray text-[12px] font-bold">
                       {item.team}
@@ -412,7 +414,7 @@ export default function EventComponent() {
         )}
       </section>
       <div className="fixed bottom-0 right-4 z-50 w-full max-w-[360px] sm:right-6 md:right-8">
-        <Betslip />
+    <Betslip selectedBet={selectedBet} />
       </div>
     </>
   );

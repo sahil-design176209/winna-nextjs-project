@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/sport/LiveSport.tsx"  ],
+, "app/sport/LiveSport.jsx", "app/sport/HotComboSection.jsx", "app/sport/Upcoming.jsx", "app/sport/SportEvent.jsx", "app/sport/Popular.jsx"  ],
   "exclude": ["node_modules"]
 }

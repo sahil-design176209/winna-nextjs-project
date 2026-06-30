@@ -31,7 +31,7 @@ const Navbar = ({ isPromotionMenuOpen, onTogglePromotions }: NavbarProps) => {
       {showSportsNavbar ? (
         <SportsNavbar />
       ) : (
-        <ul className="layout-container flex items-center gap-6 xl:gap-10">
+        <ul className="layout-container flex items-center gap-6 xl:gap-10 w-full max-w-[1312px] mx-auto">
           <li>
             <Link
               aria-current="page"
