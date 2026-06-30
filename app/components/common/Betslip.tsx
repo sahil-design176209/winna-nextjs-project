@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ThemeIcons } from "../SvgIcons";
 interface BetSlipProps {
   selectedBet: { team: string; odd: string } | null; // your existing line
   isCollapsed: boolean;
@@ -20,8 +21,28 @@ const Betslip = ({
           className="flex items-center gap-2 cursor-pointer select-none"
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
-          <span className="font-bold text-lg tracking-wide text-white">
-            Betslip
+          <span className="font-bold text-lg tracking-wide text-white flex items-center jsutify-center gap-2">
+            <ThemeIcons.BetsyIcon />
+            <span className=""> Betslip</span>
+            <button
+              type="button"
+              onClick={() => setIsCollapsed(!isCollapsed)}
+              className="text-white focus:outline-none cursor-pointer p-0.5 hover:opacity-80 transition-opacity"
+              aria-label="Toggle Betslip Content"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="#fff"
+                xmlns="http://www.w3.org/2000/svg"
+                className={`transform transition-transform duration-200 ${
+                  isCollapsed ? "rotate-180" : "rotate-0"
+                }`}
+              >
+                <path d="M8.7542 11.1529C8.35634 11.6157 7.64366 11.6157 7.2458 11.1529L4.24545 7.66298C3.68586 7.01207 4.14485 6 4.99964 6L11.0004 6C11.8551 6 12.3141 7.01207 11.7546 7.66298L8.7542 11.1529Z"></path>
+              </svg>
+            </button>
           </span>
         </div>
 
@@ -37,28 +58,8 @@ const Betslip = ({
               onChange={() => setIsOneClickBet(!isOneClickBet)}
               className="sr-only peer"
             />
-            <div className="w-11 h-6 bg-accent-blue-hover rounded-full peer peer-focus:ring-0 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-blue-pressed"></div>
+            <div className="w-11 h-6 bg-accent-blue-hover rounded-full peer peer-focus:ring-0 peer-checked:after:translate-x-full after:content-['']  border-2 border-white after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-blue-pressed"></div>
           </label>
-
-          <button
-            type="button"
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            className="text-white focus:outline-none cursor-pointer p-0.5 hover:opacity-80 transition-opacity"
-            aria-label="Toggle Betslip Content"
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 16 16"
-              fill="#fff"
-              xmlns="http://www.w3.org/2000/svg"
-              className={`transform transition-transform duration-200 ${
-                isCollapsed ? "rotate-180" : "rotate-0"
-              }`}
-            >
-              <path d="M8.7542 11.1529C8.35634 11.6157 7.64366 11.6157 7.2458 11.1529L4.24545 7.66298C3.68586 7.01207 4.14485 6 4.99964 6L11.0004 6C11.8551 6 12.3141 7.01207 11.7546 7.66298L8.7542 11.1529Z"></path>
-            </svg>
-          </button>
         </div>
       </div>
 
@@ -208,14 +209,14 @@ const Betslip = ({
                 <div className="h-[1px] bg-body-level-7 w-full mb-4" />
 
                 {/* Input Stake Row */}
-                <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex items-center justify-between gap-2 mb-4">
                   <label className="text-sm font-semibold text-gray-400">
                     Stake
                   </label>
                   <input
                     type="number"
                     defaultValue="100"
-                    className="w-[70%] h-11 rounded-lg border border-[#1e2f42] bg-[#09111a] px-4 text-white text-right font-bold outline-none focus:border-accent-blue"
+                    className="w-[80%] h-11 rounded-lg border border-[#1e2f42] bg-[#09111a] px-4 text-white text-right font-bold outline-none focus:border-accent-blue"
                   />
                 </div>
 

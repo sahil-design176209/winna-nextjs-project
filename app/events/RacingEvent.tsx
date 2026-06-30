@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useState } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { ThemeIcons, SportsMenuIcons } from "../components/SvgIcons";
 import greyHound from "../../public/images/greyHound.png";
@@ -8,6 +9,17 @@ import Image from "next/image";
 import Betslip from "../components/common/Betslip";
 
 const RacingEvent = () => {
+  const [selectedBet, setSelectedBet] = useState<{
+    team: string;
+    odd: string;
+  } | null>(null);
+  const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const handleBetClick = (item: { team: string; odd: string }) => {
+    setSelectedBet(item);
+    setIsCollapsed(false); // Opens the betslip when a bet is clicked
+  };
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -45,7 +57,7 @@ const RacingEvent = () => {
   return (
     <>
       <div className="mb-[30px] text-white font-sans relative isolate">
-        <div className="absolute top-[-15px] left-1/2 z-[2] w-full md:max-w-[60%] -translate-x-1/2 h-auto bg-top bg-no-repeat opacity-20 transition-opacity duration-1000 ease-in ">
+        <div className="absolute top-[-15px] left-1/2 z-[-1] w-full md:max-w-[60%] -translate-x-1/2 h-auto bg-top bg-no-repeat opacity-20 transition-opacity duration-1000 ease-in ">
           <Image
             src={currentBackgroundImage}
             alt={`${mainTitleText} background`}
@@ -86,7 +98,7 @@ const RacingEvent = () => {
           </button>
         </div>
 
-        <div className="rounded-[8px] bg-body-level-7 mb-5">
+        <div className="rounded-[8px] bg-body-level-7 mb-5 relative z-[-2]">
           <div className="px-3 py-4 flex items-center gap-2 text-sm text-cs-text-color">
             <span className="text-[12px]">Sunday</span>
             <span className="text-[12px]">
@@ -160,9 +172,20 @@ const RacingEvent = () => {
                     {item.name}
                   </span>
                 </div>
-                <div className="end-tag ">
+                <div className="end-tag">
                   <div className="flex items-center justify-between gap-2">
-                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-2 flex items-center justify-between">
+                    {/* First Odds Box */}
+                    <div
+                      onClick={() =>
+                        handleBetClick({ team: item.name, odd: item.odd })
+                      }
+                      className={`px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full flex items-center justify-between cursor-pointer transition-colors ${
+                        selectedBet?.team === item.name &&
+                        selectedBet?.odd === item.odd
+                          ? "bg-accent-blue"
+                          : "bg-body-level-2"
+                      }`}
+                    >
                       <span className="text-[12px] font-semibold text-white">
                         {item.odd}
                       </span>
@@ -170,7 +193,19 @@ const RacingEvent = () => {
                         {item.odd}
                       </span>
                     </div>
-                    <div className="px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full bg-body-level-2 flex items-center justify-between">
+
+                    {/* Second Odds Box (Optional: kept identical if it triggers the same selection) */}
+                    <div
+                      onClick={() =>
+                        handleBetClick({ team: item.name, odd: item.odd })
+                      }
+                      className={`px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full flex items-center justify-between cursor-pointer transition-colors ${
+                        selectedBet?.team === item.name &&
+                        selectedBet?.odd === item.odd
+                          ? "bg-accent-blue"
+                          : "bg-body-level-2"
+                      }`}
+                    >
                       <span className="text-[12px] font-semibold text-white">
                         {item.odd}
                       </span>
@@ -186,7 +221,11 @@ const RacingEvent = () => {
         </div>
       </div>
       <div className="fixed bottom-0 right-4 z-50 w-full max-w-[360px] sm:right-6 md:right-8">
-        <Betslip />
+        <Betslip
+          selectedBet={selectedBet}
+          isCollapsed={isCollapsed}
+          setIsCollapsed={setIsCollapsed}
+        />
       </div>
     </>
   );
