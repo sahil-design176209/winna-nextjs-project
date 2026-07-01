@@ -62,7 +62,7 @@ const Betslip = ({
               onChange={() => setIsOneClickBet(!isOneClickBet)}
               className="sr-only peer"
             />
-            <div className="w-11 h-6 bg-accent-blue-hover rounded-full peer peer-focus:ring-0 peer-checked:after:translate-x-full after:content-[''] border-2 border-white after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-blue-pressed"></div>
+            <div className="w-11 h-6 bg-accent-blue rounded-full peer peer-focus:ring-0 peer-checked:after:translate-x-full after:content-[''] border-2 border-white after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-blue-pressed"></div>
           </label>
         </div>
       </div>
@@ -117,7 +117,7 @@ const Betslip = ({
                   </div>
                 ) : (
                   <div className="w-full max-w-[340px] rounded-lg text-white overflow-hidden">
-                    <div className="py-4">
+                    <div className="pb-4">
                       <h3 className="text-accent-blue font-bold text-[16px]">
                         {selectedBet.team} {/* <-- Changed from "Zimbabwe" */}
                       </h3>
