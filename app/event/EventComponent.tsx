@@ -17,9 +17,14 @@ export default function EventComponent() {
   const [selectedBet, setSelectedBet] = useState<{
     team: string;
     odd: string;
+    market: string;
   } | null>(null);
 
-  const handleBetClick = (item: { team: string; odd: string }) => {
+  const handleBetClick = (item: {
+    team: string;
+    odd: string;
+    market: string;
+  }) => {
     setSelectedBet(item);
     setIsCollapsed(false); // Opens the betslip when a bet is clicked
   };
@@ -239,10 +244,13 @@ export default function EventComponent() {
                 ].map((item) => (
                   <div
                     key={item.team}
-                    onClick={() => handleBetClick(item)}
+                    onClick={() =>
+                      handleBetClick({ ...item, market: "match_odds" })
+                    }
                     className={`flex items-center justify-between rounded-lg px-4 py-3 h-[30px] transition-colors ${
                       selectedBet?.team === item.team &&
-                      selectedBet?.odd === item.odd
+                      selectedBet?.odd === item.odd &&
+                      selectedBet?.market === "match_odds"
                         ? "bg-accent-blue !text-white" // Your active/selected background color
                         : "bg-body-level-9 !text-typography-gray" // Your default background color
                     }`}
@@ -329,10 +337,13 @@ export default function EventComponent() {
                 ].map((item) => (
                   <div
                     key={item.team}
-                    onClick={() => handleBetClick(item)}
+                    onClick={() =>
+                      handleBetClick({ ...item, market: "bookmaker" })
+                    }
                     className={`flex items-center justify-between rounded-lg px-4 py-3 h-[30px] transition-colors ${
                       selectedBet?.team === item.team &&
-                      selectedBet?.odd === item.odd
+                      selectedBet?.odd === item.odd &&
+                      selectedBet?.market === "bookmaker"
                         ? "bg-accent-blue !text-white " // Your active/selected background color
                         : "bg-body-level-9 !text-typography-gray" // Your default background color
                     }`}
@@ -419,10 +430,11 @@ export default function EventComponent() {
                 ].map((item) => (
                   <div
                     key={item.team}
-                    onClick={() => handleBetClick(item)}
+                    onClick={() => handleBetClick({ ...item, market: "toss" })}
                     className={`flex items-center justify-between rounded-lg px-4 py-3 h-[30px] transition-colors ${
                       selectedBet?.team === item.team &&
-                      selectedBet?.odd === item.odd
+                      selectedBet?.odd === item.odd &&
+                      selectedBet?.market === "toss"
                         ? "bg-accent-blue !text-white" // <-- Added !text-white here
                         : "bg-body-level-9 !text-typography-gray"
                     }`}

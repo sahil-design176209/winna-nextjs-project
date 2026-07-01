@@ -12,10 +12,15 @@ const RacingEvent = () => {
   const [selectedBet, setSelectedBet] = useState<{
     team: string;
     odd: string;
+    type: string;
   } | null>(null);
   const [isCollapsed, setIsCollapsed] = useState(true);
 
-  const handleBetClick = (item: { team: string; odd: string }) => {
+  const handleBetClick = (item: {
+    team: string;
+    odd: string;
+    type: string;
+  }) => {
     setSelectedBet(item);
     setIsCollapsed(false); // Opens the betslip when a bet is clicked
   };
@@ -177,11 +182,16 @@ const RacingEvent = () => {
                     {/* First Odds Box */}
                     <div
                       onClick={() =>
-                        handleBetClick({ team: item.name, odd: item.odd })
+                        handleBetClick({
+                          team: item.name,
+                          odd: item.odd,
+                          type: "box1",
+                        })
                       }
                       className={`px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full flex items-center justify-between cursor-pointer transition-colors ${
                         selectedBet?.team === item.name &&
-                        selectedBet?.odd === item.odd
+                        selectedBet?.odd === item.odd &&
+                        selectedBet?.type === "box1"
                           ? "bg-accent-blue"
                           : "bg-body-level-2"
                       }`}
@@ -197,11 +207,16 @@ const RacingEvent = () => {
                     {/* Second Odds Box (Optional: kept identical if it triggers the same selection) */}
                     <div
                       onClick={() =>
-                        handleBetClick({ team: item.name, odd: item.odd })
+                        handleBetClick({
+                          team: item.name,
+                          odd: item.odd,
+                          type: "box2",
+                        })
                       }
                       className={`px-[10px] py-[16px] rounded-md w-[300px] max-[991px]:w-[200px] max-[620px]:w-[100px] width-full flex items-center justify-between cursor-pointer transition-colors ${
                         selectedBet?.team === item.name &&
-                        selectedBet?.odd === item.odd
+                        selectedBet?.odd === item.odd &&
+                        selectedBet?.type === "box2"
                           ? "bg-accent-blue"
                           : "bg-body-level-2"
                       }`}
