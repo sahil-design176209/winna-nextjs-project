@@ -119,12 +119,17 @@ const Betslip = ({
                   <div className="w-full max-w-[340px] rounded-lg text-white overflow-hidden">
                     <div className="py-4">
                       <h3 className="text-accent-blue font-bold text-[16px]">
-                        Zimbabwe
+                        {selectedBet.team} {/* <-- Changed from "Zimbabwe" */}
                       </h3>
+
                       <p className="text-gray-400 text-sm mt-1">
                         Match Odds • Zimbabwe v Bangladesh
                       </p>
-                      <p className="text-white font-bold text-xl mt-2">1.08</p>
+
+                      {/* CHANGE THIS: */}
+                      <p className="text-white font-bold text-xl mt-2">
+                        {selectedBet.odd} {/* <-- Changed from "1.08" */}
+                      </p>
                     </div>
 
                     <div>
@@ -166,12 +171,17 @@ const Betslip = ({
                 <div className="flex flex-col w-full transition-all duration-200">
                   <div className="text-left mb-4">
                     <h3 className="text-accent-blue font-bold text-base tracking-wide">
-                      Bangladesh
+                      {selectedBet.team} {/* <-- Changed from "Bangladesh" */}
                     </h3>
+
                     <p className="text-gray-400 text-xs mt-0.5 font-medium lowercase first-letter:uppercase">
                       match odds Zimbabwe v Bangladesh
                     </p>
-                    <p className="text-white font-bold text-xl mt-1.5">10</p>
+
+                    {/* CHANGE THIS: */}
+                    <p className="text-white font-bold text-xl mt-1.5">
+                      {selectedBet.odd} {/* <-- Changed from "10" */}
+                    </p>
                   </div>
 
                   <div className="h-[1px] bg-body-level-7 w-full mb-4" />
