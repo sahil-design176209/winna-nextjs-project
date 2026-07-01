@@ -207,7 +207,7 @@ const Betslip = ({
                     <input
                       type="number"
                       defaultValue="100"
-                      className="w-[80%] h-11 rounded-lg border border-[#1e2f42] bg-[#09111a] px-4 text-white text-right font-bold outline-none focus:border-accent-blue"
+                      className="w-[80%] h-11 rounded-lg border border-[#1e2f42] bg-[#09111a] px-4 text-white  font-bold outline-none focus:border-accent-blue"
                     />
                   </div>
 
