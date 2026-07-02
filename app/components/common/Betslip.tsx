@@ -184,7 +184,7 @@ const Betslip = ({
                     </p>
                   </div>
 
-                  <div className="h-[1px] bg-body-level-7 w-full mb-4" />
+                  {/* <div className="h-[1px] bg-body-level-7 w-full mb-4" /> */}
 
                   <div className="grid grid-cols-4 gap-3 mb-5">
                     {quickBetAmounts.map((amount, idx) => (
@@ -198,7 +198,7 @@ const Betslip = ({
                     ))}
                   </div>
 
-                  <div className="h-[1px] bg-body-level-7 w-full mb-4" />
+                  {/* <div className="h-[1px] bg-body-level-7 w-full mb-4" /> */}
 
                   <div className="flex items-center justify-between gap-2 mb-4">
                     <label className="text-sm font-semibold text-gray-400">
